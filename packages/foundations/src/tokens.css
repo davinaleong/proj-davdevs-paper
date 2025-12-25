@@ -6,4 +6,11 @@
 /* Import the core theme tokens */
 @import "../../../core/src/theme.css";
 
+/* Import component styles */
+@import "./components/Box/Box.styles.css";
+
 /* Additional foundation-specific tokens can go here */
+
+.paper-foundations-loaded {
+  --foundations-version: "1.0.0";
+}
