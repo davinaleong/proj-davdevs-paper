@@ -1,301 +1,303 @@
-# Dav/Devs Paper Plan
+# 📋 Dav/Devs Paper - Development Plan
 
-## 1. Component Inventory (Full System)
-
-### A. **Foundations (Shared by Basic & Premium)**
-
-These are non-negotiable and define the system’s “paper” identity.
-
-#### 🎨 Design Tokens
-
-* Colors (Tailwind-compatible)
-* Spacing scale
-* Border radius
-* Shadows (paper depth)
-* Typography scale
-* Z-index layers
-* Motion tokens (hover / lift / press)
-
-#### 🧩 Primitives
-
-* `Box` (paper container base)
-* `Stack` (vertical spacing)
-* `Inline` (horizontal spacing)
-* `Divider`
-* `Surface` (theme-aware background)
+> **Goal:** Build a premium paper-inspired design system for React that can be successfully commercialized with Basic (free) and Premium (paid) tiers.
 
 ---
 
-### B. **Typography (Required)**
+## 🎯 **Business Model & Value Proposition**
 
-> Typography is a *selling point*, not an afterthought.
-
-#### Headings
-
-* `H1` – `H6`
-* Serif option toggle (Playfair)
-
-#### Text
-
-* `Text` (body, muted, caption)
-* `Lead`
-* `Small`
-* `CodeInline`
-
-#### Rich Content
-
-* `Prose` (MDX/blog content)
-* `Blockquote`
-* `List` (ordered/unordered)
+### **Primary Goal**: Create a sellable product
+- **Basic Tier**: Free, MIT license - drives adoption
+- **Premium Tier**: Paid, commercial license - generates revenue
+- **Target Market**: React developers, agencies, SaaS companies
+- **Differentiator**: Unique paper aesthetic that humanizes digital interfaces
 
 ---
 
-### C. **Layout Components**
+## 📦 **Component Architecture**
 
-* `Page`
-* `Container`
-* `Grid`
-* `PaperStack` (stacked sheets look 👀)
-* `SidebarLayout`
-* `Section`
+### **A. Foundations** *(Shared by Both Tiers)*
 
----
-
-### D. **UI Components**
-
-#### Core
-
-* `Card`
-* `Button`
-* `Badge`
-* `Tag`
-* `Avatar`
-* `Icon`
-* `Tooltip`
-
-#### Forms
-
-* `Input`
-* `Textarea`
-* `Select`
-* `Checkbox`
-* `Radio`
-* `Switch`
-* `Label`
-* `FormField`
-
-#### Feedback
-
-* `Alert`
-* `Toast`
-* `Modal`
-* `Drawer`
-* `Skeleton`
-* `Progress`
-
----
-
-### E. **Navigation**
-
-* `Navbar`
-* `Footer`
-* `Breadcrumb`
-* `Tabs`
-* `Pagination`
-
----
-
-## 2. Split: **Basic vs Premium**
-
-### 🟦 BASIC (Free / Entry Tier)
-
-> Clean, Tailwind-native, no textures.
-
-**Includes**
-
-* All primitives
-* Full typography
-* Core layout components
-* Standard UI components
-* Light + Dark mode
-* Uses **Tailwind default spectrum only**
-
-**Color Strategy**
-
-```txt
-Primary: blue-600
-Secondary: slate-600
-Text: gray-800 / gray-200
-BG: white / slate-950
+#### 🎨 **Design Tokens**
+```
+Colors:     Tailwind-compatible + Paper colors
+Spacing:    Fluid scale (375px → 1440px)  
+Shadows:    Paper-realistic depth system
+Typography: Montserrat + Playfair Display + Source Code Pro
+Motion:     Paper-inspired animations (lift, press, float)
+Z-index:    Layered paper organization
 ```
 
-**No textures, no paper effects**, but spacing + shadows already hint at paper.
+#### 🧩 **Core Primitives**
+- `Box` - Base paper container with elevation
+- `Stack` - Vertical rhythm with consistent spacing  
+- `Inline` - Horizontal layout with gaps
+- `Divider` - Paper-style separators
+- `Surface` - Theme-aware backgrounds
+- `Container` - Responsive content containers
 
 ---
 
-### 🟨 PREMIUM (Paid Tier)
+### **B. Typography System** *(High Priority - Selling Point)*
 
-> This is where the magic is ✨
+#### **Headings**
+- `H1` → `H6` with serif/sans toggle
+- Auto-scaling with fluid typography
+- Paper-appropriate line heights
 
-**Adds**
+#### **Body Text**
+- `Text` - Primary text with variants (body, muted, caption)
+- `Lead` - Opening paragraph emphasis  
+- `Small` - Fine print and captions
+- `CodeInline` - Inline code styling
 
-* Paper & dark-paper backgrounds
-* Subtle grain / texture
-* Lifted paper shadows
-* Torn / stacked variants
-* Fancy typography presets
-* Decorative dividers
-* Themed templates
-
-**Premium-Only Components**
-
-* `PaperCard`
-* `PaperModal`
-* `Notebook`
-* `PaperTabs`
-* `PaperAlert`
-* `PaperProse`
-* `PaperHero`
-* `PaperTimeline`
+#### **Rich Content**
+- `Prose` - Blog/MDX content with paper feel
+- `Blockquote` - Paper-styled quotes with attribution
+- `List` - Ordered/unordered with paper bullets
 
 ---
 
-## 3. Fonts Setup (Your Chosen Stack ❤️)
+### **C. Layout Components**
 
-```txt
-Sans: Montserrat
-Serif: Playfair Display
-Mono: Source Code Pro
-Fallback: system-ui, sans-serif, serif, monospace
+#### **Page Structure**
+- `Page` - Full-page paper background
+- `Container` - Max-width content areas
+- `Section` - Page section dividers
+- `Grid` - CSS Grid with paper gaps
+
+#### **Paper-Specific Layouts**  
+- `PaperStack` - Stacked sheets effect (Premium signature)
+- `SidebarLayout` - Two-column paper layouts
+- `Notebook` - Multi-page container (Premium)
+
+---
+
+### **D. UI Components**
+
+#### **Core UI**
+- `Card` - Basic paper cards
+- `Button` - Paper-style buttons with elevation
+- `Badge` - Small paper labels
+- `Tag` - Content categorization
+- `Avatar` - User representation
+- `Icon` - Paper-friendly iconography
+- `Tooltip` - Floating paper hints
+
+#### **Forms** *(Essential for SaaS)*
+- `Input` - Text inputs with paper styling
+- `Textarea` - Multi-line text areas
+- `Select` - Dropdown selections
+- `Checkbox` - Paper checkbox styling
+- `Radio` - Radio button groups
+- `Switch` - Toggle switches
+- `Label` - Form labels with typography
+- `FormField` - Complete form field wrapper
+
+#### **Feedback**
+- `Alert` - Status messages with paper styling
+- `Toast` - Notification system
+- `Modal` - Overlay dialogs with paper depth
+- `Drawer` - Side panel with paper slide
+- `Skeleton` - Loading states with paper feel
+- `Progress` - Progress indicators
+
+---
+
+### **E. Navigation**
+- `Navbar` - Site navigation with paper elevation
+- `Footer` - Page footer sections  
+- `Breadcrumb` - Navigation trails
+- `Tabs` - Content switching
+- `Pagination` - Page navigation
+
+---
+
+## 🟦 **BASIC TIER** - *Free & Open Source*
+
+### **Value Proposition**
+> "Professional React components with a warm, paper-inspired aesthetic. Perfect for getting started."
+
+### **Included Features**
+- ✅ All 50+ components listed above
+- ✅ Complete typography system
+- ✅ Light + Dark mode
+- ✅ Responsive design
+- ✅ Accessibility built-in
+- ✅ TypeScript support
+- ✅ MIT License (commercial use OK)
+
+### **Color Strategy**
+```css
+/* Tailwind defaults only */
+--primary: theme('colors.blue.600');
+--secondary: theme('colors.slate.600');  
+--text: theme('colors.gray.800');
+--text-dark: theme('colors.gray.200');
+--bg: theme('colors.white');
+--bg-dark: theme('colors.slate.950');
 ```
 
-**Implementation**
-
-* CSS variables (`--font-sans`, etc.)
-* Tailwind `fontFamily` mapping
-* Optional `@fontsource/*` packages
+### **Styling Approach**
+- Clean Tailwind utility classes
+- Subtle shadows that hint at paper
+- No textures or special effects
+- Professional and polished
 
 ---
 
-## 4. Paper & Dark Paper Background Colors
+## 🟨 **PREMIUM TIER** - *Commercial License*
 
-### 📄 Light Paper (Premium)
+### **Value Proposition**
+> "Unlock the full magic of paper-inspired design with authentic textures, advanced effects, and exclusive components."
 
-Pairs beautifully with Tailwind gray spectrum:
+### **Premium Additions**
 
-```txt
-Paper Base:      #FAF9F7
-Paper Warm:     #F4F2EE
-Paper Border:   #E5E2DC
-Paper Shadow:   rgba(0,0,0,0.06)
+#### **🎨 Authentic Paper Colors**
+```css
+/* Light Paper Theme */
+--paper-base: #FAF9F7;      /* Warm white paper */
+--paper-warm: #F4F2EE;      /* Aged paper */
+--paper-border: #E5E2DC;    /* Subtle paper edges */
+--paper-shadow: rgba(0,0,0,0.06); /* Soft paper shadows */
+
+/* Dark Paper Theme */
+--dark-paper-base: #121212;   /* Rich black paper */
+--dark-paper-warm: #181818;   /* Charcoal paper */  
+--dark-border: #2A2A2A;       /* Dark paper edges */
+--dark-shadow: rgba(0,0,0,0.8); /* Deep paper shadows */
 ```
 
-### 🌑 Dark Paper
+#### **✨ Premium Features**
+- **Paper Textures**: Grain, linen, and fiber effects
+- **Advanced Shadows**: Multi-layered realistic depth
+- **Torn Effects**: Paper with realistic torn edges  
+- **Stacked Variants**: Multiple paper layers
+- **Enhanced Animations**: Paper-physics interactions
 
-Not pure black—still readable and warm.
+#### **🏆 Exclusive Components**
+- `PaperCard` - Cards with texture and advanced shadows
+- `PaperModal` - Modals that feel like paper documents
+- `Notebook` - Multi-page tabbed interface
+- `PaperTabs` - Tabs that look like paper folders
+- `PaperAlert` - Alerts with paper texture
+- `PaperProse` - Enhanced content with paper feel
+- `PaperHero` - Hero sections with paper backgrounds
+- `PaperTimeline` - Timeline with paper cards
 
-```txt
-Dark Paper Base:   #121212
-Dark Paper Warm:  #181818
-Dark Border:      #2A2A2A
-Dark Shadow:      rgba(0,0,0,0.8)
+---
+
+## 🛠 **Technical Implementation**
+
+### **Build System**
+```
+Tool:     Vite (fast, modern, library-friendly)
+Output:   ESM + CJS + TypeScript declarations
+CSS:      Tailwind v4 + CSS variables
+Testing:  Vitest + Testing Library
 ```
 
-💡 These sit perfectly between `gray-100 → gray-900` without clashing.
+### **Framework Compatibility**
 
----
+#### **React Ecosystem** *(Primary)*
+- ✅ React 18+ with hooks
+- ✅ Next.js (App Router + Pages Router)
+- ✅ Astro (SSR + Islands)
+- ✅ Vite + React
+- ✅ Create React App (legacy)
 
-## 5. Tech Stack (Best Choice for Selling Later)
-
-### 🥇 Recommended Stack
-
-#### Core
-
-* **TypeScript**
-* **React (headless-first)**
-* **Tailwind CSS**
-* **CSS Variables**
-
-#### Build
-
-* **Vite** ✅ (faster, modern, Astro-friendly)
-* Library mode (`build.lib`)
-
-#### Outputs
-
-* ESM
-* CJS
-* CSS-only build (bonus)
-
----
-
-### Why **Vite > Webpack**
-
-| Feature        | Vite   | Webpack |
-| -------------- | ------ | ------- |
-| DX             | ⭐⭐⭐⭐⭐  | ⭐⭐⭐     |
-| Astro support  | Native | Meh     |
-| Library builds | Easy   | Painful |
-| Selling later  | Yes    | No      |
-
----
-
-## 6. Compatibility Plan (Bonus Requirement ✔)
-
-### React / Next.js / Astro
-
-* Export headless logic + styled components
-* No framework assumptions
-* No Next-specific APIs
-
-### Raw HTML / CSS / JS
-
-* Ship:
-
-  * `paper.css`
-  * `paper.dark.css`
-* Components degrade to class-based usage:
-
+#### **Vanilla Support** *(Bonus)*
 ```html
-<div class="paper-card paper-elevated">
+<!-- CSS-only usage -->
+<link rel="stylesheet" href="paper-basic.css">
+<div class="paper paper-card paper-elevated">
+  <h2 class="text-heading-lg">No JavaScript Required</h2>
+</div>
+```
+
+### **Package Structure**
+```
+packages/
+├── foundations/     # Shared tokens & primitives
+├── basic/          # Free tier components  
+├── premium/        # Paid tier components
+├── core/           # Legacy (to be refactored)
+└── docs/           # Documentation site
 ```
 
 ---
 
-## 7. Build & Setup Plan (Step-by-Step)
+## 🚀 **Development Phases**
 
-### Phase 1 – Foundations
+### **Phase 1: Foundations** *(2-3 weeks)*
+- [ ] Design token system
+- [ ] Core primitives (Box, Stack, Inline)
+- [ ] Typography implementation
+- [ ] Dark mode system  
+- [ ] Build system setup
 
-* Tokens (colors, fonts, spacing)
-* Paper shadows & surfaces
-* Dark mode system
+### **Phase 2: Basic Tier** *(4-6 weeks)*
+- [ ] All core components (Cards, Buttons, Forms)
+- [ ] Layout components
+- [ ] Navigation components
+- [ ] Accessibility audit
+- [ ] TypeScript definitions
 
-### Phase 2 – Core Components
+### **Phase 3: Premium Features** *(3-4 weeks)*
+- [ ] Paper color system
+- [ ] Texture effects (grain, linen)
+- [ ] Advanced shadow system
+- [ ] Premium components
+- [ ] Animation enhancements
 
-* Typography
-* Layout
-* Buttons, cards, inputs
-
-### Phase 3 – Premium Layer
-
-* Paper textures
-* Dark paper variants
-* Signature components
-
-### Phase 4 – Packaging
-
-* Storybook / Ladle
-* Docs site (Astro 👌)
-* Pricing tiers
-* License
+### **Phase 4: Launch Preparation** *(2-3 weeks)*
+- [ ] Documentation site (Astro)
+- [ ] Storybook interactive examples
+- [ ] Package publishing setup
+- [ ] Pricing page
+- [ ] License enforcement
 
 ---
 
-## 8. Naming Ideas (Optional but Important)
+## 💰 **Monetization Strategy**
 
-* **PaperUI**
-* **Fold**
-* **Crease**
-* **Leaf UI**
-* **Parchment**
-* **Notebook UI**
+### **Basic Tier**
+- **Price**: Free
+- **License**: MIT  
+- **Goal**: Market penetration, brand building
+- **Revenue**: $0 (investment in adoption)
+
+### **Premium Tier**
+- **Price**: TBD (competitive research needed)
+- **License**: Commercial with usage restrictions
+- **Goal**: Revenue generation
+- **Target**: $X/month recurring
+
+### **Enterprise**
+- **Custom licensing**
+- **White-label options**
+- **Priority support**
+- **Custom components**
+
+---
+
+## 📈 **Success Metrics**
+
+### **Adoption** *(Basic Tier)*
+- npm downloads
+- GitHub stars  
+- Community usage
+
+### **Revenue** *(Premium Tier)*
+- Monthly recurring revenue
+- Customer retention
+- Enterprise deals
+
+### **Quality**
+- Component test coverage
+- Accessibility scores
+- Performance metrics
+
+---
+
+**This plan balances technical excellence with commercial viability, ensuring we build both a great product and a sustainable business.**
