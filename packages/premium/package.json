@@ -1,0 +1,34 @@
+{
+  "name": "@davdevs/paper-premium",
+  "version": "1.0.0",
+  "description": "Dav/Devs Paper UI - Premium Tier - Paper textures, effects, and premium components",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./src/index.css"
+  },
+  "dependencies": {
+    "@davdevs/paper-foundations": "workspace:*",
+    "@davdevs/paper-basic": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "tailwindcss": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "license": "Commercial"
+}

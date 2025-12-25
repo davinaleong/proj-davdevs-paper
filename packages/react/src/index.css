@@ -1,0 +1,11 @@
+/* =========================================================
+   Dav/Devs Paper - Documentation Site
+   Using Premium Tier (includes Basic + Premium features)
+   ========================================================= */
+
+/* Import Premium tier (includes everything) */
+@import "@davdevs/paper-premium/css";
+
+/* Or for Basic tier only: */
+/* @import "@davdevs/paper-basic/css"; */
+

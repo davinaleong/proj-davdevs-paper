@@ -1,21 +1,44 @@
 {
   "name": "proj-davdevs-paper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dav/Devs Paper UI - A premium paper-inspired design system",
   "main": "index.js",
+  "type": "module",
+  "workspaces": [
+    "packages/foundations",
+    "packages/basic", 
+    "packages/premium",
+    "packages/core",
+    "packages/react",
+    "packages/styles",
+    "packages/docs"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm -r build",
+    "dev": "pnpm -r dev",
+    "clean": "pnpm -r clean"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davinaleong/proj-davdevs-paper.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": [
+    "ui",
+    "design-system",
+    "react",
+    "tailwind",
+    "paper",
+    "premium"
+  ],
+  "author": "Davina Leong",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/davinaleong/proj-davdevs-paper/issues"
   },
-  "homepage": "https://github.com/davinaleong/proj-davdevs-paper#readme"
+  "homepage": "https://github.com/davinaleong/proj-davdevs-paper#readme",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
 }

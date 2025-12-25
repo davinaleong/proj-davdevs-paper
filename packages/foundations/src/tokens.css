@@ -1,0 +1,9 @@
+/* =========================================================
+   Dav/Devs Paper — Foundation Design Tokens
+   Shared by Basic & Premium tiers
+   ========================================================= */
+
+/* Import the core theme tokens */
+@import "../../../core/src/theme.css";
+
+/* Additional foundation-specific tokens can go here */

@@ -1,0 +1,33 @@
+{
+  "name": "@davdevs/paper-basic",
+  "version": "1.0.0",
+  "description": "Dav/Devs Paper UI - Basic Tier (Free) - Clean, Tailwind-native components",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./src/index.css"
+  },
+  "dependencies": {
+    "@davdevs/paper-foundations": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "tailwindcss": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "license": "MIT"
+}
