@@ -1,0 +1,146 @@
+/* =========================================================
+   Dav/Devs Paper — Paper Surfaces & Elevation
+   ========================================================= */
+
+/* -------------------------------
+   Base Paper Surface
+-------------------------------- */
+.paper {
+  background-color: var(--paper-bg, var(--color-gray-50));
+  color: var(--ink-primary, var(--color-gray-900));
+
+  border: 1px solid var(--paper-border, var(--color-gray-200));
+  border-radius: var(--paper-radius, var(--radius-lg));
+
+  box-shadow: var(--paper-shadow, none);
+
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+/* -------------------------------
+   Paper Elevation Levels
+-------------------------------- */
+
+/* Flat — default document surface */
+.paper[data-elevation="flat"] {
+  --paper-shadow: none;
+}
+
+/* Raised — cards, panels */
+.paper[data-elevation="lift"] {
+  --paper-shadow: 0 1px 2px rgb(0 0 0 / 0.05),
+                  0 4px 6px rgb(0 0 0 / 0.08);
+}
+
+/* Floating — modals, popovers */
+.paper[data-elevation="float"] {
+  --paper-shadow: 0 4px 12px rgb(0 0 0 / 0.12),
+                  0 10px 20px rgb(0 0 0 / 0.15);
+}
+
+/* Stacked — notebooks, layered sheets */
+.paper[data-elevation="stack"] {
+  --paper-shadow:
+    0 1px 2px rgb(0 0 0 / 0.05),
+    0 6px 18px rgb(0 0 0 / 0.08),
+    0 12px 30px rgb(0 0 0 / 0.1);
+}
+
+/* -------------------------------
+   Interactive States
+-------------------------------- */
+
+.paper[data-interactive="true"] {
+  cursor: pointer;
+}
+
+.paper[data-interactive="true"]:hover {
+  transform: translateY(-1px);
+}
+
+.paper[data-interactive="true"]:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* -------------------------------
+   Paper Padding Presets
+-------------------------------- */
+
+.paper-xs { padding: var(--space-2); }
+.paper-sm { padding: var(--space-3); }
+.paper-md { padding: var(--space-4); }
+.paper-lg { padding: var(--space-6); }
+.paper-xl { padding: var(--space-8); }
+
+/* -------------------------------
+   Paper Variants
+-------------------------------- */
+
+/* Muted paper (secondary panels) */
+.paper-muted {
+  background-color: var(--color-gray-100);
+}
+
+/* Inset paper (forms, wells) */
+.paper-inset {
+  background-color: var(--color-gray-100);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.06);
+}
+
+/* Borderless paper */
+.paper-borderless {
+  border: none;
+}
+
+/* -------------------------------
+   Dark Mode (Basic)
+-------------------------------- */
+
+.dark .paper {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  border-color: var(--color-gray-700);
+}
+
+/* Dark muted */
+.dark .paper-muted {
+  background-color: var(--color-gray-800);
+}
+
+/* -------------------------------
+   Paper Layout Helpers
+-------------------------------- */
+
+/* Paper stack spacing */
+.paper-stack {
+  display: grid;
+  gap: var(--paper-stack-gap, var(--space-6));
+}
+
+/* Paper header/footer */
+.paper-header {
+  margin-bottom: var(--space-4);
+}
+
+.paper-footer {
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--paper-border, var(--color-gray-200));
+  padding-top: var(--space-3);
+}
+
+/* -------------------------------
+   Print Safety
+-------------------------------- */
+
+@media print {
+  .paper {
+    box-shadow: none !important;
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+}

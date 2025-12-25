@@ -399,7 +399,6 @@
   --grid-cols-6:          repeat(6, minmax(0, 1fr));
   --grid-cols-12:         repeat(12, minmax(0, 1fr));
 }
-}
 
 /* -------------------------------
    Tailwind v4 Theme Mapping
