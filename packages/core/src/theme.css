@@ -637,3 +637,536 @@ code, pre {
   font-weight: var(--code-weight);
   font-style: var(--code-style);
 }
+
+.flow > * + * {
+  margin-top: var(--space-4);
+}
+
+:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* -------------------------------
+   Container Utility Classes
+-------------------------------- */
+
+/* Base container class that establishes containment context */
+.container {
+  container-type: inline-size;
+  container-name: main;
+  width: 100%;
+  max-width: var(--container-size, var(--container-lg));
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* Container size variants */
+.container-sm {
+  --container-size: var(--container-sm);
+}
+
+.container-md {
+  --container-size: var(--container-md);
+}
+
+.container-lg {
+  --container-size: var(--container-lg);
+}
+
+.container-xl {
+  --container-size: var(--container-xl);
+}
+
+.container-2xl {
+  --container-size: var(--container-2xl);
+}
+
+/* Fluid container without max-width */
+.container-fluid {
+  container-type: inline-size;
+  container-name: main;
+  width: 100%;
+  padding-inline: var(--space-4);
+}
+
+/* Container query utilities for responsive design within containers */
+@container main (min-width: 640px) {
+  .container-sm\:text-lg {
+    font-size: var(--text-lg);
+  }
+  
+  .container-sm\:p-6 {
+    padding: var(--space-6);
+  }
+}
+
+@container main (min-width: 768px) {
+  .container-md\:text-xl {
+    font-size: var(--text-xl);
+  }
+  
+  .container-md\:p-8 {
+    padding: var(--space-8);
+  }
+}
+
+@container main (min-width: 1024px) {
+  .container-lg\:text-2xl {
+    font-size: var(--text-2xl);
+  }
+  
+  .container-lg\:p-12 {
+    padding: var(--space-12);
+  }
+}
+
+/* -------------------------------
+   Layout Utility Classes
+-------------------------------- */
+
+/* Stack/Flow - Vertical rhythm with consistent spacing */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  margin-block-start: var(--stack-space, var(--space-4));
+}
+
+.stack-xs { --stack-space: var(--space-1); }
+.stack-sm { --stack-space: var(--space-2); }
+.stack-md { --stack-space: var(--space-4); }
+.stack-lg { --stack-space: var(--space-6); }
+.stack-xl { --stack-space: var(--space-8); }
+
+/* Cluster - Horizontal groupings with gaps */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-space, var(--space-4));
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cluster-xs { --cluster-space: var(--space-1); }
+.cluster-sm { --cluster-space: var(--space-2); }
+.cluster-md { --cluster-space: var(--space-4); }
+.cluster-lg { --cluster-space: var(--space-6); }
+.cluster-xl { --cluster-space: var(--space-8); }
+
+.cluster-center { justify-content: center; }
+.cluster-end { justify-content: flex-end; }
+.cluster-between { justify-content: space-between; }
+
+/* Center - Perfect centering */
+.center {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--center-max-width, var(--max-width-lg));
+  padding-inline-start: var(--center-gutter, var(--space-4));
+  padding-inline-end: var(--center-gutter, var(--space-4));
+}
+
+.center-xs { --center-max-width: var(--max-width-xs); }
+.center-sm { --center-max-width: var(--max-width-sm); }
+.center-md { --center-max-width: var(--max-width-md); }
+.center-lg { --center-max-width: var(--max-width-lg); }
+.center-xl { --center-max-width: var(--max-width-xl); }
+.center-prose { --center-max-width: var(--max-width-prose); }
+
+/* Box - Consistent padding with optional border */
+.box {
+  padding: var(--box-padding, var(--space-4));
+  border-width: var(--box-border-width, 0);
+  border-style: solid;
+  border-color: var(--border-primary);
+  border-radius: var(--box-border-radius, var(--radius-base));
+}
+
+.box-xs { --box-padding: var(--space-2); }
+.box-sm { --box-padding: var(--space-3); }
+.box-md { --box-padding: var(--space-4); }
+.box-lg { --box-padding: var(--space-6); }
+.box-xl { --box-padding: var(--space-8); }
+
+.box-border { --box-border-width: var(--border-1); }
+.box-border-2 { --box-border-width: var(--border-2); }
+
+/* Cover - Full coverage layouts */
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: var(--cover-min-height, 100vh);
+  padding: var(--cover-padding, var(--space-4));
+}
+
+.cover > * {
+  margin-block: var(--cover-space, var(--space-4));
+}
+
+.cover > :first-child:not(.cover-centered) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(.cover-centered) {
+  margin-block-end: 0;
+}
+
+.cover > .cover-centered {
+  margin-block: auto;
+}
+
+/* Frame - Aspect ratio containers */
+.frame {
+  aspect-ratio: var(--frame-ratio, var(--aspect-video));
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame > img,
+.frame > video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.frame-square { --frame-ratio: var(--aspect-square); }
+.frame-video { --frame-ratio: var(--aspect-video); }
+.frame-photo { --frame-ratio: var(--aspect-photo); }
+
+/* Reel - Horizontal scrolling */
+.reel {
+  display: flex;
+  block-size: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  gap: var(--reel-space, var(--space-4));
+}
+
+.reel::-webkit-scrollbar {
+  display: none;
+}
+
+.reel > * {
+  flex: 0 0 auto;
+}
+
+.reel-sm { --reel-space: var(--space-2); }
+.reel-md { --reel-space: var(--space-4); }
+.reel-lg { --reel-space: var(--space-6); }
+
+/* Imposter - Positioned overlay */
+.imposter {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imposter-contain {
+  --imposter-margin: var(--space-0);
+  overflow: auto;
+  max-inline-size: calc(100% - (var(--imposter-margin) * 2));
+  max-block-size: calc(100% - (var(--imposter-margin) * 2));
+}
+
+/* -------------------------------
+   Text & Content Utilities
+-------------------------------- */
+
+/* Visually hidden - Screen reader only content */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Text utilities */
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.truncate-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.truncate-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Icon utilities */
+.with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--with-icon-space, var(--space-2));
+}
+
+.with-icon-xs { --with-icon-space: var(--space-1); }
+.with-icon-sm { --with-icon-space: var(--space-1-5); }
+.with-icon-md { --with-icon-space: var(--space-2); }
+.with-icon-lg { --with-icon-space: var(--space-3); }
+
+/* -------------------------------
+   Interactive & State Utilities
+-------------------------------- */
+
+/* Focus visible - Keyboard navigation focus */
+.focus-visible-ring {
+  outline: none;
+}
+
+.focus-visible-ring:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* Smooth focus for interactive elements */
+.focus-smooth {
+  transition: box-shadow var(--transition-fast),
+              outline-color var(--transition-fast);
+}
+
+/* Disabled state */
+.disabled {
+  opacity: var(--opacity-50);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Loading state */
+.loading {
+  pointer-events: none;
+  opacity: var(--opacity-70);
+}
+
+/* -------------------------------
+   Scrollbar Utilities
+-------------------------------- */
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar styling */
+.scrollbar-styled {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) var(--color-gray-100);
+}
+
+.scrollbar-styled::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: var(--radius-full);
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--radius-full);
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+/* -------------------------------
+   Animation Utilities
+-------------------------------- */
+
+/* Fade animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fade-in var(--duration-300) var(--ease-out);
+}
+
+.animate-fade-out {
+  animation: fade-out var(--duration-300) var(--ease-in);
+}
+
+/* Slide animations */
+@keyframes slide-up {
+  from { transform: translateY(1rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-1rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up var(--duration-300) var(--ease-out);
+}
+
+.animate-slide-down {
+  animation: slide-down var(--duration-300) var(--ease-out);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: var(--opacity-50); }
+}
+
+.animate-pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+/* -------------------------------
+   Print Utilities
+-------------------------------- */
+
+@media print {
+  /* Force black and white printing */
+  * {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Preserve white text on dark backgrounds by inverting */
+  [data-theme="dark"],
+  .dark,
+  .bg-dark,
+  .surface-inverse {
+    color: #ffffff !important;
+    background-color: #000000 !important;
+  }
+
+  /* Borders should be black */
+  *,
+  *::before,
+  *::after {
+    border-color: #000000 !important;
+  }
+
+  /* Links should be black with underline for clarity */
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Code blocks should have subtle borders */
+  code,
+  pre {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Form elements */
+  input,
+  textarea,
+  select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Buttons should be clearly defined */
+  button,
+  .btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+  }
+
+  /* Images should maintain contrast */
+  img {
+    filter: grayscale(100%) contrast(120%) !important;
+  }
+
+  /* Print-specific visibility */
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-visible {
+    display: block !important;
+  }
+
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure good contrast for headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 0.125rem;
+  }
+
+  /* Table styling for print */
+  table {
+    border-collapse: collapse !important;
+    background-color: #ffffff !important;
+  }
+
+  th, td {
+    border: 1px solid #000000 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+}
