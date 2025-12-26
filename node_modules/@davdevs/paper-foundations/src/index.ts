@@ -13,5 +13,8 @@ export type { DividerProps, DividerRef } from './components/Divider';
 export { Surface } from './components/Surface';
 export type { SurfaceProps, SurfaceRef } from './components/Surface';
 
+export { Container } from './components/Container';
+export type { ContainerProps, ContainerRef } from './components/Container';
+
 // Export utilities
 export { cn } from './utils';

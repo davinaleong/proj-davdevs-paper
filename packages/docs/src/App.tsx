@@ -4,6 +4,7 @@ import { StackShowcase } from './components/StackShowcase';
 import { InlineShowcase } from './components/InlineShowcase';
 import { DividerShowcase } from './components/DividerShowcase';
 import { SurfaceShowcase } from './components/SurfaceShowcase';
+import { ContainerShowcase } from './components/ContainerShowcase';
 
 interface NavItem {
   id: string;
@@ -36,6 +37,11 @@ const navigationItems: NavItem[] = [
     id: 'surface',
     label: 'Surface',
     component: SurfaceShowcase
+  },
+  {
+    id: 'container',
+    label: 'Container',
+    component: ContainerShowcase
   },
   // Add more components here as they're created
 ];
