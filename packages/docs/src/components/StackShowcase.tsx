@@ -61,11 +61,13 @@ export const StackShowcase = () => {
           {(['start', 'center', 'end', 'stretch'] as const).map(align => (
             <div key={align} className="example-container">
               <h3 className="text-sm font-medium text-gray-600 mb-2">Align: {align}</h3>
-              <Stack gap="sm" align={align} className="h-32 bg-gray-50 p-4">
-                <DemoBox className="py-2 px-4">Item 1</DemoBox>
-                <DemoBox className="py-2 px-6">Item 2</DemoBox>
-                <DemoBox className="py-2 px-3">Item 3</DemoBox>
-              </Stack>
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <Stack gap="sm" align={align} className="h-32 bg-gray-50 p-4">
+                  <DemoBox className="py-2 px-4 flex-shrink-0">Item 1</DemoBox>
+                  <DemoBox className="py-2 px-6 flex-shrink-0">Item 2</DemoBox>
+                  <DemoBox className="py-2 px-3 flex-shrink-0">Item 3</DemoBox>
+                </Stack>
+              </div>
             </div>
           ))}
         </div>
