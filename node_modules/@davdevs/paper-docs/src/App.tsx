@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BoxShowcase } from './components/BoxShowcase';
+import { StackShowcase } from './components/StackShowcase';
 
 interface NavItem {
   id: string;
@@ -12,6 +13,11 @@ const navigationItems: NavItem[] = [
     id: 'box',
     label: 'Box',
     component: BoxShowcase
+  },
+  {
+    id: 'stack',
+    label: 'Stack',
+    component: StackShowcase
   },
   // Add more components here as they're created
 ];
