@@ -3,6 +3,7 @@ import { BoxShowcase } from './components/BoxShowcase';
 import { StackShowcase } from './components/StackShowcase';
 import { InlineShowcase } from './components/InlineShowcase';
 import { DividerShowcase } from './components/DividerShowcase';
+import { SurfaceShowcase } from './components/SurfaceShowcase';
 
 interface NavItem {
   id: string;
@@ -31,6 +32,11 @@ const navigationItems: NavItem[] = [
     label: 'Divider',
     component: DividerShowcase
   },
+  {
+    id: 'surface',
+    label: 'Surface',
+    component: SurfaceShowcase
+  },
   // Add more components here as they're created
 ];
 
@@ -44,7 +50,7 @@ function App() {
       {/* Sidebar */}
       <nav className="sidebar">
         <div className="mb-8">
-          <h1 className="text-xl font-bold text-gray-900 mb-2">Dav/Devs Paper UI</h1>
+          <h1 className="text-xl font-bold text-blue-500 mb-2">Dav/Devs Paper UI</h1>
           <p className="text-sm text-gray-600">Component Library</p>
         </div>
         

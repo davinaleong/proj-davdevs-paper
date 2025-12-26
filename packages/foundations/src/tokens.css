@@ -11,6 +11,7 @@
 @import "./components/Stack/Stack.styles.css";
 @import "./components/Inline/Inline.styles.css";
 @import "./components/Divider/Divider.styles.css";
+@import "./components/Surface/Surface.styles.css";
 
 /* Basic tokens for development */
 :root {

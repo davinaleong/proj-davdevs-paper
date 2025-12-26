@@ -10,5 +10,8 @@ export type { InlineProps, InlineRef } from './components/Inline';
 export { Divider } from './components/Divider';
 export type { DividerProps, DividerRef } from './components/Divider';
 
+export { Surface } from './components/Surface';
+export type { SurfaceProps, SurfaceRef } from './components/Surface';
+
 // Export utilities
 export { cn } from './utils';
