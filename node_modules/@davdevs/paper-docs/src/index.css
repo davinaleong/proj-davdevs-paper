@@ -1,0 +1,73 @@
+/* Import the foundation tokens and styles */
+@import '@davdevs/paper-foundations/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base app styles */
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--surface-primary);
+  line-height: var(--leading-normal);
+}
+
+/* Component showcase styles */
+.showcase-section {
+  @apply mb-12;
+}
+
+.showcase-title {
+  @apply text-3xl font-bold mb-6 text-gray-900;
+  font-family: var(--heading-font);
+}
+
+.showcase-subtitle {
+  @apply text-xl font-semibold mb-4 text-gray-700;
+}
+
+.showcase-grid {
+  @apply grid gap-6;
+}
+
+.showcase-item {
+  @apply p-4 border border-gray-200 rounded-lg;
+}
+
+.showcase-code {
+  @apply bg-gray-100 p-3 rounded text-sm font-mono overflow-x-auto;
+}
+
+.props-table {
+  @apply w-full border-collapse border border-gray-300;
+}
+
+.props-table th,
+.props-table td {
+  @apply border border-gray-300 px-3 py-2 text-left;
+}
+
+.props-table th {
+  @apply bg-gray-100 font-semibold;
+}
+
+.sidebar {
+  @apply w-64 bg-white border-r border-gray-200 p-6 overflow-y-auto;
+}
+
+.sidebar-nav {
+  @apply space-y-2;
+}
+
+.sidebar-link {
+  @apply block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors;
+}
+
+.sidebar-link.active {
+  @apply bg-blue-100 text-blue-700 font-medium;
+}
+
+.main-content {
+  @apply flex-1 p-6 overflow-y-auto;
+}

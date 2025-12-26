@@ -1,0 +1,16 @@
+/* =========================================================
+   Dav/Devs Paper — BASIC TIER (Free)
+   Clean, Tailwind-native, no textures
+   ========================================================= */
+
+/* Foundations */
+@import "@davdevs/paper-foundations/tokens.css";
+
+/* Core Components */
+@import "./components/typography/index.css";
+@import "./components/layout/index.css";
+@import "./components/ui/index.css";
+@import "./components/navigation/index.css";
+
+/* Tailwind */
+@import "tailwindcss";
