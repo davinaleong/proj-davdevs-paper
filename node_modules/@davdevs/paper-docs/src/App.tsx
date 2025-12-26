@@ -5,6 +5,9 @@ import { InlineShowcase } from './components/InlineShowcase';
 import { DividerShowcase } from './components/DividerShowcase';
 import { SurfaceShowcase } from './components/SurfaceShowcase';
 import { ContainerShowcase } from './components/ContainerShowcase';
+import { HeadingShowcase } from './components/HeadingShowcase';
+import { BodyTextShowcase } from './components/BodyTextShowcase';
+import { RichContentShowcase } from './components/RichContentShowcase';
 
 interface NavItem {
   id: string;
@@ -12,44 +15,77 @@ interface NavItem {
   component: React.ComponentType;
 }
 
-const navigationItems: NavItem[] = [
+interface NavGroup {
+  title: string;
+  items: NavItem[];
+}
+
+const navigationGroups: NavGroup[] = [
   {
-    id: 'box',
-    label: 'Box',
-    component: BoxShowcase
+    title: 'Foundations',
+    items: [
+      {
+        id: 'box',
+        label: 'Box',
+        component: BoxShowcase
+      },
+      {
+        id: 'stack',
+        label: 'Stack',
+        component: StackShowcase
+      },
+      {
+        id: 'inline',
+        label: 'Inline',
+        component: InlineShowcase
+      },
+      {
+        id: 'divider',
+        label: 'Divider',
+        component: DividerShowcase
+      },
+      {
+        id: 'surface',
+        label: 'Surface',
+        component: SurfaceShowcase
+      },
+      {
+        id: 'container',
+        label: 'Container',
+        component: ContainerShowcase
+      },
+    ]
   },
   {
-    id: 'stack',
-    label: 'Stack',
-    component: StackShowcase
+    title: 'Typography',
+    items: [
+      {
+        id: 'headings',
+        label: 'Headings',
+        component: HeadingShowcase
+      },
+      {
+        id: 'body-text',
+        label: 'Body Text',
+        component: BodyTextShowcase
+      },
+      {
+        id: 'rich-content',
+        label: 'Rich Content',
+        component: RichContentShowcase
+      },
+    ]
   },
-  {
-    id: 'inline',
-    label: 'Inline',
-    component: InlineShowcase
-  },
-  {
-    id: 'divider',
-    label: 'Divider',
-    component: DividerShowcase
-  },
-  {
-    id: 'surface',
-    label: 'Surface',
-    component: SurfaceShowcase
-  },
-  {
-    id: 'container',
-    label: 'Container',
-    component: ContainerShowcase
-  },
-  // Add more components here as they're created
+  // Add more groups here as they're created
 ];
+
+// Flatten all items for easy lookup
+const allNavigationItems = navigationGroups.flatMap(group => group.items);
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('box');
 
-  const ActiveComponent = navigationItems.find(item => item.id === activeComponent)?.component || BoxShowcase;
+  const ActiveComponent = allNavigationItems.find(item => item.id === activeComponent)?.component || BoxShowcase;
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -61,19 +97,23 @@ function App() {
         </div>
         
         <div className="sidebar-nav">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-            Primitives
-          </h2>
-          {navigationItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setActiveComponent(item.id)}
-              className={`sidebar-link w-full text-left ${
-                activeComponent === item.id ? 'active' : ''
-              }`}
-            >
-              {item.label}
-            </button>
+          {navigationGroups.map((group) => (
+            <div key={group.title} className="mb-6">
+              <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                {group.title}
+              </h2>
+              {group.items.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveComponent(item.id)}
+                  className={`sidebar-link w-full text-left ${
+                    activeComponent === item.id ? 'active' : ''
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           ))}
         </div>
       </nav>

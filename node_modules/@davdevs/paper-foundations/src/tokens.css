@@ -13,6 +13,7 @@
 @import "./components/Divider/Divider.styles.css";
 @import "./components/Surface/Surface.styles.css";
 @import "./components/Container/Container.styles.css";
+@import "./components/Typography/Typography.styles.css";
 
 /* Basic tokens for development */
 :root {

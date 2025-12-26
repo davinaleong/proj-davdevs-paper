@@ -1,0 +1,377 @@
+/* =========================================================
+   Typography Component Styles
+   Paper-inspired typography system
+   ========================================================= */
+
+/* -------------------------------
+   Base Typography Styles
+-------------------------------- */
+.paper-typography {
+  color: var(--text-primary, var(--color-gray-900));
+  margin: 0;
+  font-kerning: auto;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark .paper-typography {
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+/* -------------------------------
+   Font Family Variants
+-------------------------------- */
+.paper-typography[data-font="sans"] {
+  font-family: var(--font-sans, 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.paper-typography[data-font="serif"] {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+}
+
+.paper-typography[data-font="mono"] {
+  font-family: var(--font-mono, 'Source Code Pro', 'Fira Code', Consolas, monospace);
+  font-variant-numeric: lining-nums;
+}
+
+/* -------------------------------
+   Color Variants
+-------------------------------- */
+.paper-typography[data-color="primary"] {
+  color: var(--text-primary, var(--color-gray-900));
+}
+
+.paper-typography[data-color="secondary"] {
+  color: var(--text-secondary, var(--color-gray-700));
+}
+
+.paper-typography[data-color="muted"] {
+  color: var(--text-muted, var(--color-gray-600));
+}
+
+.paper-typography[data-color="subtle"] {
+  color: var(--text-subtle, var(--color-gray-400));
+}
+
+.paper-typography[data-color="inverse"] {
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+.paper-typography[data-color="inherit"] {
+  color: inherit;
+}
+
+/* Dark mode color overrides */
+.dark .paper-typography[data-color="primary"] {
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+.dark .paper-typography[data-color="secondary"] {
+  color: var(--color-gray-200);
+}
+
+.dark .paper-typography[data-color="muted"] {
+  color: var(--color-gray-300);
+}
+
+.dark .paper-typography[data-color="subtle"] {
+  color: var(--color-gray-400);
+}
+
+/* -------------------------------
+   Font Weights
+-------------------------------- */
+.paper-typography[data-weight="light"] { font-weight: 300; }
+.paper-typography[data-weight="regular"] { font-weight: 400; }
+.paper-typography[data-weight="medium"] { font-weight: 500; }
+.paper-typography[data-weight="semibold"] { font-weight: 600; }
+.paper-typography[data-weight="bold"] { font-weight: 700; }
+.paper-typography[data-weight="black"] { font-weight: 900; }
+
+/* -------------------------------
+   Text Alignment
+-------------------------------- */
+.paper-typography[data-align="left"] { text-align: left; }
+.paper-typography[data-align="center"] { text-align: center; }
+.paper-typography[data-align="right"] { text-align: right; }
+.paper-typography[data-align="justify"] { text-align: justify; }
+
+/* -------------------------------
+   Text Behavior
+-------------------------------- */
+.paper-typography[data-balance="true"] {
+  text-wrap: balance;
+}
+
+.paper-typography[data-truncate="true"] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Line clamping */
+.paper-typography[data-clamp] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.paper-typography[data-clamp="1"] { -webkit-line-clamp: 1; }
+.paper-typography[data-clamp="2"] { -webkit-line-clamp: 2; }
+.paper-typography[data-clamp="3"] { -webkit-line-clamp: 3; }
+.paper-typography[data-clamp="4"] { -webkit-line-clamp: 4; }
+.paper-typography[data-clamp="5"] { -webkit-line-clamp: 5; }
+.paper-typography[data-clamp="6"] { -webkit-line-clamp: 6; }
+
+/* -------------------------------
+   Heading Styles
+-------------------------------- */
+.paper-heading {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary, var(--color-gray-900));
+  margin: 0;
+}
+
+.dark .paper-heading {
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+/* Heading sizes */
+.paper-heading[data-level="1"], .paper-heading[data-size="5xl"] {
+  font-size: var(--text-5xl, 3rem);
+  line-height: 1.1;
+}
+
+.paper-heading[data-level="2"], .paper-heading[data-size="4xl"] {
+  font-size: var(--text-4xl, 2.25rem);
+  line-height: 1.15;
+}
+
+.paper-heading[data-level="3"], .paper-heading[data-size="3xl"] {
+  font-size: var(--text-3xl, 1.875rem);
+  line-height: 1.2;
+}
+
+.paper-heading[data-level="4"], .paper-heading[data-size="2xl"] {
+  font-size: var(--text-2xl, 1.5rem);
+  line-height: 1.25;
+}
+
+.paper-heading[data-level="5"], .paper-heading[data-size="xl"] {
+  font-size: var(--text-xl, 1.25rem);
+  line-height: 1.3;
+}
+
+.paper-heading[data-level="6"], .paper-heading[data-size="lg"] {
+  font-size: var(--text-lg, 1.125rem);
+  line-height: 1.35;
+}
+
+/* Additional size variants */
+.paper-heading[data-size="xs"] { font-size: var(--text-xs, 0.75rem); }
+.paper-heading[data-size="sm"] { font-size: var(--text-sm, 0.875rem); }
+.paper-heading[data-size="base"] { font-size: var(--text-base, 1rem); }
+.paper-heading[data-size="6xl"] { font-size: var(--text-6xl, 3.75rem); line-height: 1; }
+.paper-heading[data-size="7xl"] { font-size: var(--text-7xl, 4.5rem); line-height: 1; }
+.paper-heading[data-size="8xl"] { font-size: var(--text-8xl, 6rem); line-height: 1; }
+.paper-heading[data-size="9xl"] { font-size: var(--text-9xl, 8rem); line-height: 1; }
+
+/* Display headings */
+.paper-heading[data-display="true"] {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+/* -------------------------------
+   Text Styles
+-------------------------------- */
+.paper-text {
+  font-family: var(--font-sans, 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-primary, var(--color-gray-900));
+  margin: 0;
+}
+
+.dark .paper-text {
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+/* Text sizes */
+.paper-text[data-size="xs"] { font-size: var(--text-xs, 0.75rem); line-height: 1.5; }
+.paper-text[data-size="sm"] { font-size: var(--text-sm, 0.875rem); line-height: 1.5; }
+.paper-text[data-size="base"] { font-size: var(--text-base, 1rem); line-height: 1.65; }
+.paper-text[data-size="lg"] { font-size: var(--text-lg, 1.125rem); line-height: 1.7; }
+.paper-text[data-size="xl"] { font-size: var(--text-xl, 1.25rem); line-height: 1.75; }
+.paper-text[data-size="2xl"] { font-size: var(--text-2xl, 1.5rem); line-height: 1.8; }
+
+/* Text variants */
+.paper-text[data-variant="lead"] {
+  font-size: var(--text-xl, 1.25rem);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.paper-text[data-variant="small"] {
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+}
+
+.paper-text[data-variant="caption"] {
+  font-size: var(--text-xs, 0.75rem);
+  line-height: 1.4;
+  color: var(--text-muted, var(--color-gray-600));
+}
+
+.dark .paper-text[data-variant="caption"] {
+  color: var(--color-gray-300);
+}
+
+.paper-text[data-variant="overline"] {
+  font-size: var(--text-xs, 0.75rem);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--text-muted, var(--color-gray-600));
+}
+
+.dark .paper-text[data-variant="overline"] {
+  color: var(--color-gray-300);
+}
+
+/* Inline code */
+.paper-text[data-code="true"] {
+  font-family: var(--font-mono, 'Source Code Pro', 'Fira Code', Consolas, monospace);
+  font-size: 0.9em;
+  padding: 0.125rem 0.375rem;
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.dark .paper-text[data-code="true"] {
+  background-color: var(--color-gray-800);
+  border-color: var(--color-gray-700);
+}
+
+/* -------------------------------
+   List Styles
+-------------------------------- */
+.paper-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text-primary, var(--color-gray-900));
+}
+
+.dark .paper-list {
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+/* List spacing */
+.paper-list[data-spacing="none"] li { margin: 0; }
+.paper-list[data-spacing="xs"] li { margin: 0.125rem 0; }
+.paper-list[data-spacing="sm"] li { margin: 0.25rem 0; }
+.paper-list[data-spacing="md"] li { margin: 0.5rem 0; }
+.paper-list[data-spacing="lg"] li { margin: 0.75rem 0; }
+
+/* List variants */
+.paper-list[data-variant="paper"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.paper-list[data-variant="paper"] li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.paper-list[data-variant="paper"] li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary, var(--color-blue-600));
+  font-weight: 700;
+}
+
+.paper-list[data-variant="minimal"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* -------------------------------
+   Blockquote Styles
+-------------------------------- */
+.paper-blockquote {
+  margin: 0;
+  padding: 1.5rem 1.25rem;
+  border-left: 4px solid var(--color-primary, var(--color-blue-600));
+  background-color: var(--color-gray-50);
+  font-style: italic;
+  position: relative;
+}
+
+.dark .paper-blockquote {
+  background-color: var(--color-gray-900);
+  border-color: var(--color-blue-400);
+}
+
+/* Blockquote sizes */
+.paper-blockquote[data-size="sm"] {
+  padding: 1rem;
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.paper-blockquote[data-size="lg"] {
+  padding: 2rem 1.5rem;
+  font-size: var(--text-lg, 1.125rem);
+}
+
+.paper-blockquote[data-size="xl"] {
+  padding: 2.5rem 2rem;
+  font-size: var(--text-xl, 1.25rem);
+}
+
+/* Blockquote variants */
+.paper-blockquote[data-variant="paper"] {
+  background-color: var(--surface-secondary, var(--color-gray-50));
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.dark .paper-blockquote[data-variant="paper"] {
+  background-color: var(--color-gray-800);
+}
+
+.paper-blockquote[data-variant="minimal"] {
+  background-color: transparent;
+  border-left: 2px solid var(--color-gray-300);
+  padding: 1rem 0 1rem 1rem;
+}
+
+.dark .paper-blockquote[data-variant="minimal"] {
+  border-color: var(--color-gray-700);
+}
+
+/* Citation styles */
+.paper-blockquote-citation {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-muted, var(--color-gray-600));
+}
+
+.dark .paper-blockquote-citation {
+  color: var(--color-gray-300);
+}
+
+.paper-blockquote-citation::before {
+  content: "— ";
+}

@@ -16,5 +16,33 @@ export type { SurfaceProps, SurfaceRef } from './components/Surface';
 export { Container } from './components/Container';
 export type { ContainerProps, ContainerRef } from './components/Container';
 
+export {
+  Heading,
+  Text,
+  List,
+  Blockquote,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  Lead,
+  Small,
+  Caption,
+  Overline,
+  Code,
+} from './components/Typography';
+export type {
+  HeadingProps,
+  TextProps,
+  ListProps,
+  BlockquoteProps,
+  HeadingRef,
+  TextRef,
+  ListRef,
+  BlockquoteRef,
+} from './components/Typography';
+
 // Export utilities
 export { cn } from './utils';
