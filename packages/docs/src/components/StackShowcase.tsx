@@ -77,11 +77,13 @@ export const StackShowcase = () => {
           {(['start', 'center', 'end', 'between'] as const).map(justify => (
             <div key={justify} className="example-container">
               <h3 className="text-sm font-medium text-gray-600 mb-2">Justify: {justify}</h3>
-              <Stack gap="sm" justify={justify} className="h-32 bg-gray-50 p-4">
-                <DemoBox className="py-2 px-4">Item 1</DemoBox>
-                <DemoBox className="py-2 px-4">Item 2</DemoBox>
-                <DemoBox className="py-2 px-4">Item 3</DemoBox>
-              </Stack>
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <Stack gap="sm" justify={justify} className="h-40 bg-gray-50 p-4">
+                  <DemoBox className="py-2 px-4 flex-shrink-0">Item 1</DemoBox>
+                  <DemoBox className="py-2 px-4 flex-shrink-0">Item 2</DemoBox>
+                  <DemoBox className="py-2 px-4 flex-shrink-0">Item 3</DemoBox>
+                </Stack>
+              </div>
             </div>
           ))}
         </div>
