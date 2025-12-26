@@ -9,6 +9,7 @@
 /* Import component styles */
 /* @import "./components/Box/Box.styles.css"; */
 @import "./components/Stack/Stack.styles.css";
+@import "./components/Inline/Inline.styles.css";
 
 /* Basic tokens for development */
 :root {

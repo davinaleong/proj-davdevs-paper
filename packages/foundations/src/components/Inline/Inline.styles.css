@@ -1,0 +1,32 @@
+/* =========================================================
+   Inline Component Styles
+   Horizontal layout primitive with gaps
+   ========================================================= */
+
+.paper-inline {
+  /* Base flex container - always horizontal */
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+/* Responsive behavior */
+.paper-inline--responsive {
+  /* On very small screens, allow vertical stacking if needed */
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+/* Inline-specific utilities */
+.paper-inline > * {
+  /* Prevent items from shrinking too much */
+  flex-shrink: 0;
+}
+
+/* Special handling for text content */
+.paper-inline--text {
+  /* For inline text elements with spacing */
+  display: inline-flex;
+  vertical-align: baseline;
+}
