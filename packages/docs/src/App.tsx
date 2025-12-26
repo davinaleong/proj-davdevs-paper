@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BoxShowcase } from './components/BoxShowcase';
 import { StackShowcase } from './components/StackShowcase';
 import { InlineShowcase } from './components/InlineShowcase';
+import { DividerShowcase } from './components/DividerShowcase';
 
 interface NavItem {
   id: string;
@@ -24,6 +25,11 @@ const navigationItems: NavItem[] = [
     id: 'inline',
     label: 'Inline',
     component: InlineShowcase
+  },
+  {
+    id: 'divider',
+    label: 'Divider',
+    component: DividerShowcase
   },
   // Add more components here as they're created
 ];

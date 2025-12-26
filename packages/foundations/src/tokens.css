@@ -10,6 +10,7 @@
 /* @import "./components/Box/Box.styles.css"; */
 @import "./components/Stack/Stack.styles.css";
 @import "./components/Inline/Inline.styles.css";
+@import "./components/Divider/Divider.styles.css";
 
 /* Basic tokens for development */
 :root {
