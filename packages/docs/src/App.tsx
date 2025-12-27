@@ -107,7 +107,7 @@ const navigationGroups: NavGroup[] = [
     ]
   },
   {
-    title: 'UI Components',
+    title: 'Core UI Components',
     items: [
       {
         id: 'card',
