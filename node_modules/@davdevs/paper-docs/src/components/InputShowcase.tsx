@@ -37,16 +37,16 @@ const Input = ({
 
   const elevations = {
     none: '',
-    sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg'
+    sm: 'shadow-[0_1px_3px_0_rgba(0,0,0,0.1)]',
+    md: 'shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]',
+    lg: 'shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]'
   };
 
   const finalState = error ? 'error' : state;
   const isDisabled = disabled || loading;
 
   return (
-    <div className={`relative ${fullWidth ? 'w-full' : ''} ${elevations[elevation]} ${className}`}>
+    <div className={`relative ${fullWidth ? 'w-full' : ''} ${className}`}>
       <div className="relative">
         {startIcon && (
           <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
@@ -55,7 +55,7 @@ const Input = ({
         )}
         
         <input
-          className={`w-full border rounded-lg placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-0 disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed transition-colors duration-200 ${variants[variant]} ${sizes[size]} ${states[finalState]} ${startIcon ? 'pl-10' : ''} ${(endIcon || loading) ? 'pr-10' : ''}`}
+          className={`w-full border rounded-lg placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-0 disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed transition-all duration-200 ${variants[variant]} ${sizes[size]} ${states[finalState]} ${elevations[elevation]} ${startIcon ? 'pl-10' : ''} ${(endIcon || loading) ? 'pr-10' : ''}`}
           disabled={isDisabled}
           {...domProps}
         />

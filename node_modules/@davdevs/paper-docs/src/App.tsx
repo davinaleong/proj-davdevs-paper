@@ -18,6 +18,14 @@ import { TagShowcase } from './components/TagShowcase';
 import { AvatarShowcase } from './components/AvatarShowcase';
 import { IconShowcase } from './components/IconShowcase';
 import { TooltipShowcase } from './components/TooltipShowcase';
+import { InputShowcase } from './components/InputShowcase';
+import { TextareaShowcase } from './components/TextareaShowcase';
+import { SelectShowcase } from './components/SelectShowcase';
+import { CheckboxShowcase } from './components/CheckboxShowcase';
+import { RadioShowcase } from './components/RadioShowcase';
+import { SwitchShowcase } from './components/SwitchShowcase';
+import { LabelShowcase } from './components/LabelShowcase';
+import { FormFieldShowcase } from './components/FormFieldShowcase';
 
 interface NavItem {
   id: string;
@@ -143,6 +151,51 @@ const navigationGroups: NavGroup[] = [
         id: 'tooltip',
         label: 'Tooltip',
         component: TooltipShowcase
+      }
+    ]
+  },
+  {
+    title: 'Forms',
+    items: [
+      {
+        id: 'input',
+        label: 'Input',
+        component: InputShowcase
+      },
+      {
+        id: 'textarea',
+        label: 'Textarea',
+        component: TextareaShowcase
+      },
+      {
+        id: 'select',
+        label: 'Select',
+        component: SelectShowcase
+      },
+      {
+        id: 'checkbox',
+        label: 'Checkbox',
+        component: CheckboxShowcase
+      },
+      {
+        id: 'radio',
+        label: 'Radio',
+        component: RadioShowcase
+      },
+      {
+        id: 'switch',
+        label: 'Switch',
+        component: SwitchShowcase
+      },
+      {
+        id: 'label',
+        label: 'Label',
+        component: LabelShowcase
+      },
+      {
+        id: 'form-field',
+        label: 'Form Field',
+        component: FormFieldShowcase
       }
     ]
   },

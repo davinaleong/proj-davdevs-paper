@@ -94,7 +94,17 @@ export function CheckboxShowcase() {
     groupAll: false,
     groupItem1: true,
     groupItem2: false,
-    groupItem3: true
+    groupItem3: true,
+    smallSize: true,
+    mediumSize: true,
+    largeSize: true,
+    primaryColor: true,
+    secondaryColor: true,
+    successColor: true,
+    warningColor: true,
+    dangerColor: true,
+    indeterminateState: false,
+    errorState: false
   });
 
   const handleGroupAllChange = (checked: boolean) => {
@@ -205,8 +215,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 size="sm"
                 label="Small checkbox"
-                checked={true}
-                readOnly
+                checked={checkboxStates.smallSize}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, smallSize: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -223,8 +233,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 size="md"
                 label="Medium checkbox"
-                checked={true}
-                readOnly
+                checked={checkboxStates.mediumSize}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, mediumSize: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -241,8 +251,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 size="lg"
                 label="Large checkbox"
-                checked={true}
-                readOnly
+                checked={checkboxStates.largeSize}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, largeSize: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -265,8 +275,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 color="primary"
                 label="Primary color"
-                checked={true}
-                readOnly
+                checked={checkboxStates.primaryColor}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, primaryColor: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -280,8 +290,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 color="secondary"
                 label="Secondary color"
-                checked={true}
-                readOnly
+                checked={checkboxStates.secondaryColor}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, secondaryColor: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -295,8 +305,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 color="success"
                 label="Success color"
-                checked={true}
-                readOnly
+                checked={checkboxStates.successColor}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, successColor: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -310,8 +320,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 color="warning"
                 label="Warning color"
-                checked={true}
-                readOnly
+                checked={checkboxStates.warningColor}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, warningColor: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -325,8 +335,8 @@ export function CheckboxShowcase() {
               <Checkbox 
                 color="danger"
                 label="Danger color"
-                checked={true}
-                readOnly
+                checked={checkboxStates.dangerColor}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, dangerColor: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -344,9 +354,11 @@ export function CheckboxShowcase() {
             <h3 className="font-semibold mb-2">Indeterminate</h3>
             <div className="mb-4">
               <Checkbox 
-                indeterminate={true}
+                indeterminate={checkboxStates.indeterminateState}
                 label="Indeterminate state"
                 description="Partially selected"
+                checked={checkboxStates.indeterminateState}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, indeterminateState: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
@@ -364,6 +376,8 @@ export function CheckboxShowcase() {
                 error={true}
                 label="Error state"
                 description="This field has an error"
+                checked={checkboxStates.errorState}
+                onChange={(e: any) => setCheckboxStates({...checkboxStates, errorState: e.target.checked})}
               />
             </div>
             <pre className="showcase-code">
