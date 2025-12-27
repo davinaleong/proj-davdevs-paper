@@ -8,6 +8,9 @@ import { ContainerShowcase } from './components/ContainerShowcase';
 import { HeadingShowcase } from './components/HeadingShowcase';
 import { BodyTextShowcase } from './components/BodyTextShowcase';
 import { RichContentShowcase } from './components/RichContentShowcase';
+import { PageShowcase } from './components/PageShowcase';
+import { SectionShowcase } from './components/SectionShowcase';
+import { GridShowcase } from './components/GridShowcase';
 
 interface NavItem {
   id: string;
@@ -54,6 +57,26 @@ const navigationGroups: NavGroup[] = [
         label: 'Container',
         component: ContainerShowcase
       },
+    ]
+  },
+  {
+    title: 'Layout',
+    items: [
+      {
+        id: 'page',
+        label: 'Page',
+        component: PageShowcase
+      },
+      {
+        id: 'section',
+        label: 'Section',
+        component: SectionShowcase
+      },
+      {
+        id: 'grid',
+        label: 'Grid',
+        component: GridShowcase
+      }
     ]
   },
   {

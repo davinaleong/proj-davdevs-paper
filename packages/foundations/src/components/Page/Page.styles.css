@@ -1,0 +1,188 @@
+/* =========================================================
+   Page Component Styles
+   Full-page paper background container
+   ========================================================= */
+
+.paper-page {
+  /* Base page styles */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  
+  /* Default page background */
+  background-color: var(--surface-page, var(--color-gray-50));
+  color: var(--text-primary, var(--color-gray-900));
+  
+  /* Smooth transitions */
+  transition: var(--transition-colors);
+}
+
+/* Dark mode */
+.dark .paper-page {
+  background-color: var(--surface-page-dark, var(--color-gray-950));
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+/* Variant styles */
+.paper-page[data-variant="default"] {
+  background-color: var(--surface-page, var(--color-gray-50));
+}
+
+.paper-page[data-variant="paper"] {
+  background-color: var(--paper-base, #faf9f7);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.01) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(0,0,0,0.01) 1px, transparent 1px);
+  background-size: 40px 40px, 60px 60px;
+}
+
+.paper-page[data-variant="minimal"] {
+  background-color: var(--color-white);
+}
+
+.paper-page[data-variant="inverse"] {
+  background-color: var(--surface-inverse, var(--color-gray-900));
+  color: var(--text-inverse, var(--color-gray-100));
+}
+
+/* Dark mode variant overrides */
+.dark .paper-page[data-variant="default"] {
+  background-color: var(--surface-page-dark, var(--color-gray-950));
+}
+
+.dark .paper-page[data-variant="paper"] {
+  background-color: var(--dark-paper-base, #121212);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.02) 1px, transparent 1px);
+}
+
+.dark .paper-page[data-variant="minimal"] {
+  background-color: var(--color-gray-900);
+}
+
+.dark .paper-page[data-variant="inverse"] {
+  background-color: var(--color-gray-100);
+  color: var(--text-primary, var(--color-gray-900));
+}
+
+/* Full height control */
+.paper-page[data-full-height="true"] {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.paper-page[data-full-height="false"] {
+  min-height: auto;
+}
+
+/* Padding variants */
+.paper-page[data-padding="sm"] {
+  padding: 1rem;
+}
+
+.paper-page[data-padding="md"] {
+  padding: 1.5rem;
+}
+
+.paper-page[data-padding="lg"] {
+  padding: 2rem;
+}
+
+.paper-page[data-padding="xl"] {
+  padding: 3rem;
+}
+
+/* Max width constraints */
+.paper-page[data-max-width="sm"] {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="md"] {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="lg"] {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="xl"] {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="2xl"] {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="3xl"] {
+  max-width: 1728px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="4xl"] {
+  max-width: 1856px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="5xl"] {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="6xl"] {
+  max-width: 2048px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="7xl"] {
+  max-width: 2304px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paper-page[data-max-width="full"] {
+  max-width: 100%;
+}
+
+/* Centered content */
+.paper-page[data-centered="true"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .paper-page[data-padding="md"] {
+    padding: 1rem;
+  }
+  
+  .paper-page[data-padding="lg"] {
+    padding: 1.5rem;
+  }
+  
+  .paper-page[data-padding="xl"] {
+    padding: 2rem;
+  }
+}
+
+/* Page content wrapper for proper spacing */
+.paper-page-content {
+  width: 100%;
+  max-width: inherit;
+}

@@ -14,6 +14,9 @@
 @import "./components/Surface/Surface.styles.css";
 @import "./components/Container/Container.styles.css";
 @import "./components/Typography/Typography.styles.css";
+@import "./components/Page/Page.styles.css";
+@import "./components/Section/Section.styles.css";
+@import "./components/Grid/Grid.styles.css";
 
 /* Basic tokens for development */
 :root {
@@ -21,6 +24,58 @@
   --color-secondary: #64748b;
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
+  
+  /* Colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* Surface colors */
+  --surface-primary: var(--color-white);
+  --surface-secondary: var(--color-gray-50);
+  --surface-tertiary: var(--color-gray-100);
+  
+  /* Border colors */
+  --border-primary: var(--color-gray-200);
+  --border-secondary: var(--color-gray-300);
+  
+  /* Text colors */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-inverse: var(--color-white);
+  
+  /* Shadow system */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-colors: color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+  --transition-shadow: box-shadow 150ms ease-in-out;
+  --transition-transform: transform 150ms ease-in-out;
+}
+
+/* Dark mode tokens */
+.dark {
+  --surface-primary-dark: var(--color-gray-900);
+  --surface-secondary-dark: var(--color-gray-800);
+  --surface-tertiary-dark: var(--color-gray-700);
+  
+  --border-primary-dark: var(--color-gray-700);
+  --border-secondary-dark: var(--color-gray-600);
+  
+  --text-primary-dark: var(--color-gray-100);
+  --text-secondary-dark: var(--color-gray-400);
 }
 
 /* Additional foundation-specific tokens can go here */

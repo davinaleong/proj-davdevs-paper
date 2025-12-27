@@ -16,6 +16,15 @@ export type { SurfaceProps, SurfaceRef } from './components/Surface';
 export { Container } from './components/Container';
 export type { ContainerProps, ContainerRef } from './components/Container';
 
+export { Page } from './components/Page';
+export type { PageProps, PageRef } from './components/Page';
+
+export { Section } from './components/Section';
+export type { SectionProps, SectionRef } from './components/Section';
+
+export { Grid } from './components/Grid';
+export type { GridProps, GridRef } from './components/Grid';
+
 export {
   Heading,
   Text,
