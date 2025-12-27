@@ -11,6 +11,13 @@ import { RichContentShowcase } from './components/RichContentShowcase';
 import { PageShowcase } from './components/PageShowcase';
 import { SectionShowcase } from './components/SectionShowcase';
 import { GridShowcase } from './components/GridShowcase';
+import { CardShowcase } from './components/CardShowcase';
+import { ButtonShowcase } from './components/ButtonShowcase';
+import { BadgeShowcase } from './components/BadgeShowcase';
+import { TagShowcase } from './components/TagShowcase';
+import { AvatarShowcase } from './components/AvatarShowcase';
+import { IconShowcase } from './components/IconShowcase';
+import { TooltipShowcase } from './components/TooltipShowcase';
 
 interface NavItem {
   id: string;
@@ -99,7 +106,46 @@ const navigationGroups: NavGroup[] = [
       },
     ]
   },
-  // Add more groups here as they're created
+  {
+    title: 'UI Components',
+    items: [
+      {
+        id: 'card',
+        label: 'Card',
+        component: CardShowcase
+      },
+      {
+        id: 'button',
+        label: 'Button',
+        component: ButtonShowcase
+      },
+      {
+        id: 'badge',
+        label: 'Badge',
+        component: BadgeShowcase
+      },
+      {
+        id: 'tag',
+        label: 'Tag',
+        component: TagShowcase
+      },
+      {
+        id: 'avatar',
+        label: 'Avatar',
+        component: AvatarShowcase
+      },
+      {
+        id: 'icon',
+        label: 'Icon',
+        component: IconShowcase
+      },
+      {
+        id: 'tooltip',
+        label: 'Tooltip',
+        component: TooltipShowcase
+      }
+    ]
+  },
 ];
 
 // Flatten all items for easy lookup

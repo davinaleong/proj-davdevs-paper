@@ -1,0 +1,137 @@
+/* =========================================================
+   Tooltip Component Styles
+   Floating paper hints
+   ========================================================= */
+
+.paper-tooltip {
+  /* Base tooltip styles */
+  box-sizing: border-box;
+  word-wrap: break-word;
+  
+  /* Paper-like properties */
+  transition: var(--transition-opacity, opacity 0.2s ease-out);
+}
+
+/* Default variant */
+.paper-tooltip[data-variant="default"] {
+  background-color: var(--surface-primary, white);
+  color: var(--text-primary, #374151);
+  border-color: var(--border-primary, #d1d5db);
+}
+
+.paper-tooltip[data-variant="default"] .paper-tooltip-arrow {
+  background-color: var(--surface-primary, white);
+  border-color: var(--border-primary, #d1d5db);
+}
+
+/* Dark variant */
+.paper-tooltip[data-variant="dark"] {
+  background-color: var(--surface-dark, #1f2937);
+  color: var(--text-dark, white);
+  border-color: var(--border-dark, #374151);
+}
+
+.paper-tooltip[data-variant="dark"] .paper-tooltip-arrow {
+  background-color: var(--surface-dark, #1f2937);
+  border-color: var(--border-dark, #374151);
+}
+
+/* Light variant */
+.paper-tooltip[data-variant="light"] {
+  background-color: var(--surface-light, #f9fafb);
+  color: var(--text-light, #374151);
+  border-color: var(--border-light, #e5e7eb);
+}
+
+.paper-tooltip[data-variant="light"] .paper-tooltip-arrow {
+  background-color: var(--surface-light, #f9fafb);
+  border-color: var(--border-light, #e5e7eb);
+}
+
+/* Info variant */
+.paper-tooltip[data-variant="info"] {
+  background-color: var(--info, #3b82f6);
+  color: var(--info-foreground, white);
+  border-color: var(--info, #3b82f6);
+}
+
+.paper-tooltip[data-variant="info"] .paper-tooltip-arrow {
+  background-color: var(--info, #3b82f6);
+  border-color: var(--info, #3b82f6);
+}
+
+/* Success variant */
+.paper-tooltip[data-variant="success"] {
+  background-color: var(--success, #10b981);
+  color: var(--success-foreground, white);
+  border-color: var(--success, #10b981);
+}
+
+.paper-tooltip[data-variant="success"] .paper-tooltip-arrow {
+  background-color: var(--success, #10b981);
+  border-color: var(--success, #10b981);
+}
+
+/* Warning variant */
+.paper-tooltip[data-variant="warning"] {
+  background-color: var(--warning, #f59e0b);
+  color: var(--warning-foreground, white);
+  border-color: var(--warning, #f59e0b);
+}
+
+.paper-tooltip[data-variant="warning"] .paper-tooltip-arrow {
+  background-color: var(--warning, #f59e0b);
+  border-color: var(--warning, #f59e0b);
+}
+
+/* Danger variant */
+.paper-tooltip[data-variant="danger"] {
+  background-color: var(--danger, #ef4444);
+  color: var(--danger-foreground, white);
+  border-color: var(--danger, #ef4444);
+}
+
+.paper-tooltip[data-variant="danger"] .paper-tooltip-arrow {
+  background-color: var(--danger, #ef4444);
+  border-color: var(--danger, #ef4444);
+}
+
+/* Arrow positioning */
+.paper-tooltip-arrow {
+  /* Arrow inherits tooltip background and border */
+}
+
+/* Animation states */
+.paper-tooltip {
+  transform-origin: center;
+}
+
+.paper-tooltip[data-placement="top"] {
+  transform-origin: bottom center;
+}
+
+.paper-tooltip[data-placement="bottom"] {
+  transform-origin: top center;
+}
+
+.paper-tooltip[data-placement="left"] {
+  transform-origin: right center;
+}
+
+.paper-tooltip[data-placement="right"] {
+  transform-origin: left center;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .paper-tooltip[data-variant="default"] {
+    background-color: var(--surface-primary-dark, #1f2937);
+    color: var(--text-primary-dark, #f3f4f6);
+    border-color: var(--border-primary-dark, #374151);
+  }
+  
+  .paper-tooltip[data-variant="default"] .paper-tooltip-arrow {
+    background-color: var(--surface-primary-dark, #1f2937);
+    border-color: var(--border-primary-dark, #374151);
+  }
+}

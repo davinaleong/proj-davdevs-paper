@@ -1,0 +1,138 @@
+/* =========================================================
+   Tag Component Styles
+   Content categorization tags
+   ========================================================= */
+
+.paper-tag {
+  /* Base tag styles */
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  
+  /* Paper-like properties */
+  transition: var(--transition-all, all 0.2s ease-out);
+}
+
+/* Default variant */
+.paper-tag[data-variant="default"] {
+  background-color: var(--surface-secondary, #f9fafb);
+  color: var(--text-secondary, #6b7280);
+  border-color: var(--border-secondary, #e5e7eb);
+}
+
+.paper-tag[data-variant="default"]:hover {
+  background-color: var(--surface-tertiary, #f3f4f6);
+  border-color: var(--border-primary, #d1d5db);
+}
+
+/* Primary variant */
+.paper-tag[data-variant="primary"] {
+  background-color: var(--primary-subtle, #eff6ff);
+  color: var(--primary, #3b82f6);
+  border-color: var(--primary-light, #93c5fd);
+}
+
+.paper-tag[data-variant="primary"]:hover {
+  background-color: var(--primary-subtle-hover, #dbeafe);
+  border-color: var(--primary, #3b82f6);
+}
+
+/* Secondary variant */
+.paper-tag[data-variant="secondary"] {
+  background-color: var(--secondary-subtle, #f8fafc);
+  color: var(--secondary, #64748b);
+  border-color: var(--secondary-light, #cbd5e1);
+}
+
+.paper-tag[data-variant="secondary"]:hover {
+  background-color: var(--secondary-subtle-hover, #f1f5f9);
+  border-color: var(--secondary, #64748b);
+}
+
+/* Category variant */
+.paper-tag[data-variant="category"] {
+  background-color: var(--category-subtle, #fef7ed);
+  color: var(--category, #ea580c);
+  border-color: var(--category-light, #fed7aa);
+}
+
+.paper-tag[data-variant="category"]:hover {
+  background-color: var(--category-subtle-hover, #fed7aa);
+  border-color: var(--category, #ea580c);
+}
+
+/* Keyword variant */
+.paper-tag[data-variant="keyword"] {
+  background-color: var(--keyword-subtle, #f0fdf4);
+  color: var(--keyword, #16a34a);
+  border-color: var(--keyword-light, #bbf7d0);
+}
+
+.paper-tag[data-variant="keyword"]:hover {
+  background-color: var(--keyword-subtle-hover, #dcfce7);
+  border-color: var(--keyword, #16a34a);
+}
+
+/* Selected state */
+.paper-tag.tag-selected {
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.paper-tag.tag-selected[data-variant="primary"] {
+  background-color: var(--primary, #3b82f6);
+  color: var(--primary-foreground, white);
+  border-color: var(--primary, #3b82f6);
+}
+
+.paper-tag.tag-selected[data-variant="category"] {
+  background-color: var(--category, #ea580c);
+  color: var(--category-foreground, white);
+  border-color: var(--category, #ea580c);
+}
+
+.paper-tag.tag-selected[data-variant="keyword"] {
+  background-color: var(--keyword, #16a34a);
+  color: var(--keyword-foreground, white);
+  border-color: var(--keyword, #16a34a);
+}
+
+/* Icon and content spacing */
+.tag-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tag-content {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Remove button */
+.tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Focus styles for accessibility */
+.paper-tag:focus-visible {
+  outline: 2px solid var(--focus-ring, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .paper-tag[data-variant="default"] {
+    background-color: var(--surface-secondary-dark, #374151);
+    color: var(--text-secondary-dark, #9ca3af);
+    border-color: var(--border-secondary-dark, #4b5563);
+  }
+  
+  .paper-tag[data-variant="default"]:hover {
+    background-color: var(--surface-tertiary-dark, #4b5563);
+    border-color: var(--border-primary-dark, #6b7280);
+  }
+}

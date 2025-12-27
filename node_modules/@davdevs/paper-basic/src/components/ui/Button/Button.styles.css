@@ -1,0 +1,114 @@
+/* =========================================================
+   Button Component Styles
+   Paper-style buttons with elevation
+   ========================================================= */
+
+.paper-button {
+  /* Base button styles */
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid transparent;
+  
+  /* Paper-like properties */
+  transition: var(--transition-all, all 0.2s ease-out);
+}
+
+/* Primary variant */
+.paper-button[data-variant="primary"] {
+  background-color: var(--primary, #3b82f6);
+  color: var(--primary-foreground, white);
+  border-color: var(--primary, #3b82f6);
+}
+
+.paper-button[data-variant="primary"]:hover:not(:disabled) {
+  background-color: var(--primary-hover, #2563eb);
+  border-color: var(--primary-hover, #2563eb);
+}
+
+.paper-button[data-variant="primary"]:active:not(:disabled) {
+  background-color: var(--primary-active, #1d4ed8);
+  border-color: var(--primary-active, #1d4ed8);
+}
+
+/* Secondary variant */
+.paper-button[data-variant="secondary"] {
+  background-color: var(--secondary, #6b7280);
+  color: var(--secondary-foreground, white);
+  border-color: var(--secondary, #6b7280);
+}
+
+.paper-button[data-variant="secondary"]:hover:not(:disabled) {
+  background-color: var(--secondary-hover, #4b5563);
+  border-color: var(--secondary-hover, #4b5563);
+}
+
+/* Outline variant */
+.paper-button[data-variant="outline"] {
+  background-color: transparent;
+  color: var(--primary, #3b82f6);
+  border-color: var(--primary, #3b82f6);
+}
+
+.paper-button[data-variant="outline"]:hover:not(:disabled) {
+  background-color: var(--primary, #3b82f6);
+  color: var(--primary-foreground, white);
+}
+
+/* Ghost variant */
+.paper-button[data-variant="ghost"] {
+  background-color: transparent;
+  color: var(--text-primary, #374151);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.paper-button[data-variant="ghost"]:hover:not(:disabled) {
+  background-color: var(--surface-secondary, #f3f4f6);
+}
+
+/* Danger variant */
+.paper-button[data-variant="danger"] {
+  background-color: var(--danger, #ef4444);
+  color: var(--danger-foreground, white);
+  border-color: var(--danger, #ef4444);
+}
+
+.paper-button[data-variant="danger"]:hover:not(:disabled) {
+  background-color: var(--danger-hover, #dc2626);
+  border-color: var(--danger-hover, #dc2626);
+}
+
+/* Focus styles for accessibility */
+.paper-button:focus-visible {
+  outline: 2px solid var(--focus-ring, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.paper-button:disabled {
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Icon spacing */
+.button-start-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button-end-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .paper-button[data-variant="ghost"] {
+    color: var(--text-primary-dark, #f3f4f6);
+  }
+  
+  .paper-button[data-variant="ghost"]:hover:not(:disabled) {
+    background-color: var(--surface-secondary-dark, #374151);
+  }
+}
