@@ -7,7 +7,9 @@ export * from './forms';
 // Feedback Components
 export * from './feedback';
 
+// Navigation Components
+export * from './navigation';
+
 // Other component categories (placeholders for future implementation)
 // export * from './layout'; 
-// export * from './navigation';
 // export * from './typography';

@@ -26,6 +26,15 @@ import { RadioShowcase } from './components/RadioShowcase';
 import { SwitchShowcase } from './components/SwitchShowcase';
 import { LabelShowcase } from './components/LabelShowcase';
 import { FormFieldShowcase } from './components/FormFieldShowcase';
+import { AlertShowcase } from './components/AlertShowcase';
+import { ToastShowcase } from './components/ToastShowcase';
+import { ModalShowcase } from './components/ModalShowcase';
+import { DrawerShowcase } from './components/DrawerShowcase';
+import { SkeletonShowcase } from './components/SkeletonShowcase';
+import { ProgressShowcase } from './components/ProgressShowcase';
+import { BreadcrumbShowcase } from './components/BreadcrumbShowcase';
+import { TabsShowcase } from './components/TabsShowcase';
+import { PaginationShowcase } from './components/PaginationShowcase';
 
 interface NavItem {
   id: string;
@@ -196,6 +205,61 @@ const navigationGroups: NavGroup[] = [
         id: 'form-field',
         label: 'Form Field',
         component: FormFieldShowcase
+      }
+    ]
+  },
+  {
+    title: 'Feedback',
+    items: [
+      {
+        id: 'alert',
+        label: 'Alert',
+        component: AlertShowcase
+      },
+      {
+        id: 'toast',
+        label: 'Toast',
+        component: ToastShowcase
+      },
+      {
+        id: 'modal',
+        label: 'Modal',
+        component: ModalShowcase
+      },
+      {
+        id: 'drawer',
+        label: 'Drawer',
+        component: DrawerShowcase
+      },
+      {
+        id: 'skeleton',
+        label: 'Skeleton',
+        component: SkeletonShowcase
+      },
+      {
+        id: 'progress',
+        label: 'Progress',
+        component: ProgressShowcase
+      }
+    ]
+  },
+  {
+    title: 'Navigation',
+    items: [
+      {
+        id: 'breadcrumb',
+        label: 'Breadcrumb',
+        component: BreadcrumbShowcase
+      },
+      {
+        id: 'tabs',
+        label: 'Tabs',
+        component: TabsShowcase
+      },
+      {
+        id: 'pagination',
+        label: 'Pagination',
+        component: PaginationShowcase
       }
     ]
   },
