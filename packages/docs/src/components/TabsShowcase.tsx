@@ -39,11 +39,10 @@ export function TabsShowcase() {
     }
   ];
 
-  const tabsWithIcons: TabItem[] = [
+  const tabsWithDisabled: TabItem[] = [
     {
       id: 'profile',
       label: 'Profile',
-      icon: '👤',
       content: (
         <div className="p-4 bg-blue-50 rounded-lg">
           <h3 className="font-semibold mb-2">Profile Settings</h3>
@@ -54,8 +53,6 @@ export function TabsShowcase() {
     {
       id: 'notifications',
       label: 'Notifications',
-      icon: '🔔',
-      badge: '3',
       content: (
         <div className="p-4 bg-yellow-50 rounded-lg">
           <h3 className="font-semibold mb-2">Notification Settings</h3>
@@ -66,7 +63,6 @@ export function TabsShowcase() {
     {
       id: 'security',
       label: 'Security',
-      icon: '🔒',
       content: (
         <div className="p-4 bg-green-50 rounded-lg">
           <h3 className="font-semibold mb-2">Security Settings</h3>
@@ -77,7 +73,6 @@ export function TabsShowcase() {
     {
       id: 'billing',
       label: 'Billing',
-      icon: '💳',
       disabled: true,
       content: (
         <div className="p-4 bg-gray-50 rounded-lg">
@@ -85,25 +80,6 @@ export function TabsShowcase() {
           <p className="text-gray-600">This section is currently unavailable.</p>
         </div>
       )
-    }
-  ];
-
-  const verticalTabs: TabItem[] = [
-    {
-      id: 'dashboard',
-      label: 'Dashboard',
-      content: <div className="p-6 bg-gray-50 rounded-lg"><h3 className="font-semibold">Dashboard Overview</h3><p>Your main dashboard content here.</p></div>
-    },
-    {
-      id: 'analytics',
-      label: 'Analytics',
-      badge: 'New',
-      content: <div className="p-6 bg-blue-50 rounded-lg"><h3 className="font-semibold">Analytics Data</h3><p>Charts and metrics would be displayed here.</p></div>
-    },
-    {
-      id: 'reports',
-      label: 'Reports',
-      content: <div className="p-6 bg-green-50 rounded-lg"><h3 className="font-semibold">Report Generation</h3><p>Generate and view reports here.</p></div>
     }
   ];
 
@@ -145,78 +121,24 @@ export function TabsShowcase() {
           <h2 className="text-lg font-semibold mb-4">Variants</h2>
           <div className="space-y-6">
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Underline (Default)</h3>
-              <Tabs items={basicTabs} variant="underline" showContent={false} />
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Default</h3>
+              <Tabs items={basicTabs} variant="default" />
             </div>
             <div>
               <h3 className="text-sm font-medium text-gray-700 mb-2">Pills</h3>
-              <Tabs items={basicTabs} variant="pills" showContent={false} />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Cards</h3>
-              <Tabs items={basicTabs} variant="cards" showContent={false} />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Segmented</h3>
-              <Tabs items={basicTabs} variant="segmented" showContent={false} />
+              <Tabs items={basicTabs} variant="pills" />
             </div>
           </div>
         </div>
 
-        {/* Sizes */}
+        {/* With Disabled Tab */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Sizes</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Small</h3>
-              <Tabs items={basicTabs} size="sm" showContent={false} />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Medium (Default)</h3>
-              <Tabs items={basicTabs} size="md" showContent={false} />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Large</h3>
-              <Tabs items={basicTabs} size="lg" showContent={false} />
-            </div>
-          </div>
-        </div>
-
-        {/* With Icons and Badges */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4">With Icons and Badges</h2>
+          <h2 className="text-lg font-semibold mb-4">With Disabled Tab</h2>
           <Tabs 
-            items={tabsWithIcons} 
+            items={tabsWithDisabled} 
             activeTab={activeTab2}
             onTabChange={setActiveTab2}
           />
-        </div>
-
-        {/* Layout Options */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4">Layout Options</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Centered</h3>
-              <Tabs items={basicTabs} centered={true} showContent={false} />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Full Width</h3>
-              <Tabs items={basicTabs} fullWidth={true} showContent={false} />
-            </div>
-          </div>
-        </div>
-
-        {/* Vertical Tabs */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4">Vertical Orientation</h2>
-          <div className="max-w-3xl">
-            <Tabs 
-              items={verticalTabs} 
-              orientation="vertical"
-              variant="pills"
-            />
-          </div>
         </div>
 
         {/* Implementation Example */}
@@ -230,14 +152,12 @@ const tabs: TabItem[] = [
   {
     id: 'overview',
     label: 'Overview',
-    icon: '📊',
     content: <div>Overview content</div>
   },
   {
     id: 'settings',
     label: 'Settings',
-    icon: '⚙️',
-    badge: '3',
+    disabled: true,
     content: <div>Settings content</div>
   }
 ];
@@ -247,7 +167,6 @@ function MyTabs() {
     <Tabs 
       items={tabs}
       variant="pills"
-      size="md"
       defaultActiveTab="overview"
     />
   );
