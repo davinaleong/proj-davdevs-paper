@@ -205,10 +205,9 @@ export function PaginationShowcase() {
         </div>
 
         {/* Implementation Example */}
-        <div className="bg-gray-50 p-6 rounded-lg">
+        <div>
           <h2 className="text-lg font-semibold mb-4">Usage Example</h2>
-          <pre className="text-sm bg-white p-4 rounded border overflow-x-auto">
-            <code>{`import { Pagination } from '@davdevs/paper-basic';
+          <pre className="showcase-code mt-4">{`import { Pagination } from '@davdevs/paper-basic';
 import { useState } from 'react';
 
 function MyPagination() {
@@ -230,8 +229,7 @@ function MyPagination() {
       }}
     />
   );
-}`}</code>
-          </pre>
+}`}</pre>
         </div>
 
         {/* Edge Cases */}
