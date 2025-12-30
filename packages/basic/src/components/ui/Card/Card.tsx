@@ -8,7 +8,7 @@ import type { CardProps, CardRef } from './Card.types';
  * A versatile container component that provides a paper-like surface
  * with elevation, padding, and interactive states.
  */
-export const Card = React.forwardRef<CardRef, CardProps>({
+export const Card = React.forwardRef<CardRef, CardProps>(({
   children,
   className,
   variant = 'default',
