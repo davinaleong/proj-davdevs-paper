@@ -35,6 +35,8 @@ import { ProgressShowcase } from './components/ProgressShowcase';
 import { BreadcrumbShowcase } from './components/BreadcrumbShowcase';
 import { TabsShowcase } from './components/TabsShowcase';
 import { PaginationShowcase } from './components/PaginationShowcase';
+import { NavbarShowcase } from './components/NavbarShowcase';
+import { FooterShowcase } from './components/FooterShowcase';
 
 interface NavItem {
   id: string;
@@ -246,6 +248,16 @@ const navigationGroups: NavGroup[] = [
   {
     title: 'Navigation',
     items: [
+      {
+        id: 'navbar',
+        label: 'Navbar',
+        component: NavbarShowcase
+      },
+      {
+        id: 'footer',
+        label: 'Footer',
+        component: FooterShowcase
+      },
       {
         id: 'breadcrumb',
         label: 'Breadcrumb',
