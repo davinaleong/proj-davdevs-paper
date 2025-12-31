@@ -19,7 +19,7 @@ export const ContainerShowcase = () => {
   const DemoContent = ({ title, size }: { title: string; size: string }) => (
     <Surface level="primary" padding="md" radius="base" border="subtle" className="text-center">
       <Stack gap="sm">
-        <h4 className="font-medium text-gray-900">{title}</h4>
+        <h4 className="font-medium text-gray-900 dark:text-gray-100">{title}</h4>
         <p className="text-sm text-gray-600">Size: {size}</p>
         <div className="text-xs text-gray-500">
           This content demonstrates the container width and responsive behavior.
@@ -42,7 +42,7 @@ export const ContainerShowcase = () => {
   return (
     <div className="showcase-content">
       <header className="showcase-header">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Container</h1>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Container</h1>
         <p className="text-lg text-gray-600 mb-8">
           Responsive content containers for creating consistent page layouts with configurable max-widths and padding.
         </p>

@@ -79,7 +79,7 @@ export function AvatarShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Avatar Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Flexible avatar component supporting images, initials, and icons with status indicators and paper-inspired design.
         </p>
       </div>

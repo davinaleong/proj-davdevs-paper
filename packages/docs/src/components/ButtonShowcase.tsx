@@ -84,7 +84,7 @@ export function ButtonShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Button Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Interactive buttons with paper-inspired design, elevation effects, and comprehensive accessibility support.
         </p>
       </div>

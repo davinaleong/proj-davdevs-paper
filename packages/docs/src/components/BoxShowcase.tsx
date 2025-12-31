@@ -6,7 +6,7 @@ export function BoxShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Box Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           The foundational primitive for creating paper-inspired containers with consistent spacing, borders, and elevation effects.
         </p>
       </div>
@@ -29,7 +29,7 @@ export function BoxShowcase() {
 
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">With Border</h3>
-            <Box border className="mb-4">
+            <Box border className="mb-4 border-gray-200 dark:border-gray-600">
               <p>Box with a subtle border for definition.</p>
             </Box>
             <pre className="showcase-code">
@@ -62,8 +62,8 @@ export function BoxShowcase() {
               <h3 className="font-semibold mb-2 capitalize">
                 {elevation === 'none' ? 'None' : elevation.toUpperCase()}
               </h3>
-              <Box elevation={elevation} padding="lg" className="mb-4 bg-white">
-                <p className="text-sm">Elevation: {elevation}</p>
+              <Box elevation={elevation} padding="lg" className="mb-4 bg-white dark:bg-gray-800">
+                <p className="text-sm text-gray-900 dark:text-gray-100">Elevation: {elevation}</p>
               </Box>
               <pre className="showcase-code text-xs">
 {`<Box elevation="${elevation}">
@@ -104,7 +104,7 @@ export function BoxShowcase() {
           {(['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const).map((padding) => (
             <div key={padding} className="showcase-item">
               <h3 className="font-semibold mb-2 text-sm">{padding.toUpperCase()}</h3>
-              <Box padding={padding} border className="mb-4 bg-blue-50">
+              <Box padding={padding} border className="mb-4 bg-blue-50 dark:bg-blue-900/20 border-gray-200 dark:border-gray-700">
                 <p className="text-xs">Padding: {padding}</p>
               </Box>
               <pre className="showcase-code text-xs">
@@ -125,7 +125,7 @@ export function BoxShowcase() {
           <Box 
             elevation="sm" 
             padding="lg" 
-            className="cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-105 bg-white"
+            className="cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-105 bg-white dark:bg-gray-800"
             onClick={() => alert('Box clicked!')}
           >
             <h4 className="font-medium mb-2">Click me!</h4>
@@ -175,6 +175,7 @@ export function BoxShowcase() {
               variant="secondary" 
               padding="lg"
               border
+              className="border-gray-200 dark:border-gray-700"
             >
               <h4 className="font-medium mb-2">Article Title</h4>
               <p className="text-sm">This renders as an HTML article element with semantic meaning.</p>
