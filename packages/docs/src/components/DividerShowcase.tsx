@@ -3,14 +3,14 @@ import { Divider, Stack, Inline, Box } from '@davdevs/paper-foundations';
 
 export const DividerShowcase = () => {
   const DemoBox = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-    <Box className={`p-4 bg-gray-100 border border-gray-200 rounded text-center text-sm ${className}`}>
+    <Box className={`p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-center text-sm text-gray-900 dark:text-gray-100 ${className}`}>
       {children}
     </Box>
   );
 
   const DemoCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-    <div className="bg-white border border-gray-200 rounded-lg p-6">
-      <h3 className="text-lg font-medium text-gray-900 mb-4">{title}</h3>
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">{title}</h3>
       {children}
     </div>
   );
@@ -18,14 +18,14 @@ export const DividerShowcase = () => {
   return (
     <div className="showcase-content">
       <header className="showcase-header">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Divider</h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Divider</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
           Paper-style separators for creating visual division between content sections with flexible styling options.
         </p>
       </header>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Basic Usage</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Basic Usage</h2>
         <DemoCard title="Default Horizontal Divider">
           <Stack gap="md">
             <DemoBox>Content above the divider</DemoBox>
@@ -36,7 +36,7 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Style Variants</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Style Variants</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {(['default', 'dashed', 'dotted', 'double', 'thick', 'subtle'] as const).map(variant => (
             <DemoCard key={variant} title={`Variant: ${variant}`}>
@@ -51,7 +51,7 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Color Variants</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Color Variants</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {(['default', 'muted', 'accent', 'primary', 'secondary'] as const).map(color => (
             <DemoCard key={color} title={`Color: ${color}`}>
@@ -66,7 +66,7 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Size Variants</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Size Variants</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {(['thin', 'base', 'thick'] as const).map(size => (
             <DemoCard key={size} title={`Size: ${size}`}>
@@ -81,7 +81,7 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Spacing Options</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Spacing Options</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {(['xs', 'md', 'xl'] as const).map(spacing => (
             <DemoCard key={spacing} title={`Spacing: ${spacing}`}>
@@ -96,7 +96,7 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">With Labels</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">With Labels</h2>
         <div className="grid grid-cols-1 gap-6">
           <DemoCard title="Centered Label (Default)">
             <Stack gap="md">
@@ -127,7 +127,7 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Vertical Dividers</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Vertical Dividers</h2>
         <DemoCard title="Inline Content Separation">
           <Inline gap="none" align="center" className="h-20">
             <DemoBox className="h-full flex items-center px-6">Left Section</DemoBox>
@@ -140,22 +140,22 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Form Sections Example</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Form Sections Example</h2>
         <DemoCard title="Registration Form">
           <div className="max-w-md mx-auto">
             <Stack gap="lg">
               <div>
-                <h3 className="text-sm font-medium text-gray-700 mb-3">Personal Information</h3>
+                <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Personal Information</h3>
                 <Stack gap="sm">
                   <input 
                     type="text" 
                     placeholder="Full Name" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   />
                   <input 
                     type="email" 
                     placeholder="Email Address" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   />
                 </Stack>
               </div>
@@ -167,12 +167,12 @@ export const DividerShowcase = () => {
                   <input 
                     type="tel" 
                     placeholder="Phone Number" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   />
                   <input 
                     type="text" 
                     placeholder="Address (Optional)" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   />
                 </Stack>
               </div>
@@ -180,7 +180,7 @@ export const DividerShowcase = () => {
               <Divider variant="subtle" spacing="sm" />
               
               <Inline gap="md" justify="end">
-                <button className="px-4 py-2 text-gray-600 hover:text-gray-800 text-sm">
+                <button className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">
                   Cancel
                 </button>
                 <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm">
@@ -193,9 +193,9 @@ export const DividerShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Usage Examples</h2>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <pre className="text-sm text-gray-800 overflow-x-auto">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Usage Examples</h2>
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+          <pre className="text-sm text-gray-800 dark:text-gray-200 overflow-x-auto">
 {`// Basic divider
 <Stack gap="lg">
   <div>Section 1</div>

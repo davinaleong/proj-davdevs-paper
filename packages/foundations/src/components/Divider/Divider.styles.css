@@ -70,12 +70,24 @@
   border-color: #e5e7eb; /* gray-200 */
 }
 
+:root.dark .paper-divider--color-default {
+  border-color: #374151; /* gray-700 - more subtle in dark mode */
+}
+
 .paper-divider--color-muted {
   border-color: #f3f4f6; /* gray-100 */
 }
 
+:root.dark .paper-divider--color-muted {
+  border-color: #4b5563; /* gray-600 - subtle muted in dark mode */
+}
+
 .paper-divider--color-accent {
   border-color: #d1d5db; /* gray-300 */
+}
+
+:root.dark .paper-divider--color-accent {
+  border-color: #6b7280; /* gray-500 - subtle accent in dark mode */
 }
 
 .paper-divider--color-primary {
@@ -84,6 +96,10 @@
 
 .paper-divider--color-secondary {
   border-color: #64748b; /* slate-500 */
+}
+
+:root.dark .paper-divider--color-secondary {
+  border-color: #64748b; /* slate-500 - keep same for secondary */
 }
 
 /* Spacing variants */
@@ -167,6 +183,10 @@
   border-top-color: #e5e7eb; /* gray-200 - default color */
 }
 
+:root.dark .paper-divider__line {
+  border-top-color: #374151; /* gray-700 - subtle in dark mode */
+}
+
 /* Inherit parent styles for labeled dividers */
 .paper-divider--with-label .paper-divider__line {
   border-top-width: inherit;
@@ -188,6 +208,10 @@
   font-weight: 500;
   white-space: nowrap;
   padding: 0 0.5rem;
+}
+
+:root.dark .paper-divider__label {
+  color: #9ca3af; /* gray-400 - readable but subtle in dark mode */
 }
 
 /* Label position variants - not needed with grid approach */
