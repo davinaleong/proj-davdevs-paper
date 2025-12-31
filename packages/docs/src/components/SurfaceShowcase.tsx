@@ -4,7 +4,7 @@ import { Surface, Stack, Inline, Divider } from '@davdevs/paper-foundations';
 export const SurfaceShowcase = () => {
   const DemoButton = ({ children, variant = 'default' }: { children: React.ReactNode; variant?: 'default' | 'primary' | 'secondary' }) => {
     const variants = {
-      default: 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50',
+      default: 'bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600',
       primary: 'bg-blue-600 text-white hover:bg-blue-700',
       secondary: 'bg-gray-600 text-white hover:bg-gray-700'
     };
@@ -17,8 +17,8 @@ export const SurfaceShowcase = () => {
   };
 
   const DemoCard = ({ title, children, className = '' }: { title: string; children: React.ReactNode; className?: string }) => (
-    <div className={`bg-white border border-gray-200 rounded-lg p-6 ${className}`}>
-      <h3 className="text-lg font-medium text-gray-900 mb-4">{title}</h3>
+    <div className={`bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 ${className}`}>
+      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">{title}</h3>
       {children}
     </div>
   );
@@ -26,14 +26,14 @@ export const SurfaceShowcase = () => {
   return (
     <div className="showcase-content">
       <header className="showcase-header">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Surface</h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Surface</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
           Theme-aware background surfaces for creating consistent visual hierarchy with automatic dark mode support.
         </p>
       </header>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Surface Hierarchy</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Surface Hierarchy</h2>
         <DemoCard title="Different Surface Levels">
           <Stack gap="md">
             {(['primary', 'secondary', 'tertiary', 'elevated', 'overlay', 'inverse'] as const).map(level => (
@@ -49,7 +49,7 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Appearance Variants</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Appearance Variants</h2>
         <DemoCard title="Different Appearances">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {(['default', 'subtle', 'muted', 'accent', 'transparent'] as const).map(appearance => (
@@ -65,7 +65,7 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Elevation & Radius</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Elevation & Radius</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <DemoCard title="Elevation Levels">
             <Stack gap="md">
@@ -94,7 +94,7 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Padding & Border</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Padding & Border</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <DemoCard title="Padding Options">
             <Stack gap="sm">
@@ -123,7 +123,7 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Interactive Surfaces</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Interactive Surfaces</h2>
         <DemoCard title="Hover & Click Effects">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Surface 
@@ -135,8 +135,8 @@ export const SurfaceShowcase = () => {
               onClick={() => console.log('Primary surface clicked!')}
             >
               <Stack gap="sm">
-                <h4 className="font-medium">Interactive Primary</h4>
-                <p className="text-sm text-gray-600">Hover me for lift effect</p>
+                <h4 className="font-medium text-gray-900 dark:text-gray-100">Interactive Primary</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Hover me for lift effect</p>
               </Stack>
             </Surface>
             
@@ -148,8 +148,8 @@ export const SurfaceShowcase = () => {
               onClick={() => console.log('Elevated surface clicked!')}
             >
               <Stack gap="sm">
-                <h4 className="font-medium">Interactive Elevated</h4>
-                <p className="text-sm text-gray-600">Already has elevation, hover enhances it</p>
+                <h4 className="font-medium text-gray-900 dark:text-gray-100">Interactive Elevated</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Already has elevation, hover enhances it</p>
               </Stack>
             </Surface>
           </div>
@@ -157,12 +157,12 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Card Examples</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Card Examples</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Surface level="elevated" padding="lg" radius="lg" border="subtle">
             <Stack gap="md">
-              <h4 className="text-lg font-semibold">Simple Card</h4>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Simple Card</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
                 This is a card built with Surface component using elevated level for subtle depth.
               </p>
               <Divider />
@@ -175,13 +175,13 @@ export const SurfaceShowcase = () => {
           
           <Surface level="overlay" padding="lg" radius="xl" elevation="lg">
             <Stack gap="md">
-              <h4 className="text-lg font-semibold">Modal-Style Card</h4>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Modal-Style Card</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Using overlay level with higher elevation for modal-like appearance.
               </p>
               <Divider variant="subtle" />
               <Inline gap="sm" justify="between">
-                <span className="text-xs text-gray-500">Modal content</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">Modal content</span>
                 <DemoButton variant="primary">Close</DemoButton>
               </Inline>
             </Stack>
@@ -190,12 +190,12 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Navigation Example</h2>
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Navigation Example</h2>
         <DemoCard title="Sidebar with Nested Surfaces">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[300px]">
             <Surface level="secondary" padding="md" radius="lg" className="lg:col-span-1">
               <Stack gap="md">
-                <h4 className="font-medium text-gray-900">Navigation</h4>
+                <h4 className="font-medium text-gray-900 dark:text-gray-100">Navigation</h4>
                 <Stack gap="xs">
                   <Surface level="primary" padding="sm" radius="base" interactive>
                     <div className="text-sm font-medium">Home</div>
@@ -215,13 +215,13 @@ export const SurfaceShowcase = () => {
             
             <Surface level="primary" padding="lg" radius="lg" border="subtle" className="lg:col-span-3">
               <Stack gap="lg">
-                <h4 className="text-xl font-semibold">Main Content Area</h4>
-                <p className="text-gray-600">
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Main Content Area</h4>
+                <p className="text-gray-600 dark:text-gray-400">
                   This demonstrates how Surface components can be used to create a layout with consistent theming.
                   The sidebar uses secondary level while content uses primary level.
                 </p>
                 <Surface level="elevated" padding="md" radius="base">
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Nested elevated surface for additional content hierarchy.
                   </p>
                 </Surface>
@@ -232,9 +232,9 @@ export const SurfaceShowcase = () => {
       </div>
 
       <div className="showcase-section">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Usage Examples</h2>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <pre className="text-sm text-gray-800 overflow-x-auto">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Usage Examples</h2>
+        <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+          <pre className="text-sm text-gray-800 dark:text-gray-200 overflow-x-auto">
 {`// Basic surface
 <Surface level="primary" padding="md" radius="base">
   <p>Content</p>

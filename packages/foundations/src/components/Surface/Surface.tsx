@@ -66,10 +66,10 @@ export const Surface = React.forwardRef<SurfaceRef, SurfaceProps>((
 
   const borderClasses = {
     none: '',
-    subtle: 'border border-gray-100',
-    default: 'border border-gray-200',
-    accent: 'border border-gray-300',
-    primary: 'border border-blue-200'
+    subtle: 'border border-gray-100 dark:border-gray-800',
+    default: 'border border-gray-200 dark:border-gray-700',
+    accent: 'border border-gray-300 dark:border-gray-600',
+    primary: 'border border-blue-200 dark:border-blue-700'
   };
 
   const classes = cn(
