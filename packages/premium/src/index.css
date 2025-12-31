@@ -4,10 +4,10 @@
    ========================================================= */
 
 /* Include all basic tier features */
-@import "@davdevs/paper-basic";
+@import "../../basic/src/index.css";
 
 /* Premium paper effects */
-@import "../../../core/src/paper.css";
+@import "../../core/src/paper.css";
 
 /* Premium Components */
 @import "./components/paper/index.css";
@@ -15,4 +15,3 @@
 
 /* Premium textures and effects */
 @import "./effects/paper-textures.css";
-@import "./effects/shadows.css";

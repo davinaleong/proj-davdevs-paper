@@ -2,12 +2,25 @@
    Premium Paper Components
    ========================================================= */
 
-/* Premium Paper Effects */
-@import "./paper-card.css";
-@import "./paper-modal.css";
-@import "./notebook.css";
-@import "./paper-tabs.css";
-@import "./paper-alert.css";
-@import "./paper-prose.css";
-@import "./paper-hero.css";
-@import "./paper-timeline.css";
+/* Paper-specific styling and effects */
+/* This is a placeholder for future paper-themed components */
+
+/* Base paper styling */
+.paper-base {
+  @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+  background-color: #faf9f7; /* Warm white paper */
+}
+
+/* Paper texture effects */
+.paper-texture {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Paper shadow effects */
+.paper-shadow {
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+}

@@ -2,11 +2,103 @@
    Layout Components - Basic Tier
    ========================================================= */
 
-/* Layout Containers */
-@import "./page.css";
-@import "./container.css";
-@import "./grid.css";
-@import "./section.css";
+/* Page Layout */
+.layout-page {
+  @apply min-h-screen bg-white dark:bg-gray-900;
+}
 
-/* Layout Patterns */
-@import "./sidebar-layout.css";
+.layout-page-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Container Layout */
+.layout-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-container-sm {
+  @apply w-full max-w-2xl mx-auto px-4 sm:px-6;
+}
+
+.layout-container-md {
+  @apply w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-container-lg {
+  @apply w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-container-xl {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-container-full {
+  @apply w-full px-4 sm:px-6 lg:px-8;
+}
+
+/* Grid Layout */
+.layout-grid {
+  @apply grid gap-6;
+}
+
+.layout-grid-cols-1 {
+  @apply grid-cols-1;
+}
+
+.layout-grid-cols-2 {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.layout-grid-cols-3 {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.layout-grid-cols-4 {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+}
+
+.layout-grid-cols-6 {
+  @apply grid-cols-2 md:grid-cols-3 lg:grid-cols-6;
+}
+
+.layout-grid-cols-12 {
+  @apply grid-cols-12;
+}
+
+/* Section Layout */
+.layout-section {
+  @apply py-12 lg:py-16;
+}
+
+.layout-section-sm {
+  @apply py-8 lg:py-12;
+}
+
+.layout-section-lg {
+  @apply py-16 lg:py-24;
+}
+
+.layout-section-xl {
+  @apply py-20 lg:py-32;
+}
+
+/* Sidebar Layout */
+.layout-sidebar {
+  @apply flex flex-col lg:flex-row gap-8;
+}
+
+.layout-sidebar-reverse {
+  @apply flex flex-col lg:flex-row-reverse gap-8;
+}
+
+.layout-sidebar-content {
+  @apply flex-1;
+}
+
+.layout-sidebar-aside {
+  @apply w-full lg:w-64 flex-shrink-0;
+}
+
+.layout-sidebar-aside-wide {
+  @apply w-full lg:w-80 flex-shrink-0;
+}

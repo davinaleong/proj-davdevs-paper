@@ -1,0 +1,210 @@
+/* =========================================================
+   PaperStack Component Styles
+   ========================================================= */
+
+.paper-stack {
+  @apply relative;
+  --stack-offset: 4px;
+  --stack-rotation: 1deg;
+}
+
+/* Offset Variants */
+.paper-stack-offset-sm {
+  --stack-offset: 2px;
+  --stack-rotation: 0.5deg;
+}
+
+.paper-stack-offset-md {
+  --stack-offset: 4px;
+  --stack-rotation: 1deg;
+}
+
+.paper-stack-offset-lg {
+  --stack-offset: 6px;
+  --stack-rotation: 1.5deg;
+}
+
+/* Paper Stack Layers */
+.paper-stack-layer {
+  @apply absolute inset-0 bg-white rounded-lg;
+  @apply border border-gray-200;
+  z-index: -1;
+}
+
+.paper-stack-layer-1 {
+  transform: translate(calc(var(--stack-offset) * 2), calc(var(--stack-offset) * 2));
+}
+
+.paper-stack-layer-2 {
+  transform: translate(var(--stack-offset), var(--stack-offset));
+}
+
+.paper-stack-layer-3 {
+  transform: translate(calc(var(--stack-offset) * 3), calc(var(--stack-offset) * 3));
+}
+
+.paper-stack-layer-4 {
+  transform: translate(calc(var(--stack-offset) * 4), calc(var(--stack-offset) * 4));
+}
+
+/* Rotated Stacks */
+.paper-stack-rotated .paper-stack-layer-1 {
+  transform: 
+    translate(calc(var(--stack-offset) * 2), calc(var(--stack-offset) * 2))
+    rotate(calc(var(--stack-rotation) * -1));
+}
+
+.paper-stack-rotated .paper-stack-layer-2 {
+  transform: 
+    translate(var(--stack-offset), var(--stack-offset))
+    rotate(var(--stack-rotation));
+}
+
+.paper-stack-rotated .paper-stack-layer-3 {
+  transform: 
+    translate(calc(var(--stack-offset) * 3), calc(var(--stack-offset) * 3))
+    rotate(calc(var(--stack-rotation) * 2));
+}
+
+.paper-stack-rotated .paper-stack-layer-4 {
+  transform: 
+    translate(calc(var(--stack-offset) * 4), calc(var(--stack-offset) * 4))
+    rotate(calc(var(--stack-rotation) * -2));
+}
+
+/* Content Layer */
+.paper-stack-content {
+  @apply relative bg-white rounded-lg p-6;
+  @apply border border-gray-200;
+  z-index: 10;
+}
+
+/* Shadow Variants */
+.paper-stack-shadow-none .paper-stack-layer,
+.paper-stack-shadow-none .paper-stack-content {
+  box-shadow: none;
+}
+
+.paper-stack-shadow-soft .paper-stack-layer,
+.paper-stack-shadow-soft .paper-stack-content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.paper-stack-shadow-medium .paper-stack-layer,
+.paper-stack-shadow-medium .paper-stack-content {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.paper-stack-shadow-hard .paper-stack-layer,
+.paper-stack-shadow-hard .paper-stack-content {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Texture Variants */
+.paper-stack-texture-grain .paper-stack-layer,
+.paper-stack-texture-grain .paper-stack-content {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.paper-stack-texture-linen .paper-stack-layer,
+.paper-stack-texture-linen .paper-stack-content {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.01) 2px,
+      rgba(0,0,0,0.01) 4px
+    );
+}
+
+.paper-stack-texture-fiber .paper-stack-layer,
+.paper-stack-texture-fiber .paper-stack-content {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.015) 1px,
+      rgba(0,0,0,0.015) 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.015) 1px,
+      rgba(0,0,0,0.015) 2px
+    );
+}
+
+/* Interactive Stacks */
+.paper-stack-interactive {
+  @apply cursor-pointer transition-transform duration-200 ease-out;
+}
+
+.paper-stack-interactive:hover {
+  transform: translateY(-2px);
+}
+
+.paper-stack-interactive:hover .paper-stack-layer-1 {
+  transform: 
+    translate(calc(var(--stack-offset) * 2.5), calc(var(--stack-offset) * 2.5))
+    rotate(calc(var(--stack-rotation) * -1.2));
+}
+
+.paper-stack-interactive:hover .paper-stack-layer-2 {
+  transform: 
+    translate(calc(var(--stack-offset) * 1.2), calc(var(--stack-offset) * 1.2))
+    rotate(calc(var(--stack-rotation) * 1.2));
+}
+
+.paper-stack-interactive:active {
+  transform: translateY(0);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .paper-stack-layer,
+  .paper-stack-content {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .paper-stack-texture-grain .paper-stack-layer,
+  .paper-stack-texture-grain .paper-stack-content {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
+  }
+  
+  .paper-stack-texture-linen .paper-stack-layer,
+  .paper-stack-texture-linen .paper-stack-content {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.01) 2px,
+        rgba(255,255,255,0.01) 4px
+      );
+  }
+  
+  .paper-stack-texture-fiber .paper-stack-layer,
+  .paper-stack-texture-fiber .paper-stack-content {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(255,255,255,0.015) 1px,
+        rgba(255,255,255,0.015) 2px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 1px,
+        rgba(255,255,255,0.015) 1px,
+        rgba(255,255,255,0.015) 2px
+      );
+  }
+}

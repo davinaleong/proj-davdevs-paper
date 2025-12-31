@@ -38,6 +38,9 @@ import { TabsShowcase } from './components/TabsShowcase';
 import { PaginationShowcase } from './components/PaginationShowcase';
 import { NavbarShowcase } from './components/NavbarShowcase';
 import { FooterShowcase } from './components/FooterShowcase';
+import { PaperStackShowcase } from './components/PaperStackShowcase';
+import { SidebarLayoutShowcase } from './components/SidebarLayoutShowcase';
+import { NotebookComponentShowcase } from './components/NotebookComponentShowcase';
 
 interface NavItem {
   id: string;
@@ -278,6 +281,26 @@ const navigationGroups: NavGroup[] = [
         id: 'pagination',
         label: 'Pagination',
         component: PaginationShowcase
+      }
+    ]
+  },
+  {
+    title: 'Premium Layout Components',
+    items: [
+      {
+        id: 'paper-stack',
+        label: 'PaperStack',
+        component: PaperStackShowcase
+      },
+      {
+        id: 'sidebar-layout',
+        label: 'SidebarLayout',
+        component: SidebarLayoutShowcase
+      },
+      {
+        id: 'notebook-component',
+        label: 'Notebook',
+        component: NotebookComponentShowcase
       }
     ]
   },

@@ -1,0 +1,360 @@
+/* =========================================================
+   Notebook Component Styles
+   ========================================================= */
+
+.notebook {
+  @apply relative bg-white rounded-lg;
+  @apply border border-gray-200;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Size Variants */
+.notebook-sm {
+  width: 320px;
+  height: 400px;
+}
+
+.notebook-md {
+  width: 480px;
+  height: 600px;
+}
+
+.notebook-lg {
+  width: 640px;
+  height: 800px;
+}
+
+.notebook-xl {
+  width: 800px;
+  height: 1000px;
+}
+
+/* Notebook Cover & Spine */
+.notebook-cover {
+  @apply absolute inset-0 pointer-events-none;
+}
+
+.notebook-spine {
+  @apply absolute;
+}
+
+/* Binding Position */
+.notebook-binding-left .notebook-spine {
+  @apply left-0 top-0 bottom-0;
+  width: 40px;
+}
+
+.notebook-binding-top .notebook-spine {
+  @apply top-0 left-0 right-0;
+  height: 40px;
+}
+
+.notebook-binding-right .notebook-spine {
+  @apply right-0 top-0 bottom-0;
+  width: 40px;
+}
+
+/* Spiral Style */
+.notebook-spiral .notebook-spiral {
+  @apply flex flex-col items-center justify-around h-full py-4;
+}
+
+.spiral-ring {
+  @apply w-6 h-3 border-2 border-gray-400 rounded-full;
+  background: linear-gradient(45deg, #ccc, #999);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Ring Style */
+.notebook-ring .notebook-rings {
+  @apply flex flex-col justify-around h-full py-8;
+}
+
+.ring {
+  @apply w-8 h-8 border-4 border-gray-500 rounded-full mx-auto;
+  background: radial-gradient(circle at 30% 30%, #ddd, #aaa);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Composition & Leather Stitching */
+.notebook-composition .notebook-stitching,
+.notebook-leather .notebook-stitching {
+  @apply flex flex-col justify-around h-full py-4;
+}
+
+.stitch {
+  @apply w-1 h-3 bg-gray-600 mx-auto rounded-full;
+}
+
+/* Style Variants */
+.notebook-composition {
+  @apply bg-gray-100;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.05),
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+.notebook-leather {
+  @apply bg-amber-50;
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(139,69,19,0.1) 1px, transparent 0),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(139,69,19,0.05) 3px,
+      rgba(139,69,19,0.05) 6px
+    );
+  background-size: 15px 15px, 100% 12px;
+}
+
+/* Page Tabs */
+.notebook-tabs {
+  @apply absolute top-0 right-4 flex space-x-1 z-10;
+}
+
+.notebook-binding-top .notebook-tabs {
+  @apply top-12 right-4;
+}
+
+.notebook-tab {
+  @apply bg-white border border-gray-300 rounded-t-md px-3 py-1;
+  @apply text-sm font-medium text-gray-600 hover:text-gray-800;
+  @apply transition-all duration-200;
+  @apply flex items-center space-x-1;
+  transform: translateY(2px);
+}
+
+.notebook-tab.active {
+  @apply bg-white border-b-white text-gray-900;
+  transform: translateY(0);
+  z-index: 10;
+}
+
+.notebook-tab:not(.active) {
+  @apply hover:transform hover:-translate-y-1;
+}
+
+.notebook-tab.disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.notebook-tab-icon {
+  @apply text-xs;
+}
+
+/* Main Content */
+.notebook-content {
+  @apply relative h-full p-6;
+}
+
+.notebook-binding-left .notebook-content {
+  @apply pl-16;
+}
+
+.notebook-binding-top .notebook-content {
+  @apply pt-16;
+}
+
+.notebook-binding-right .notebook-content {
+  @apply pr-16;
+}
+
+.notebook-page {
+  @apply relative h-full;
+  background: white;
+}
+
+/* Margin Line */
+.notebook-margin {
+  @apply absolute left-16 top-0 bottom-0 border-l-2 border-red-300;
+}
+
+.notebook-binding-top .notebook-margin {
+  @apply left-0 right-0 top-16 bottom-auto border-l-0 border-t-2 h-0;
+}
+
+/* Line Styles */
+.notebook-lines-ruled .notebook-page {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 23px,
+    #e5e7eb 23px,
+    #e5e7eb 25px
+  );
+}
+
+.notebook-lines-dotted .notebook-page {
+  background-image: 
+    radial-gradient(circle at 20px 25px, #d1d5db 1px, transparent 1px);
+  background-size: 20px 25px;
+}
+
+.notebook-lines-grid .notebook-page {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 24px,
+      #e5e7eb 24px,
+      #e5e7eb 25px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 24px,
+      #e5e7eb 24px,
+      #e5e7eb 25px
+    );
+}
+
+/* Page Content */
+.notebook-page-content {
+  @apply h-full overflow-y-auto;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.notebook-page-inner {
+  @apply min-h-full;
+}
+
+/* Page Number */
+.notebook-page-number {
+  @apply absolute bottom-4 right-4 text-xs text-gray-500;
+}
+
+/* Texture Variants */
+.notebook-texture-grain .notebook-page {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.notebook-texture-linen .notebook-page {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.01) 2px,
+      rgba(0,0,0,0.01) 4px
+    );
+}
+
+.notebook-texture-fiber .notebook-page {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.015) 1px,
+      rgba(0,0,0,0.015) 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.015) 1px,
+      rgba(0,0,0,0.015) 2px
+    );
+}
+
+/* Combined line + texture styles */
+.notebook-lines-ruled.notebook-texture-grain .notebook-page {
+  background-image: 
+    repeating-linear-gradient(
+      transparent,
+      transparent 23px,
+      #e5e7eb 23px,
+      #e5e7eb 25px
+    ),
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+  background-size: 100% 25px, 20px 20px;
+}
+
+/* Interactive Effects */
+.notebook-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -3px rgba(0, 0, 0, 0.15), 0 8px 10px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* Notebook Shadow */
+.notebook-shadow {
+  @apply absolute -bottom-2 -right-2 inset-0 bg-gray-800 rounded-lg -z-10;
+  opacity: 0.1;
+  transform: rotate(1deg);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .notebook {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .notebook-page {
+    @apply bg-gray-800;
+  }
+  
+  .notebook-tab {
+    @apply bg-gray-700 border-gray-600 text-gray-300;
+  }
+  
+  .notebook-tab.active {
+    @apply bg-gray-800 border-b-gray-800 text-gray-100;
+  }
+  
+  .notebook-margin {
+    @apply border-red-500;
+  }
+  
+  .notebook-lines-ruled .notebook-page {
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 23px,
+      #374151 23px,
+      #374151 25px
+    );
+  }
+  
+  .notebook-lines-dotted .notebook-page {
+    background-image: 
+      radial-gradient(circle at 20px 25px, #4b5563 1px, transparent 1px);
+  }
+  
+  .notebook-lines-grid .notebook-page {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 24px,
+        #374151 24px,
+        #374151 25px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 24px,
+        #374151 24px,
+        #374151 25px
+      );
+  }
+  
+  .notebook-texture-grain .notebook-page {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
+  }
+}
