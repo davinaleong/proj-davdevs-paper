@@ -10,5 +10,6 @@
 @import "./Avatar/Avatar.styles.css";
 @import "./Icon/Icon.styles.css";
 @import "./Tooltip/Tooltip.styles.css";
+@import "./Prose/prose.css";
 @import "./icon.css";
 @import "./tooltip.css";

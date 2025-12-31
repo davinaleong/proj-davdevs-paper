@@ -8,6 +8,7 @@ import { ContainerShowcase } from './components/ContainerShowcase';
 import { HeadingShowcase } from './components/HeadingShowcase';
 import { BodyTextShowcase } from './components/BodyTextShowcase';
 import { RichContentShowcase } from './components/RichContentShowcase';
+import { ProseShowcase } from './components/ProseShowcase';
 import { PageShowcase } from './components/PageShowcase';
 import { SectionShowcase } from './components/SectionShowcase';
 import { GridShowcase } from './components/GridShowcase';
@@ -117,6 +118,11 @@ const navigationGroups: NavGroup[] = [
         id: 'body-text',
         label: 'Body Text',
         component: BodyTextShowcase
+      },
+      {
+        id: 'prose',
+        label: 'Prose',
+        component: ProseShowcase
       },
       {
         id: 'rich-content',

@@ -6,3 +6,4 @@ export * from './Tag';
 export * from './Avatar';
 export * from './Icon';
 export * from './Tooltip';
+export * from './Prose';

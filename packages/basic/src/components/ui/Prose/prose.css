@@ -1,0 +1,364 @@
+/* Prose - Paper-inspired content styling */
+
+.prose-paper {
+  color: theme('colors.slate.700');
+  line-height: 1.7;
+}
+
+.dark .prose-paper {
+  color: theme('colors.slate.300');
+}
+
+/* Headings */
+.prose-paper :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.900');
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.dark .prose-paper :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.100');
+}
+
+.prose-paper :where(h1):not(:where([class~="not-prose"] *)) {
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.888889em;
+}
+
+.prose-paper :where(h2):not(:where([class~="not-prose"] *)) {
+  font-size: 1.875em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose-paper :where(h3):not(:where([class~="not-prose"] *)) {
+  font-size: 1.5em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose-paper :where(h4):not(:where([class~="not-prose"] *)) {
+  font-size: 1.25em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-paper :where(h5):not(:where([class~="not-prose"] *)) {
+  font-size: 1.125em;
+}
+
+.prose-paper :where(h6):not(:where([class~="not-prose"] *)) {
+  font-size: 1em;
+}
+
+/* Paragraphs */
+.prose-paper :where(p):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Lead paragraphs */
+.prose-paper :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.600');
+  font-size: 1.25em;
+  line-height: 1.6;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.dark .prose-paper :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.400');
+}
+
+/* Links */
+.prose-paper :where(a):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.blue.600');
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.prose-paper :where(a):hover:not(:where([class~="not-prose"] *)) {
+  color: theme('colors.blue.700');
+}
+
+.dark .prose-paper :where(a):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.blue.400');
+}
+
+.dark .prose-paper :where(a):hover:not(:where([class~="not-prose"] *)) {
+  color: theme('colors.blue.300');
+}
+
+/* Strong and emphasis */
+.prose-paper :where(strong):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.900');
+  font-weight: 600;
+}
+
+.dark .prose-paper :where(strong):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.100');
+}
+
+.prose-paper :where(em):not(:where([class~="not-prose"] *)) {
+  font-style: italic;
+  color: theme('colors.slate.700');
+}
+
+.dark .prose-paper :where(em):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.300');
+}
+
+/* Inline code */
+.prose-paper :where(code):not(:where([class~="not-prose"], pre *)) {
+  color: theme('colors.slate.800');
+  background-color: theme('colors.slate.100');
+  padding: 0.2em 0.4em;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+  font-weight: 500;
+  border: 1px solid theme('colors.slate.200');
+}
+
+.dark .prose-paper :where(code):not(:where([class~="not-prose"], pre *)) {
+  color: theme('colors.slate.200');
+  background-color: theme('colors.slate.800');
+  border-color: theme('colors.slate.700');
+}
+
+/* Code blocks */
+.prose-paper :where(pre):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.800');
+  background-color: theme('colors.slate.50');
+  border: 1px solid theme('colors.slate.200');
+  border-radius: 0.5rem;
+  padding: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  overflow-x: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .prose-paper :where(pre):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.200');
+  background-color: theme('colors.slate.900');
+  border-color: theme('colors.slate.700');
+}
+
+.prose-paper :where(pre code):not(:where([class~="not-prose"] *)) {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875em;
+}
+
+/* Lists */
+.prose-paper :where(ul, ol):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose-paper :where(ul):not(:where([class~="not-prose"] *)) {
+  list-style-type: disc;
+}
+
+.prose-paper :where(ol):not(:where([class~="not-prose"] *)) {
+  list-style-type: decimal;
+}
+
+.prose-paper :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.375em;
+}
+
+.prose-paper :where(li::marker):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.500');
+}
+
+.dark .prose-paper :where(li::marker):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.400');
+}
+
+/* Nested lists */
+.prose-paper :where(li > ul, li > ol):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+.prose-paper :where(blockquote):not(:where([class~="not-prose"] *)) {
+  font-style: italic;
+  color: theme('colors.slate.600');
+  border-left: 4px solid theme('colors.slate.300');
+  padding-left: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  quotes: '"' '"' ''' ''';
+  background-color: theme('colors.slate.50');
+  padding: 1.5em;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .prose-paper :where(blockquote):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.300');
+  border-left-color: theme('colors.slate.600');
+  background-color: theme('colors.slate.900');
+}
+
+.prose-paper :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before {
+  content: open-quote;
+}
+
+.prose-paper :where(blockquote p:last-of-type):not(:where([class~="not-prose"] *))::after {
+  content: close-quote;
+}
+
+/* Tables */
+.prose-paper :where(table):not(:where([class~="not-prose"] *)) {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid theme('colors.slate.200');
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .prose-paper :where(table):not(:where([class~="not-prose"] *)) {
+  border-color: theme('colors.slate.700');
+}
+
+.prose-paper :where(thead):not(:where([class~="not-prose"] *)) {
+  background-color: theme('colors.slate.100');
+}
+
+.dark .prose-paper :where(thead):not(:where([class~="not-prose"] *)) {
+  background-color: theme('colors.slate.800');
+}
+
+.prose-paper :where(thead th):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.900');
+  font-weight: 600;
+  vertical-align: bottom;
+  padding: 0.75rem;
+  border-bottom: 1px solid theme('colors.slate.200');
+}
+
+.dark .prose-paper :where(thead th):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.100');
+  border-bottom-color: theme('colors.slate.700');
+}
+
+.prose-paper :where(tbody tr):not(:where([class~="not-prose"] *)) {
+  border-bottom: 1px solid theme('colors.slate.200');
+}
+
+.dark .prose-paper :where(tbody tr):not(:where([class~="not-prose"] *)) {
+  border-bottom-color: theme('colors.slate.700');
+}
+
+.prose-paper :where(tbody tr):last-child:not(:where([class~="not-prose"] *)) {
+  border-bottom: none;
+}
+
+.prose-paper :where(tbody td):not(:where([class~="not-prose"] *)) {
+  vertical-align: top;
+  padding: 0.75rem;
+}
+
+.prose-paper :where(tbody tr):nth-child(even):not(:where([class~="not-prose"] *)) {
+  background-color: theme('colors.slate.50');
+}
+
+.dark .prose-paper :where(tbody tr):nth-child(even):not(:where([class~="not-prose"] *)) {
+  background-color: theme('colors.slate.900');
+}
+
+/* Horizontal rules */
+.prose-paper :where(hr):not(:where([class~="not-prose"] *)) {
+  border: none;
+  border-top: 1px solid theme('colors.slate.200');
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.dark .prose-paper :where(hr):not(:where([class~="not-prose"] *)) {
+  border-top-color: theme('colors.slate.700');
+}
+
+/* Images */
+.prose-paper :where(img):not(:where([class~="not-prose"] *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Figure and figcaption */
+.prose-paper :where(figure):not(:where([class~="not-prose"] *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose-paper :where(figcaption):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.600');
+  font-size: 0.875em;
+  line-height: 1.4;
+  margin-top: 0.75em;
+  text-align: center;
+}
+
+.dark .prose-paper :where(figcaption):not(:where([class~="not-prose"] *)) {
+  color: theme('colors.slate.400');
+}
+
+/* Size variants */
+.prose-sm.prose-paper {
+  font-size: 0.875rem;
+  line-height: 1.7142857;
+}
+
+.prose-sm.prose-paper :where(h1):not(:where([class~="not-prose"] *)) {
+  font-size: 1.8571429em;
+}
+
+.prose-sm.prose-paper :where(h2):not(:where([class~="not-prose"] *)) {
+  font-size: 1.5714286em;
+}
+
+.prose-lg.prose-paper {
+  font-size: 1.125rem;
+  line-height: 1.7777778;
+}
+
+.prose-lg.prose-paper :where(h1):not(:where([class~="not-prose"] *)) {
+  font-size: 2.6666667em;
+}
+
+.prose-lg.prose-paper :where(h2):not(:where([class~="not-prose"] *)) {
+  font-size: 2.2222222em;
+}
+
+.prose-xl.prose-paper {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.prose-xl.prose-paper :where(h1):not(:where([class~="not-prose"] *)) {
+  font-size: 2.8em;
+}
+
+.prose-xl.prose-paper :where(h2):not(:where([class~="not-prose"] *)) {
+  font-size: 2.4em;
+}
