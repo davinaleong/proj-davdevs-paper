@@ -1,0 +1,201 @@
+/* =========================================================
+   Dav/Devs Paper — Design Tokens
+   Theme system with Basic & Premium tiers + Light/Dark modes
+   ========================================================= */
+
+:root {
+  /* =============================================
+     BASIC TIER TOKENS (Free)
+     Tailwind defaults only - clean & professional
+     ============================================= */
+  
+  /* Light Mode - Basic Tier */
+  --primary: #2563eb; /* theme('colors.blue.600') */
+  --secondary: #475569; /* theme('colors.slate.600') */
+  --text: #1f2937; /* theme('colors.gray.800') */
+  --text-muted: #6b7280; /* theme('colors.gray.500') */
+  --bg: #ffffff; /* theme('colors.white') */
+  --bg-secondary: #f9fafb; /* theme('colors.gray.50') */
+  --border: #e5e7eb; /* theme('colors.gray.200') */
+  --shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Interactive States */
+  --primary-hover: #1d4ed8; /* theme('colors.blue.700') */
+  --secondary-hover: #334155; /* theme('colors.slate.700') */
+}
+
+/* Dark Mode - Basic Tier (class-based for manual control) */
+:root.dark {
+  --primary: #3b82f6; /* theme('colors.blue.500') */
+  --secondary: #64748b; /* theme('colors.slate.500') */
+  --text: #e5e7eb; /* theme('colors.gray.200') */
+  --text-muted: #d1d5db; /* theme('colors.gray.300') - lightened */
+  --bg: #0f172a; /* theme('colors.slate.950') */
+  --bg-secondary: #1e293b; /* theme('colors.slate.800') */
+  --border: #374151; /* theme('colors.gray.700') */
+  --shadow: rgba(0, 0, 0, 0.5);
+  
+  /* Interactive States */
+  --primary-hover: #60a5fa; /* theme('colors.blue.400') */
+  --secondary-hover: #94a3b8; /* theme('colors.slate.400') */
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --primary: #3b82f6; /* theme('colors.blue.500') */
+    --secondary: #64748b; /* theme('colors.slate.500') */
+    --text: #e5e7eb; /* theme('colors.gray.200') */
+    --text-muted: #d1d5db; /* theme('colors.gray.300') - lightened */
+    --bg: #0f172a; /* theme('colors.slate.950') */
+    --bg-secondary: #1e293b; /* theme('colors.slate.800') */
+    --border: #374151; /* theme('colors.gray.700') */
+    --shadow: rgba(0, 0, 0, 0.5);
+    
+    /* Interactive States */
+    --primary-hover: #60a5fa; /* theme('colors.blue.400') */
+    --secondary-hover: #94a3b8; /* theme('colors.slate.400') */
+  }
+}
+
+/* =============================================
+   PREMIUM TIER TOKENS (Paid)
+   Authentic paper colors & textures
+   ============================================= */
+
+/* Light Paper Theme - Premium Tier */
+:root.premium-tier {
+  --primary: #d97706; /* Warm amber for paper feel */
+  --secondary: #92400e; /* Rich brown */
+  --text: #292524; /* Warm dark text */
+  --text-muted: #78716c; /* Muted warm gray */
+  --bg: #faf9f7; /* Warm white paper */
+  --bg-secondary: #f4f2ee; /* Aged paper */
+  --border: #e5e2dc; /* Subtle paper edges */
+  --shadow: rgba(0, 0, 0, 0.06); /* Soft paper shadows */
+  
+  /* Premium Paper Colors */
+  --paper-base: #faf9f7;
+  --paper-warm: #f4f2ee;
+  --paper-border: #e5e2dc;
+  --paper-shadow: rgba(0, 0, 0, 0.06);
+  
+  /* Interactive States */
+  --primary-hover: #b45309;
+  --secondary-hover: #78350f;
+}
+
+/* Dark Paper Theme - Premium Tier */
+:root.dark.premium-tier {
+  --primary: #fbbf24; /* Bright amber for contrast */
+  --secondary: #d97706; /* Warm amber */
+  --text: #fbbf24; /* Warm light text */
+  --text-muted: #a3a3a3; /* Neutral muted */
+  --bg: #121212; /* Rich black paper */
+  --bg-secondary: #181818; /* Charcoal paper */
+  --border: #2a2a2a; /* Dark paper edges */
+  --shadow: rgba(0, 0, 0, 0.8); /* Deep paper shadows */
+  
+  /* Premium Dark Paper Colors */
+  --paper-base: #121212;
+  --paper-warm: #181818;
+  --paper-border: #2a2a2a;
+  --paper-shadow: rgba(0, 0, 0, 0.8);
+  
+  /* Interactive States */
+  --primary-hover: #fcd34d;
+  --secondary-hover: #f59e0b;
+}
+
+/* =============================================
+   COMPONENT-SPECIFIC TOKENS
+   ============================================= */
+
+:root {
+  /* Typography Scale */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-mono: 'Source Code Pro', monospace;
+  
+  /* Spacing Scale (Fluid) */
+  --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 1vw, 1rem);
+  --space-md: clamp(1rem, 2vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 3vw, 2rem);
+  --space-xl: clamp(2rem, 4vw, 3rem);
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  
+  /* Shadows (Paper-realistic depth) */
+  --shadow-sm: 0 1px 2px var(--shadow);
+  --shadow-md: 0 4px 6px -1px var(--shadow), 0 2px 4px -1px var(--shadow);
+  --shadow-lg: 0 10px 15px -3px var(--shadow), 0 4px 6px -2px var(--shadow);
+  --shadow-xl: 0 20px 25px -5px var(--shadow), 0 10px 10px -5px var(--shadow);
+  
+  /* Z-index Scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+
+.theme-text {
+  color: var(--text);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-bg {
+  background-color: var(--bg);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+.theme-primary {
+  color: var(--primary);
+}
+
+.theme-secondary {
+  color: var(--secondary);
+}
+
+.theme-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* Paper-specific utilities (Premium only) */
+.premium-tier .paper-bg {
+  background-color: var(--paper-base);
+}
+
+.premium-tier .paper-bg-warm {
+  background-color: var(--paper-warm);
+}
+
+.premium-tier .paper-border {
+  border-color: var(--paper-border);
+}
+
+.premium-tier .paper-shadow {
+  box-shadow: var(--paper-shadow);
+}

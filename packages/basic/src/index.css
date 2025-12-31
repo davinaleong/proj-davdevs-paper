@@ -10,8 +10,3 @@
 @import "./components/typography/index.css";
 @import "./components/layout/index.css";
 @import "./components/ui/index.css";
-
-/* Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

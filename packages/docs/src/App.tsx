@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { ThemeToggle } from './components/ThemeToggle';
 import { BoxShowcase } from './components/BoxShowcase';
 import { StackShowcase } from './components/StackShowcase';
 import { InlineShowcase } from './components/InlineShowcase';
@@ -315,41 +317,46 @@ function App() {
   const ActiveComponent = allNavigationItems.find(item => item.id === activeComponent)?.component || BoxShowcase;
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Sidebar */}
-      <nav className="sidebar">
-        <div className="mb-8">
-          <h1 className="text-xl font-bold text-blue-500 mb-2">Dav/Devs Paper UI</h1>
-          <p className="text-sm text-gray-600">Component Library</p>
-        </div>
-        
-        <div className="sidebar-nav">
-          {navigationGroups.map((group) => (
-            <div key={group.title} className="mb-6">
-              <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                {group.title}
-              </h2>
-              {group.items.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveComponent(item.id)}
-                  className={`sidebar-link w-full text-left ${
-                    activeComponent === item.id ? 'active' : ''
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          ))}
-        </div>
-      </nav>
+    <ThemeProvider>
+      <div className="flex h-screen theme-bg">
+        {/* Sidebar */}
+        <nav className="sidebar theme-bg-secondary theme-border">
+          <div className="mb-8">
+            <h1 className="text-xl font-bold theme-primary mb-2">Dav/Devs Paper UI</h1>
+            <p className="text-sm theme-text-muted">Component Library</p>
+          </div>
+          
+          <div className="sidebar-nav">
+            {navigationGroups.map((group) => (
+              <div key={group.title} className="mb-6">
+                <h2 className="text-sm font-semibold theme-text-muted uppercase tracking-wider mb-3">
+                  {group.title}
+                </h2>
+                {group.items.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveComponent(item.id)}
+                    className={`sidebar-link w-full text-left ${
+                      activeComponent === item.id ? 'active' : ''
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            ))}
+          </div>
 
-      {/* Main Content */}
-      <main className="main-content">
-        <ActiveComponent />
-      </main>
-    </div>
+          {/* Theme Toggle */}
+          <ThemeToggle />
+        </nav>
+
+        {/* Main Content */}
+        <main className="main-content theme-bg">
+          <ActiveComponent />
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 
