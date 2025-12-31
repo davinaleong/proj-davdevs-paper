@@ -3,34 +3,39 @@ import { cn } from '../../../../foundations/src/utils';
 
 export interface SidebarLayoutProps {
   children: React.ReactNode;
-  className?: string;
   sidebar: React.ReactNode;
+  className?: string;
+
   sidebarPosition?: 'left' | 'right';
   sidebarWidth?: 'sm' | 'md' | 'lg' | 'xl';
   gap?: 'none' | 'sm' | 'md' | 'lg';
+
   paperStyle?: 'flat' | 'elevated' | 'stacked';
   texture?: 'none' | 'grain' | 'linen' | 'fiber';
+
   responsive?: boolean;
   collapsible?: boolean;
 }
 
 export const SidebarLayout: React.FC<SidebarLayoutProps> = ({
   children,
-  className,
   sidebar,
+  className,
+
   sidebarPosition = 'left',
   sidebarWidth = 'md',
   gap = 'md',
+
   paperStyle = 'elevated',
   texture = 'grain',
+
   responsive = true,
   collapsible = false,
-  ...props
 }) => {
-  const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const [collapsed, setCollapsed] = React.useState(false);
 
   return (
-    <div 
+    <div
       className={cn(
         'sidebar-layout',
         `sidebar-layout-${sidebarPosition}`,
@@ -39,42 +44,41 @@ export const SidebarLayout: React.FC<SidebarLayoutProps> = ({
         `sidebar-layout-${paperStyle}`,
         `sidebar-layout-texture-${texture}`,
         responsive && 'sidebar-layout-responsive',
-        collapsible && 'sidebar-layout-collapsible',
-        isCollapsed && 'sidebar-layout-collapsed',
+        collapsed && 'sidebar-layout-collapsed',
         className
       )}
-      {...props}
     >
       {/* Sidebar */}
-      <aside className={cn(
-        'sidebar-layout-sidebar',
-        sidebarPosition === 'right' && 'order-2'
-      )}>
-        {collapsible && (
-          <button
-            className="sidebar-layout-toggle"
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          >
-            <span className={cn(
-              'sidebar-toggle-icon',
-              isCollapsed && 'collapsed'
-            )}>
+      {!collapsed && (
+        <aside className="sidebar-layout-sidebar">
+          {collapsible && (
+            <button
+              className="sidebar-layout-toggle"
+              onClick={() => setCollapsed(true)}
+              aria-label="Collapse sidebar"
+            >
               {sidebarPosition === 'left' ? '◀' : '▶'}
-            </span>
+            </button>
+          )}
+
+          <div className="sidebar-layout-sidebar-content">
+            {sidebar}
+          </div>
+        </aside>
+      )}
+
+      {/* Main */}
+      <main className="sidebar-layout-main">
+        {collapsible && collapsed && (
+          <button
+            className="sidebar-layout-toggle sidebar-layout-toggle-expand"
+            onClick={() => setCollapsed(false)}
+            aria-label="Expand sidebar"
+          >
+            {sidebarPosition === 'left' ? '▶' : '◀'}
           </button>
         )}
-        
-        <div className="sidebar-layout-sidebar-content">
-          {!isCollapsed && sidebar}
-        </div>
-      </aside>
 
-      {/* Main Content */}
-      <main className={cn(
-        'sidebar-layout-main',
-        sidebarPosition === 'right' && 'order-1'
-      )}>
         <div className="sidebar-layout-main-content">
           {children}
         </div>
