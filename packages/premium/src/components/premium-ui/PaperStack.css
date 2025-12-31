@@ -4,82 +4,90 @@
 
 .paper-stack {
   @apply relative;
-  --stack-offset: 4px;
+  isolation: isolate; /* fixes z-index stacking */
+  --stack-offset: 12px;
   --stack-rotation: 1deg;
 }
 
 /* Offset Variants */
 .paper-stack-offset-sm {
-  --stack-offset: 2px;
+  --stack-offset: 8px;
   --stack-rotation: 0.5deg;
 }
 
 .paper-stack-offset-md {
-  --stack-offset: 4px;
+  --stack-offset: 12px;
   --stack-rotation: 1deg;
 }
 
 .paper-stack-offset-lg {
-  --stack-offset: 6px;
+  --stack-offset: 16px;
   --stack-rotation: 1.5deg;
 }
 
 /* Paper Stack Layers */
 .paper-stack-layer {
-  @apply absolute bg-white rounded-lg p-6;
-  @apply border border-gray-200;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+  @apply absolute bg-white rounded-lg border border-gray-200;
+  inset: 0;
+  pointer-events: none;
+  transform-origin: center;
 }
 
+/* Proper depth ordering */
+.paper-stack-layer-1 { z-index: 1; }
+.paper-stack-layer-2 { z-index: 2; }
+.paper-stack-layer-3 { z-index: 3; }
+.paper-stack-layer-4 { z-index: 4; }
+
+/* Translation only (no padding hacks) */
 .paper-stack-layer-1 {
-  transform: translate(calc(var(--stack-offset) * 2), calc(var(--stack-offset) * 2));
+  transform: translate(
+    calc(var(--stack-offset) * 0.25),
+    calc(var(--stack-offset) * 0.25)
+  );
 }
 
 .paper-stack-layer-2 {
-  transform: translate(var(--stack-offset), var(--stack-offset));
+  transform: translate(
+    calc(var(--stack-offset) * 0.5),
+    calc(var(--stack-offset) * 0.5)
+  );
 }
 
 .paper-stack-layer-3 {
-  transform: translate(calc(var(--stack-offset) * 3), calc(var(--stack-offset) * 3));
+  transform: translate(
+    calc(var(--stack-offset) * 0.75),
+    calc(var(--stack-offset) * 0.75)
+  );
 }
 
 .paper-stack-layer-4 {
-  transform: translate(calc(var(--stack-offset) * 4), calc(var(--stack-offset) * 4));
+  transform: translate(
+    var(--stack-offset),
+    var(--stack-offset)
+  );
 }
 
 /* Rotated Stacks */
 .paper-stack-rotated .paper-stack-layer-1 {
-  transform: 
-    translate(calc(var(--stack-offset) * 2), calc(var(--stack-offset) * 2))
-    rotate(calc(var(--stack-rotation) * -1));
+  rotate: -0.3deg;
 }
 
 .paper-stack-rotated .paper-stack-layer-2 {
-  transform: 
-    translate(var(--stack-offset), var(--stack-offset))
-    rotate(var(--stack-rotation));
+  rotate: 0.4deg;
 }
 
 .paper-stack-rotated .paper-stack-layer-3 {
-  transform: 
-    translate(calc(var(--stack-offset) * 3), calc(var(--stack-offset) * 3))
-    rotate(calc(var(--stack-rotation) * 2));
+  rotate: -0.6deg;
 }
 
 .paper-stack-rotated .paper-stack-layer-4 {
-  transform: 
-    translate(calc(var(--stack-offset) * 4), calc(var(--stack-offset) * 4))
-    rotate(calc(var(--stack-rotation) * -2));
+  rotate: 0.8deg;
 }
 
 /* Content Layer */
 .paper-stack-content {
-  @apply relative bg-white rounded-lg p-6;
-  @apply border border-gray-200;
+  @apply relative bg-white rounded-lg p-6 border border-gray-200;
   z-index: 10;
 }
 
