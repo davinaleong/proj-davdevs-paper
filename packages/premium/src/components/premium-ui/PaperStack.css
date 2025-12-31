@@ -112,42 +112,67 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Texture Variants */
+/* ================================
+   Texture Variants (Enhanced)
+================================ */
+
+/* Shared texture tuning */
 .paper-stack-texture-grain .paper-stack-layer,
-.paper-stack-texture-grain .paper-stack-content {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
-  background-size: 20px 20px;
-}
-
+.paper-stack-texture-grain .paper-stack-content,
 .paper-stack-texture-linen .paper-stack-layer,
-.paper-stack-texture-linen .paper-stack-content {
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.01) 2px,
-      rgba(0,0,0,0.01) 4px
-    );
-}
-
+.paper-stack-texture-linen .paper-stack-content,
 .paper-stack-texture-fiber .paper-stack-layer,
 .paper-stack-texture-fiber .paper-stack-content {
-  background-image: 
+  background-blend-mode: multiply;
+}
+
+/* ---------- Grain ---------- */
+.paper-stack-texture-grain .paper-stack-layer,
+.paper-stack-texture-grain .paper-stack-content {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.06) 1px, transparent 1px),
+    radial-gradient(circle at 3px 3px, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 18px 18px, 24px 24px;
+}
+
+/* ---------- Linen ---------- */
+.paper-stack-texture-linen .paper-stack-layer,
+.paper-stack-texture-linen .paper-stack-content {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.035),
+      rgba(0,0,0,0.035) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.025),
+      rgba(0,0,0,0.025) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  background-size: auto;
+}
+
+/* ---------- Fiber ---------- */
+.paper-stack-texture-fiber .paper-stack-layer,
+.paper-stack-texture-fiber .paper-stack-content {
+  background-image:
     repeating-linear-gradient(
       0deg,
-      transparent,
+      rgba(0,0,0,0.035),
+      rgba(0,0,0,0.035) 1px,
       transparent 1px,
-      rgba(0,0,0,0.015) 1px,
-      rgba(0,0,0,0.015) 2px
+      transparent 3px
     ),
     repeating-linear-gradient(
       90deg,
-      transparent,
+      rgba(0,0,0,0.025),
+      rgba(0,0,0,0.025) 1px,
       transparent 1px,
-      rgba(0,0,0,0.015) 1px,
-      rgba(0,0,0,0.015) 2px
+      transparent 4px
     );
 }
 
