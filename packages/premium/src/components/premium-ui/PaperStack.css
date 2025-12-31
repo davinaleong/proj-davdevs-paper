@@ -26,8 +26,12 @@
 
 /* Paper Stack Layers */
 .paper-stack-layer {
-  @apply absolute inset-0 bg-white rounded-lg;
+  @apply absolute bg-white rounded-lg p-6;
   @apply border border-gray-200;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -1;
 }
 

@@ -5,7 +5,7 @@ import type { NotebookPage } from '@davdevs/paper-premium';
 export function PaperStackShowcase() {
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-8">PaperStack</h1>
+      <h1 className="text-3xl font-bold mb-8">Paper Stack</h1>
       <p className="text-lg text-gray-600 mb-8">
         Premium stacked sheets effect that creates depth with multiple paper layers
       </p>

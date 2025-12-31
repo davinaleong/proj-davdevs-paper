@@ -4,7 +4,7 @@ import { SidebarLayout } from '@davdevs/paper-premium';
 export function SidebarLayoutShowcase() {
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-8">SidebarLayout</h1>
+      <h1 className="text-3xl font-bold mb-8">Sidebar Layout</h1>
       <p className="text-lg text-gray-600 mb-8">
         Two-column paper layouts with premium styling and interactive features
       </p>

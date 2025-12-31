@@ -289,12 +289,12 @@ const navigationGroups: NavGroup[] = [
     items: [
       {
         id: 'paper-stack',
-        label: 'PaperStack',
+        label: 'Paper Stack',
         component: PaperStackShowcase
       },
       {
         id: 'sidebar-layout',
-        label: 'SidebarLayout',
+        label: 'Sidebar Layout',
         component: SidebarLayoutShowcase
       },
       {
