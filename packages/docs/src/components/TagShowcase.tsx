@@ -17,11 +17,21 @@ const Tag = ({
   ...domProps 
 }: any) => {
   const variants = {
-    default: selected ? 'bg-gray-200 text-gray-900' : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
-    primary: selected ? 'bg-blue-200 text-blue-900' : 'bg-blue-100 text-blue-700 hover:bg-blue-200',
-    secondary: selected ? 'bg-gray-200 text-gray-900' : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
-    category: selected ? 'bg-purple-200 text-purple-900' : 'bg-purple-100 text-purple-700 hover:bg-purple-200',
-    keyword: selected ? 'bg-green-200 text-green-900' : 'bg-green-100 text-green-700 hover:bg-green-200'
+    default: selected 
+      ? 'bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-gray-100' 
+      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600',
+    primary: selected 
+      ? 'bg-blue-200 dark:bg-blue-700 text-blue-900 dark:text-blue-100' 
+      : 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800',
+    secondary: selected 
+      ? 'bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-gray-100' 
+      : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600',
+    category: selected 
+      ? 'bg-purple-200 dark:bg-purple-700 text-purple-900 dark:text-purple-100' 
+      : 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800',
+    keyword: selected 
+      ? 'bg-green-200 dark:bg-green-700 text-green-900 dark:text-green-100' 
+      : 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-800'
   };
 
   const sizes = {
@@ -93,7 +103,7 @@ export function TagShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Tag Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Interactive tags for categorizing content, filtering, and user selection with paper-inspired design.
         </p>
       </div>
