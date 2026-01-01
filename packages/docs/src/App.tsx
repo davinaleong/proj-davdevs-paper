@@ -43,6 +43,7 @@ import { FooterShowcase } from './components/FooterShowcase';
 import { PaperStackShowcase } from './components/PaperStackShowcase';
 import { SidebarLayoutShowcase } from './components/SidebarLayoutShowcase';
 import { NotebookComponentShowcase } from './components/NotebookComponentShowcase';
+import { ScreenshotGenerator } from './components/ScreenshotGenerator';
 
 interface NavItem {
   id: string;
@@ -306,13 +307,38 @@ const navigationGroups: NavGroup[] = [
       }
     ]
   },
+  {
+    title: 'Dev Tools',
+    items: [
+      {
+        id: 'screenshots',
+        label: '📸 Screenshots',
+        component: ScreenshotGenerator
+      }
+    ]
+  }
 ];
 
 // Flatten all items for easy lookup
 const allNavigationItems = navigationGroups.flatMap(group => group.items);
 
 function App() {
-  const [activeComponent, setActiveComponent] = useState<string>('box');
+  // Check URL for direct access to screenshot generator
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialComponent = urlParams.get('component') || 
+    (window.location.pathname.includes('screenshots') ? 'screenshots' : 'box');
+  
+  const [activeComponent, setActiveComponent] = useState<string>(initialComponent);
+
+  // Update URL when component changes (for screenshots)
+  const handleComponentChange = (componentId: string) => {
+    setActiveComponent(componentId);
+    if (componentId === 'screenshots') {
+      window.history.pushState({}, '', '/screenshots');
+    } else if (window.location.pathname === '/screenshots') {
+      window.history.pushState({}, '', '/');
+    }
+  };
 
   const ActiveComponent = allNavigationItems.find(item => item.id === activeComponent)?.component || BoxShowcase;
 
@@ -335,7 +361,7 @@ function App() {
                 {group.items.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => setActiveComponent(item.id)}
+                    onClick={() => handleComponentChange(item.id)}
                     className={`sidebar-link w-full text-left ${
                       activeComponent === item.id ? 'active' : ''
                     }`}
