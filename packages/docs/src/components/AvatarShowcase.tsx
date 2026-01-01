@@ -1,4 +1,5 @@
 import React from 'react';
+import { User } from 'lucide-react';
 
 // Mock Avatar component for demonstration
 const Avatar = ({ 
@@ -6,6 +7,7 @@ const Avatar = ({
   name = '',
   size = 'md',
   shape = 'circle',
+  variant = 'default',
   status,
   icon,
   className = '', 
@@ -27,6 +29,15 @@ const Avatar = ({
     square: 'rounded-lg'
   };
 
+  const variants = {
+    default: 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300',
+    primary: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300',
+    secondary: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
+    success: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300',
+    warning: 'bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300',
+    danger: 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'
+  };
+
   const getInitials = (name: string) => {
     return name
       .split(' ')
@@ -44,8 +55,8 @@ const Avatar = ({
   };
 
   return (
-    <div className={`relative inline-block ${className}`} {...domProps}>
-      <div className={`inline-flex items-center justify-center bg-gray-200 text-gray-600 font-medium ${sizes[size]} ${shapeStyles[shape]}`}>
+    <div className={`relative inline-flex ${className}`} {...domProps}>
+      <div className={`flex items-center justify-center font-medium ${sizes[size]} ${shapeStyles[shape]} ${variants[variant]}`}>
         {src ? (
           <img 
             src={src} 
@@ -57,22 +68,15 @@ const Avatar = ({
         ) : name ? (
           getInitials(name)
         ) : (
-          <UserIcon />
+          <User className="w-6 h-6" />
         )}
       </div>
       {status && (
-        <span className={`absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white ${statusColors[status]}`} />
+        <span className={`absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white dark:ring-gray-800 ${statusColors[status]}`} />
       )}
     </div>
   );
 };
-
-// Mock user icon
-const UserIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-  </svg>
-);
 
 export function AvatarShowcase() {
   return (
@@ -435,25 +439,25 @@ export function AvatarShowcase() {
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150" 
               size="md" 
               alt="John"
-              className="border-2 border-white"
+              className="border-2 border-white dark:border-gray-800"
             />
             <Avatar 
               src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150" 
               size="md" 
               alt="Jane"
-              className="border-2 border-white"
+              className="border-2 border-white dark:border-gray-800"
             />
             <Avatar 
               name="Mike Wilson" 
               size="md" 
-              className="border-2 border-white"
+              className="border-2 border-white dark:border-gray-800"
             />
             <Avatar 
               name="Sarah Davis" 
               size="md" 
-              className="border-2 border-white"
+              className="border-2 border-white dark:border-gray-800"
             />
-            <div className="flex items-center justify-center w-10 h-10 bg-gray-100 border-2 border-white rounded-full text-xs font-medium text-gray-500">
+            <div className="flex items-center justify-center w-10 h-10 bg-gray-100 dark:bg-gray-700 border-2 border-white dark:border-gray-800 rounded-full text-xs font-medium text-gray-500 dark:text-gray-400">
               +3
             </div>
           </div>
@@ -461,17 +465,17 @@ export function AvatarShowcase() {
 {`<div className="flex -space-x-2">
   <Avatar 
     src="/user1.jpg"
-    className="border-2 border-white"
+    className="border-2 border-white dark:border-gray-800"
   />
   <Avatar 
     src="/user2.jpg"
-    className="border-2 border-white"
+    className="border-2 border-white dark:border-gray-800"
   />
   <Avatar 
     name="Mike Wilson"
-    className="border-2 border-white"
+    className="border-2 border-white dark:border-gray-800"
   />
-  <div className="flex items-center justify-center w-10 h-10 bg-gray-100 border-2 border-white rounded-full text-xs font-medium text-gray-500">
+  <div className="flex items-center justify-center w-10 h-10 bg-gray-100 dark:bg-gray-700 border-2 border-white dark:border-gray-800 rounded-full text-xs font-medium text-gray-500 dark:text-gray-400">
     +3
   </div>
 </div>`}
@@ -485,13 +489,9 @@ export function AvatarShowcase() {
         <div className="showcase-item">
           <h3 className="font-semibold mb-2">Custom Icon Fallback</h3>
           <div className="flex gap-4 items-center mb-4">
-            <Avatar icon={<UserIcon />} size="lg" />
+            <Avatar icon={<User className="w-6 h-6" />} size="lg" />
             <Avatar 
-              icon={
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                </svg>
-              } 
+              icon={<User className="w-6 h-6" />} 
               size="lg" 
               variant="primary"
             />
