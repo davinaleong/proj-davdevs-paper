@@ -71,8 +71,8 @@
   --surface-secondary-dark: var(--color-gray-800);
   --surface-tertiary-dark: var(--color-gray-700);
   
-  --border-primary-dark: var(--color-gray-700);
-  --border-secondary-dark: var(--color-gray-600);
+  --border-primary-dark: var(--color-gray-800);
+  --border-secondary-dark: var(--color-gray-700);
   
   --text-primary-dark: var(--color-gray-100);
   --text-secondary-dark: var(--color-gray-400);

@@ -40,7 +40,7 @@ body {
 }
 
 .showcase-item {
-  @apply p-4 border border-gray-200 dark:border-gray-700 rounded-lg;
+  @apply p-4 border border-gray-200 dark:border-gray-800 rounded-lg;
 }
 
 .showcase-code {

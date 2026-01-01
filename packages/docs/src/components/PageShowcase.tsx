@@ -18,17 +18,17 @@ export function PageShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-4">Background Variants</h3>
             <div className="space-y-4 mb-4">
-              <div className="h-32 border rounded overflow-hidden">
+              <div className="h-32 border border-gray-200 dark:border-gray-800 rounded overflow-hidden">
                 <Page variant="default" className="h-full">
                   <Text size="sm">Default page background</Text>
                 </Page>
               </div>
-              <div className="h-32 border rounded overflow-hidden">
+              <div className="h-32 border border-gray-200 dark:border-gray-800 rounded overflow-hidden">
                 <Page variant="paper" className="h-full">
                   <Text size="sm">Paper texture background</Text>
                 </Page>
               </div>
-              <div className="h-32 border rounded overflow-hidden">
+              <div className="h-32 border border-gray-200 dark:border-gray-800 rounded overflow-hidden">
                 <Page variant="minimal" className="h-full">
                   <Text size="sm">Minimal clean background</Text>
                 </Page>
@@ -52,17 +52,17 @@ export function PageShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-4">Padding & Centering</h3>
             <div className="space-y-4 mb-4">
-              <div className="h-24 border rounded overflow-hidden">
+              <div className="h-24 border border-gray-200 dark:border-gray-800 rounded overflow-hidden">
                 <Page padding="lg" className="h-full">
                   <Text size="sm">Large padding</Text>
                 </Page>
               </div>
-              <div className="h-24 border rounded overflow-hidden">
+              <div className="h-24 border border-gray-200 dark:border-gray-800 rounded overflow-hidden">
                 <Page maxWidth="md" centered className="h-full">
                   <Text size="sm">Max width with centering</Text>
                 </Page>
               </div>
-              <div className="h-24 border rounded overflow-hidden">
+              <div className="h-24 border border-gray-200 dark:border-gray-800 rounded overflow-hidden">
                 <Page padding="xl" maxWidth="lg" centered className="h-full">
                   <Text size="sm">Combined: padding + max-width + centered</Text>
                 </Page>
@@ -90,7 +90,7 @@ export function PageShowcase() {
         <h2 className="showcase-subtitle">Full Height Pages</h2>
         <div className="showcase-item">
           <h3 className="font-semibold mb-4">Full Viewport Height</h3>
-          <div className="border rounded-lg overflow-hidden mb-6 h-64">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden mb-6 h-64">
             <Page variant="paper" fullHeight padding="lg" className="flex items-center justify-center">
               <div className="text-center">
                 <Text size="lg" className="font-semibold">Full Height Page</Text>
@@ -119,23 +119,23 @@ export function PageShowcase() {
         <h2 className="showcase-subtitle">Usage Examples</h2>
         <div className="showcase-item">
           <h3 className="font-semibold mb-4">Typical Page Structure</h3>
-          <div className="border rounded-lg overflow-hidden mb-6 h-48">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden mb-6 h-48">
             <Page variant="paper" padding="lg">
               <div className="space-y-4">
-                <div className="text-center py-8 border-b border-gray-200">
+                <div className="text-center py-8 border-b border-gray-200 dark:border-gray-800">
                   <Text size="xl" className="font-bold">Welcome</Text>
                   <Text size="md" className="text-gray-600 mt-2">
                     This is a typical page layout with paper background
                   </Text>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded border">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded border border-gray-200 dark:border-gray-700">
                     <Text size="sm" className="font-semibold">Feature 1</Text>
                   </div>
-                  <div className="bg-white p-4 rounded border">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded border border-gray-200 dark:border-gray-700">
                     <Text size="sm" className="font-semibold">Feature 2</Text>
                   </div>
-                  <div className="bg-white p-4 rounded border">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded border border-gray-200 dark:border-gray-700">
                     <Text size="sm" className="font-semibold">Feature 3</Text>
                   </div>
                 </div>
