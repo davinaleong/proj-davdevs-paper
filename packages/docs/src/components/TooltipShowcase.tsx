@@ -50,7 +50,7 @@ const Tooltip = ({
   const isOpen = trigger === 'manual' ? open : isVisible;
 
   const variantStyles = {
-    default: 'bg-gray-900 text-white',
+    default: 'bg-gray-900 dark:bg-gray-800 text-white',
     dark: 'bg-black text-white',
     info: 'bg-blue-600 text-white',
     success: 'bg-green-600 text-white',
@@ -104,9 +104,9 @@ const Tooltip = ({
 // Mock Button component for demonstrations
 const Button = ({ children, variant = 'primary', size = 'md', className = '', ...props }: any) => {
   const variants = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600',
-    secondary: 'bg-gray-500 text-white hover:bg-gray-600',
-    outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+    primary: 'bg-blue-500 dark:bg-blue-600 text-white hover:bg-blue-600 dark:hover:bg-blue-700',
+    secondary: 'bg-gray-500 dark:bg-gray-600 text-white hover:bg-gray-600 dark:hover:bg-gray-700',
+    outline: 'border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
   };
   
   const sizes = {
@@ -127,7 +127,7 @@ const Button = ({ children, variant = 'primary', size = 'md', className = '', ..
 
 const IconButton = ({ children, className = '', ...props }: any) => (
   <button 
-    className={`p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors ${className}`}
+    className={`p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${className}`}
     {...props}
   >
     {children}
@@ -161,7 +161,7 @@ export function TooltipShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Tooltip Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Floating paper hints with smart positioning, accessibility support, and multiple trigger options.
         </p>
       </div>
@@ -208,7 +208,7 @@ export function TooltipShowcase() {
               <div className="flex items-center gap-2">
                 <span>Need help?</span>
                 <Tooltip content="Click here for assistance or check our FAQ section">
-                  <button className="text-gray-400 hover:text-gray-600">
+                  <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                     <HelpIcon />
                   </button>
                 </Tooltip>
@@ -218,7 +218,7 @@ export function TooltipShowcase() {
 {`<div className="flex items-center gap-2">
   <span>Need help?</span>
   <Tooltip content="Click here for assistance">
-    <button className="text-gray-400 hover:text-gray-600">
+    <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
       <HelpIcon />
     </button>
   </Tooltip>
@@ -453,7 +453,7 @@ export function TooltipShowcase() {
                 <input 
                   type="text" 
                   placeholder="Focus me" 
-                  className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </Tooltip>
             </div>
@@ -670,31 +670,31 @@ export function TooltipShowcase() {
             <div className="space-y-4 mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <label className="block text-sm font-medium text-gray-700">Email Address</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label>
                   <Tooltip content="We'll never share your email with anyone else">
-                    <button className="text-gray-400 hover:text-gray-600">
+                    <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                       <InfoIcon />
                     </button>
                   </Tooltip>
                 </div>
                 <input 
                   type="email" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   placeholder="Enter your email"
                 />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <label className="block text-sm font-medium text-gray-700">Password</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
                   <Tooltip content="Password must be at least 8 characters long and contain uppercase, lowercase, and numbers">
-                    <button className="text-gray-400 hover:text-gray-600">
+                    <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                       <HelpIcon />
                     </button>
                   </Tooltip>
                 </div>
                 <input 
                   type="password" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500" 
                   placeholder="Enter your password"
                 />
               </div>
@@ -722,8 +722,8 @@ export function TooltipShowcase() {
                 </IconButton>
               </Tooltip>
               <Tooltip content="Delete this item" variant="danger">
-                <IconButton className="hover:bg-red-100">
-                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <IconButton className="hover:bg-red-100 dark:hover:bg-red-900">
+                  <svg className="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
                 </IconButton>
