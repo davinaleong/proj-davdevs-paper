@@ -64,11 +64,11 @@ export function IconShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Icon Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Paper-friendly iconography with consistent sizing, interactive states, and accessibility features.
         </p>
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8">
-          <p className="text-yellow-800 text-sm">
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-8">
+          <p className="text-yellow-800 dark:text-yellow-200 text-sm">
             <strong>Note:</strong> This is a preview of the Icon component structure. The full implementation would include 
             a comprehensive icon library with SVG optimization, tree-shaking, and custom icon support.
           </p>
@@ -208,19 +208,19 @@ export function IconShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">Background Colors</h3>
             <div className="flex gap-2 mb-4">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <Icon name="home" className="text-blue-600" />
+              <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                <Icon name="home" className="text-blue-600 dark:text-blue-400" />
               </div>
-              <div className="p-2 bg-green-100 rounded-lg">
-                <Icon name="check" className="text-green-600" />
+              <div className="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
+                <Icon name="check" className="text-green-600 dark:text-green-400" />
               </div>
-              <div className="p-2 bg-red-100 rounded-lg">
-                <Icon name="heart" className="text-red-600" />
+              <div className="p-2 bg-red-100 dark:bg-red-900 rounded-lg">
+                <Icon name="heart" className="text-red-600 dark:text-red-400" />
               </div>
             </div>
             <pre className="showcase-code">
-{`<div className="p-2 bg-blue-100 rounded-lg">
-  <Icon name="home" className="text-blue-600" />
+{`<div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
+  <Icon name="home" className="text-blue-600 dark:text-blue-400" />
 </div>`}
             </pre>
           </div>
@@ -238,7 +238,7 @@ export function IconShowcase() {
               <Icon name="star" className="text-gray-400 hover:text-yellow-500 transition-colors cursor-pointer" size="lg" />
               <Icon name="settings" className="text-gray-400 hover:text-blue-500 transition-colors cursor-pointer" size="lg" />
             </div>
-            <p className="text-sm text-gray-600 mb-4">Hover over the icons above</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Hover over the icons above</p>
             <pre className="showcase-code">
 {`<Icon 
   name="heart" 
@@ -250,19 +250,19 @@ export function IconShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">Button Icons</h3>
             <div className="flex gap-2 mb-4">
-              <button className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors">
-                <Icon name="plus" className="text-gray-600" />
+              <button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <Icon name="plus" className="text-gray-600 dark:text-gray-400" />
               </button>
-              <button className="p-2 rounded-lg bg-blue-100 hover:bg-blue-200 transition-colors">
-                <Icon name="check" className="text-blue-600" />
+              <button className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
+                <Icon name="check" className="text-blue-600 dark:text-blue-400" />
               </button>
-              <button className="p-2 rounded-lg bg-red-100 hover:bg-red-200 transition-colors">
-                <Icon name="x" className="text-red-600" />
+              <button className="p-2 rounded-lg bg-red-100 dark:bg-red-900 hover:bg-red-200 dark:hover:bg-red-800 transition-colors">
+                <Icon name="x" className="text-red-600 dark:text-red-400" />
               </button>
             </div>
             <pre className="showcase-code">
-{`<button className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200">
-  <Icon name="plus" className="text-gray-600" />
+{`<button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700">
+  <Icon name="plus" className="text-gray-600 dark:text-gray-400" />
 </button>`}
             </pre>
           </div>
@@ -311,22 +311,22 @@ export function IconShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">In Lists</h3>
             <div className="space-y-2 mb-4">
-              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50">
-                <Icon name="home" className="text-gray-500" size="sm" />
+              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <Icon name="home" className="text-gray-500 dark:text-gray-400" size="sm" />
                 <span>Home</span>
               </div>
-              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50">
-                <Icon name="settings" className="text-gray-500" size="sm" />
+              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <Icon name="settings" className="text-gray-500 dark:text-gray-400" size="sm" />
                 <span>Settings</span>
               </div>
-              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50">
-                <Icon name="mail" className="text-gray-500" size="sm" />
+              <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <Icon name="mail" className="text-gray-500 dark:text-gray-400" size="sm" />
                 <span>Messages</span>
               </div>
             </div>
             <pre className="showcase-code">
-{`<div className="flex items-center gap-3 p-2">
-  <Icon name="home" className="text-gray-500" size="sm" />
+{`<div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+  <Icon name="home" className="text-gray-500 dark:text-gray-400" size="sm" />
   <span>Home</span>
 </div>`}
             </pre>
@@ -344,7 +344,7 @@ export function IconShowcase() {
             <Icon name="x" className="text-red-500" aria-label="Error" role="img" />
             <Icon name="star" className="text-yellow-500" aria-hidden="true" />
           </div>
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             Use <code>aria-label</code> for meaningful icons and <code>aria-hidden="true"</code> for decorative ones.
           </p>
           <pre className="showcase-code">
