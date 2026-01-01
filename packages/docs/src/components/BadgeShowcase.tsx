@@ -5,6 +5,7 @@ const Badge = ({
   children, 
   variant = 'default', 
   size = 'md',
+  shape = 'rounded',
   icon,
   dismissible = false,
   onDismiss,
@@ -12,18 +13,38 @@ const Badge = ({
   // Destructure and exclude non-DOM props
   startIcon,
   endIcon,
-  outline,
-  subtle,
+  outline = false,
+  subtle = false,
   ...domProps 
 }: any) => {
-  const variants = {
-    default: 'bg-gray-100 text-gray-800',
-    primary: 'bg-blue-100 text-blue-800',
-    secondary: 'bg-gray-100 text-gray-800',
-    success: 'bg-green-100 text-green-800',
-    warning: 'bg-yellow-100 text-yellow-800',
-    danger: 'bg-red-100 text-red-800',
-    info: 'bg-blue-100 text-blue-800'
+  const baseVariants = {
+    default: 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200',
+    primary: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200',
+    secondary: 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200',
+    success: 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200',
+    warning: 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200',
+    danger: 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200',
+    info: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+  };
+
+  const subtleVariants = {
+    default: 'bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400',
+    primary: 'bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400',
+    secondary: 'bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400',
+    success: 'bg-green-50 dark:bg-green-950 text-green-600 dark:text-green-400',
+    warning: 'bg-yellow-50 dark:bg-yellow-950 text-yellow-600 dark:text-yellow-400',
+    danger: 'bg-red-50 dark:bg-red-950 text-red-600 dark:text-red-400',
+    info: 'bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400'
+  };
+
+  const outlineVariants = {
+    default: 'bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300',
+    primary: 'bg-transparent border border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300',
+    secondary: 'bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300',
+    success: 'bg-transparent border border-green-300 dark:border-green-600 text-green-700 dark:text-green-300',
+    warning: 'bg-transparent border border-yellow-300 dark:border-yellow-600 text-yellow-700 dark:text-yellow-300',
+    danger: 'bg-transparent border border-red-300 dark:border-red-600 text-red-700 dark:text-red-300',
+    info: 'bg-transparent border border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300'
   };
 
   const sizes = {
@@ -32,9 +53,22 @@ const Badge = ({
     lg: 'px-3 py-1 text-sm'
   };
 
+  const shapes = {
+    rounded: 'rounded-md',
+    pill: 'rounded-full'
+  };
+
+  // Determine which variant set to use
+  let variantClasses = baseVariants[variant];
+  if (subtle) {
+    variantClasses = subtleVariants[variant];
+  } else if (outline) {
+    variantClasses = outlineVariants[variant];
+  }
+
   return (
     <span 
-      className={`inline-flex items-center font-medium rounded-full ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center font-medium ${shapes[shape]} ${variantClasses} ${sizes[size]} ${className}`}
       {...domProps}
     >
       {(icon || startIcon) && <span className="mr-1">{icon || startIcon}</span>}
@@ -82,7 +116,7 @@ export function BadgeShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Badge Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Compact labels for status, categories, counts, and other metadata with paper-inspired design.
         </p>
       </div>
