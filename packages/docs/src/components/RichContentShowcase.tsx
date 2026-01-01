@@ -249,7 +249,7 @@ export function RichContentShowcase() {
         <h2 className="showcase-subtitle">Typography in Context</h2>
         <div className="showcase-item">
           <h3 className="font-semibold mb-4">Complete Article Example</h3>
-          <div className="max-w-4xl mb-6 p-8 bg-white rounded-lg border shadow-sm">
+          <div className="max-w-4xl mb-6 p-8 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
             <H1>The Art of Paper-Inspired Design</H1>
             <Overline className="mt-2">Design Philosophy • 5 min read • December 26, 2025</Overline>
             
