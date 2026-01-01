@@ -28,6 +28,7 @@
 
 .paper-section[data-variant="paper"] {
   background-color: var(--surface-primary, var(--color-white));
+  color: var(--text-primary, var(--color-gray-900));
   border: 1px solid var(--border-primary, var(--color-gray-200));
   /* Add subtle paper texture */
   background-image: 
@@ -39,6 +40,7 @@
 
 .paper-section[data-variant="elevated"] {
   background-color: var(--surface-primary, var(--color-white));
+  color: var(--text-primary, var(--color-gray-900));
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-primary, var(--color-gray-200));
   /* Enhanced shadow for more elevation */
@@ -48,6 +50,7 @@
 }
 
 .paper-section[data-variant="bordered"] {
+  color: var(--text-primary, var(--color-gray-900));
   border: 1px solid var(--border-primary, var(--color-gray-200));
 }
 
@@ -58,7 +61,8 @@
 /* Dark mode variant overrides */
 .dark .paper-section[data-variant="paper"] {
   background-color: var(--surface-primary-dark, var(--color-gray-900));
-  border-color: var(--border-primary-dark, var(--color-gray-700));
+  color: var(--text-primary-dark, var(--color-gray-100));
+  border-color: var(--border-primary-dark, var(--color-gray-800));
   /* Darker paper texture for dark mode */
   background-image: 
     radial-gradient(circle at 25px 25px, rgba(255,255,255,0.02) 2%, transparent 0%), 
@@ -67,7 +71,8 @@
 
 .dark .paper-section[data-variant="elevated"] {
   background-color: var(--surface-primary-dark, var(--color-gray-900));
-  border-color: var(--border-primary-dark, var(--color-gray-700));
+  color: var(--text-primary-dark, var(--color-gray-100));
+  border-color: var(--border-primary-dark, var(--color-gray-800));
   /* Enhanced dark mode shadow */
   box-shadow: 
     0 10px 15px -3px rgb(0 0 0 / 0.3), 
@@ -76,7 +81,8 @@
 }
 
 .dark .paper-section[data-variant="bordered"] {
-  border-color: var(--border-primary-dark, var(--color-gray-700));
+  color: var(--text-primary-dark, var(--color-gray-100));
+  border-color: var(--border-primary-dark, var(--color-gray-800));
 }
 
 /* Padding variants */
@@ -136,7 +142,7 @@
 }
 
 .dark .paper-section[data-divider="true"]::after {
-  background-color: var(--border-primary-dark, var(--color-gray-700));
+  background-color: var(--border-primary-dark, var(--color-gray-800));
 }
 
 /* Responsive adjustments */

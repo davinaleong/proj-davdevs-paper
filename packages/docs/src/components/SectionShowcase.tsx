@@ -215,8 +215,8 @@ export function SectionShowcase() {
         <h2 className="showcase-subtitle">Usage Examples</h2>
         <div className="showcase-item">
           <h3 className="font-semibold mb-4">Page with Multiple Sections</h3>
-          <div className="border rounded-lg overflow-hidden mb-6">
-            <div className="bg-gray-50 p-6 space-y-0">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden mb-6">
+            <div className="bg-gray-50 dark:bg-gray-900 p-6 space-y-0">
               <Section variant="elevated" padding="xl" radius="lg" margin="lg" maxWidth="4xl" centered>
                 <H1>Page Title</H1>
                 <Text className="mt-4">

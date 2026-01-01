@@ -67,6 +67,20 @@
 
 /* Dark mode tokens */
 .dark {
+  /* Override base surface tokens for automatic dark mode */
+  --surface-primary: var(--color-gray-900);
+  --surface-secondary: var(--color-gray-800);
+  --surface-tertiary: var(--color-gray-700);
+  
+  /* Override base border tokens for automatic dark mode */
+  --border-primary: var(--color-gray-800);
+  --border-secondary: var(--color-gray-700);
+  
+  /* Override base text tokens for automatic dark mode */
+  --text-primary: var(--color-gray-100);
+  --text-secondary: var(--color-gray-400);
+  
+  /* Keep the specific dark variants for components that need them */
   --surface-primary-dark: var(--color-gray-900);
   --surface-secondary-dark: var(--color-gray-800);
   --surface-tertiary-dark: var(--color-gray-700);
