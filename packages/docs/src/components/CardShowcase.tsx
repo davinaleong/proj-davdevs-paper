@@ -13,10 +13,10 @@ const Card = ({
   ...domProps 
 }: any) => {
   const variants = {
-    default: 'bg-white border border-gray-200',
-    outlined: 'bg-white border-2 border-gray-300',
-    filled: 'bg-gray-50 border border-gray-200',
-    ghost: 'bg-transparent border border-dashed border-gray-300'
+    default: 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
+    outlined: 'bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600',
+    filled: 'bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600',
+    ghost: 'bg-transparent border border-dashed border-gray-300 dark:border-gray-600'
   };
 
   const elevations = {
@@ -67,7 +67,7 @@ export function CardShowcase() {
             <h3 className="font-semibold mb-2">Default Card</h3>
             <Card className="mb-4">
               <h3 className="font-semibold mb-2">Card Title</h3>
-              <p className="text-gray-600">This is a default card with medium padding and subtle elevation.</p>
+              <p className="text-gray-600 dark:text-gray-300">This is a default card with medium padding and subtle elevation.</p>
             </Card>
             <pre className="showcase-code">
 {`<Card>
@@ -81,7 +81,7 @@ export function CardShowcase() {
             <h3 className="font-semibold mb-2">Outlined Card</h3>
             <Card variant="outlined" className="mb-4">
               <h3 className="font-semibold mb-2">Outlined Style</h3>
-              <p className="text-gray-600">Card with prominent border and transparent background.</p>
+              <p className="text-gray-600 dark:text-gray-300">Card with prominent border and transparent background.</p>
             </Card>
             <pre className="showcase-code">
 {`<Card variant="outlined">
@@ -95,7 +95,7 @@ export function CardShowcase() {
             <h3 className="font-semibold mb-2">Interactive Card</h3>
             <Card interactive elevation="md" className="mb-4 cursor-pointer">
               <h3 className="font-semibold mb-2">Clickable Card</h3>
-              <p className="text-gray-600">This card responds to hover and click interactions.</p>
+              <p className="text-gray-600 dark:text-gray-300">This card responds to hover and click interactions.</p>
             </Card>
             <pre className="showcase-code">
 {`<Card interactive elevation="md">
@@ -115,7 +115,7 @@ export function CardShowcase() {
             <h3 className="font-semibold mb-2">Filled Card</h3>
             <Card variant="filled" className="mb-4">
               <h3 className="font-semibold mb-2">Filled Background</h3>
-              <p className="text-gray-600">Card with subtle background fill and no border.</p>
+              <p className="text-gray-600 dark:text-gray-300">Card with subtle background fill and no border.</p>
             </Card>
             <pre className="showcase-code">
 {`<Card variant="filled">
@@ -129,7 +129,7 @@ export function CardShowcase() {
             <h3 className="font-semibold mb-2">Ghost Card</h3>
             <Card variant="ghost" className="mb-4">
               <h3 className="font-semibold mb-2">Minimal Style</h3>
-              <p className="text-gray-600">Transparent card with no border or shadow.</p>
+              <p className="text-gray-600 dark:text-gray-300">Transparent card with no border or shadow.</p>
             </Card>
             <pre className="showcase-code">
 {`<Card variant="ghost">
@@ -214,7 +214,7 @@ export function CardShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">No Padding</h3>
             <Card padding="none" className="mb-4">
-              <div className="p-4 bg-blue-50 rounded">
+              <div className="p-4 bg-blue-50 dark:bg-blue-900 rounded">
                 <p>Custom inner padding with none padding card.</p>
               </div>
             </Card>
