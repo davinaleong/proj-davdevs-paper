@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../../utils';
 
-interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
+interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type' | 'onChange'> {
   /** Switch size */
   size?: 'sm' | 'md' | 'lg';
   /** Label text */
@@ -14,6 +14,8 @@ interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 
   color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
   /** Paper elevation */
   elevation?: 'none' | 'sm' | 'md' | 'lg';
+  /** Change handler - supports both standard and function-based patterns */
+  onChange?: ((checked: boolean) => void) | ((event: React.ChangeEvent<HTMLInputElement>) => void);
 }
 
 export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
@@ -27,6 +29,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
     elevation = 'none',
     disabled,
     checked,
+    onChange,
     ...props
   },
   ref
@@ -83,6 +86,16 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
           className="sr-only peer"
           disabled={disabled}
           checked={checked}
+          onChange={(e) => {
+            if (onChange) {
+              // Check if it's the function-based pattern by checking the length
+              if (onChange.length === 1) {
+                (onChange as (checked: boolean) => void)(e.target.checked);
+              } else {
+                (onChange as (event: React.ChangeEvent<HTMLInputElement>) => void)(e);
+              }
+            }
+          }}
           {...props}
         />
         
@@ -91,12 +104,12 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
           sizeClasses[size].track,
           {
             [colorClasses[color]]: checked,
-            'bg-gray-300': !checked,
+            'bg-gray-300 dark:bg-gray-600': !checked,
             'opacity-50 cursor-not-allowed': disabled
           }
         )}>
           <div className={cn(
-            'absolute top-0.5 left-0.5 bg-white rounded-full shadow-md transition-transform duration-200',
+            'absolute top-0.5 left-0.5 bg-white dark:bg-gray-200 rounded-full shadow-md transition-transform duration-200',
             sizeClasses[size].thumb,
             {
               [sizeClasses[size].translate]: checked
@@ -108,7 +121,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
       {label && (
         <div className="ml-3">
           <span className={cn(
-            'font-medium text-gray-900',
+            'font-medium text-gray-900 dark:text-gray-100',
             labelSizeClasses[size],
             {
               'opacity-50': disabled
@@ -120,7 +133,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
           {(error || helperText) && (
             <p className={cn(
               'mt-1 text-sm',
-              error ? 'text-red-600' : 'text-gray-500'
+              error ? 'text-red-600 dark:text-red-400' : 'text-gray-500 dark:text-gray-400'
             )}>
               {error || helperText}
             </p>
