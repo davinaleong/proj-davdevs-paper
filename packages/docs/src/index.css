@@ -7,6 +7,9 @@
 /* Import the core theme variables */
 @import '../../core/src/theme.css';
 
+/* Import Input component styles for testing */
+@import '../../basic/src/components/forms/Input/Input.styles.css';
+
 /* Tailwind CSS imports */
 @import "tailwindcss/base";
 @import "tailwindcss/components";

@@ -1,22 +1,22 @@
 .paper-input {
-  @apply relative inline-flex items-center;
+  @apply relative flex flex-col w-full;
 }
 
 .paper-input__field {
-  @apply w-full px-3 py-2 text-gray-900 bg-white border border-gray-300 rounded-lg;
-  @apply placeholder:text-gray-500;
-  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
-  @apply disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed;
+  @apply w-full px-3 py-2 text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg;
+  @apply placeholder:text-gray-500 dark:placeholder:text-gray-400;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-blue-500 dark:focus:border-blue-400;
+  @apply disabled:bg-gray-50 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 disabled:cursor-not-allowed;
   @apply transition-colors duration-200;
 }
 
 /* Variants */
 .paper-input__field--filled {
-  @apply bg-gray-50 border-gray-200;
+  @apply bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600;
 }
 
 .paper-input__field--outlined {
-  @apply bg-transparent border-2 border-gray-300;
+  @apply bg-transparent border-2 border-gray-300 dark:border-gray-600;
 }
 
 /* Sizes */
@@ -34,15 +34,15 @@
 
 /* States */
 .paper-input__field--error {
-  @apply border-red-300 focus:border-red-500 focus:ring-red-500;
+  @apply border-red-300 dark:border-red-500 focus:border-red-500 dark:focus:border-red-400 focus:ring-red-500 dark:focus:ring-red-400;
 }
 
 .paper-input__field--success {
-  @apply border-green-300 focus:border-green-500 focus:ring-green-500;
+  @apply border-green-300 dark:border-green-500 focus:border-green-500 dark:focus:border-green-400 focus:ring-green-500 dark:focus:ring-green-400;
 }
 
 .paper-input__field--warning {
-  @apply border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500;
+  @apply border-yellow-300 dark:border-yellow-500 focus:border-yellow-500 dark:focus:border-yellow-400 focus:ring-yellow-500 dark:focus:ring-yellow-400;
 }
 
 /* With icons */
@@ -57,7 +57,7 @@
 /* Icons */
 .paper-input__start-icon,
 .paper-input__end-icon {
-  @apply absolute top-1/2 transform -translate-y-1/2 text-gray-400;
+  @apply absolute top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500;
   @apply pointer-events-none;
 }
 
@@ -71,11 +71,11 @@
 
 /* Helper text */
 .paper-input__helper {
-  @apply mt-1 text-sm text-gray-600;
+  @apply mt-1 text-sm text-gray-600 dark:text-gray-400;
 }
 
 .paper-input__error {
-  @apply mt-1 text-sm text-red-600;
+  @apply mt-1 text-sm text-red-600 dark:text-red-400;
 }
 
 /* Elevation */
