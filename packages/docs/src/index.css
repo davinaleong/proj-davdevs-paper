@@ -10,6 +10,9 @@
 /* Import Input component styles for testing */
 @import '../../basic/src/components/forms/Input/Input.styles.css';
 
+/* Import Checkbox component styles */
+@import '../../basic/src/components/forms/Checkbox/Checkbox.styles.css';
+
 /* Tailwind CSS imports */
 @import "tailwindcss/base";
 @import "tailwindcss/components";

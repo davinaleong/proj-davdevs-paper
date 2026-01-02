@@ -1,0 +1,144 @@
+.paper-checkbox {
+  @apply relative flex items-start w-full;
+}
+
+.paper-checkbox__input {
+  @apply sr-only;
+}
+
+.paper-checkbox__control {
+  @apply relative flex-shrink-0 cursor-pointer rounded transition-all duration-200;
+  @apply bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600;
+  @apply hover:border-gray-400 dark:hover:border-gray-500;
+  @apply focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-white dark:focus-within:ring-offset-gray-900;
+}
+
+/* Size variants */
+.paper-checkbox__control--sm {
+  @apply w-4 h-4;
+  @apply focus-within:ring-1;
+}
+
+.paper-checkbox__control--md {
+  @apply w-5 h-5;
+}
+
+.paper-checkbox__control--lg {
+  @apply w-6 h-6;
+}
+
+/* Color variants for checked state */
+.paper-checkbox__control--primary.paper-checkbox__control--checked {
+  @apply bg-blue-600 dark:bg-blue-500 border-blue-600 dark:border-blue-500;
+  @apply focus-within:ring-blue-500 dark:focus-within:ring-blue-400;
+}
+
+.paper-checkbox__control--secondary.paper-checkbox__control--checked {
+  @apply bg-gray-600 dark:bg-gray-500 border-gray-600 dark:border-gray-500;
+  @apply focus-within:ring-gray-500 dark:focus-within:ring-gray-400;
+}
+
+.paper-checkbox__control--success.paper-checkbox__control--checked {
+  @apply bg-green-600 dark:bg-green-500 border-green-600 dark:border-green-500;
+  @apply focus-within:ring-green-500 dark:focus-within:ring-green-400;
+}
+
+.paper-checkbox__control--warning.paper-checkbox__control--checked {
+  @apply bg-yellow-600 dark:bg-yellow-500 border-yellow-600 dark:border-yellow-500;
+  @apply focus-within:ring-yellow-500 dark:focus-within:ring-yellow-400;
+}
+
+.paper-checkbox__control--danger.paper-checkbox__control--checked {
+  @apply bg-red-600 dark:bg-red-500 border-red-600 dark:border-red-500;
+  @apply focus-within:ring-red-500 dark:focus-within:ring-red-400;
+}
+
+/* Indeterminate state */
+.paper-checkbox__control--indeterminate {
+  @apply bg-blue-600 dark:bg-blue-500 border-blue-600 dark:border-blue-500;
+  @apply focus-within:ring-blue-500 dark:focus-within:ring-blue-400;
+}
+
+.paper-checkbox__control--secondary.paper-checkbox__control--indeterminate {
+  @apply bg-gray-600 dark:bg-gray-500 border-gray-600 dark:border-gray-500;
+  @apply focus-within:ring-gray-500 dark:focus-within:ring-gray-400;
+}
+
+.paper-checkbox__control--success.paper-checkbox__control--indeterminate {
+  @apply bg-green-600 dark:bg-green-500 border-green-600 dark:border-green-500;
+  @apply focus-within:ring-green-500 dark:focus-within:ring-green-400;
+}
+
+.paper-checkbox__control--warning.paper-checkbox__control--indeterminate {
+  @apply bg-yellow-600 dark:bg-yellow-500 border-yellow-600 dark:border-yellow-500;
+  @apply focus-within:ring-yellow-500 dark:focus-within:ring-yellow-400;
+}
+
+.paper-checkbox__control--danger.paper-checkbox__control--indeterminate {
+  @apply bg-red-600 dark:bg-red-500 border-red-600 dark:border-red-500;
+  @apply focus-within:ring-red-500 dark:focus-within:ring-red-400;
+}
+
+/* Disabled state */
+.paper-checkbox__control--disabled {
+  @apply opacity-50 cursor-not-allowed;
+  @apply bg-gray-100 dark:bg-gray-700 border-gray-200 dark:border-gray-600;
+}
+
+/* Checkmark icon */
+.paper-checkbox__checkmark {
+  @apply absolute inset-0 flex items-center justify-center text-white;
+  @apply opacity-0 transform scale-0 transition-all duration-150 ease-in-out;
+}
+
+.paper-checkbox__control--checked .paper-checkbox__checkmark,
+.paper-checkbox__control--indeterminate .paper-checkbox__checkmark {
+  @apply opacity-100 scale-100;
+}
+
+/* Label container */
+.paper-checkbox__label-container {
+  @apply ml-3 flex flex-col;
+}
+
+.paper-checkbox__label {
+  @apply font-medium text-gray-900 dark:text-gray-100 cursor-pointer transition-colors duration-200;
+}
+
+.paper-checkbox__label--sm {
+  @apply text-sm;
+}
+
+.paper-checkbox__label--md {
+  @apply text-base;
+}
+
+.paper-checkbox__label--lg {
+  @apply text-lg;
+}
+
+.paper-checkbox__label--disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Helper/error text */
+.paper-checkbox__helper {
+  @apply mt-1 text-sm text-gray-500 dark:text-gray-400;
+}
+
+.paper-checkbox__error {
+  @apply mt-1 text-sm text-red-600 dark:text-red-400;
+}
+
+/* Elevation */
+.paper-checkbox--elevated-sm {
+  @apply shadow-sm;
+}
+
+.paper-checkbox--elevated-md {
+  @apply shadow-md;
+}
+
+.paper-checkbox--elevated-lg {
+  @apply shadow-lg;
+}

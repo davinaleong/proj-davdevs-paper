@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect, useRef } from 'react';
 import { cn } from '../../../utils';
 import { CheckboxProps } from './Checkbox.types';
+import './Checkbox.styles.css';
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((
   {
@@ -13,6 +14,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((
     color = 'primary',
     elevation = 'none',
     disabled,
+    checked,
+    onChange,
     ...props
   },
   ref
@@ -27,75 +30,102 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((
     }
   }, [indeterminate, inputRef]);
 
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6'
+  const handleClick = () => {
+    if (disabled) return;
+    
+    if (inputRef && 'current' in inputRef && inputRef.current) {
+      inputRef.current.click();
+    }
   };
 
-  const colorClasses = {
-    primary: 'text-blue-600 focus:ring-blue-500',
-    secondary: 'text-gray-600 focus:ring-gray-500',
-    success: 'text-green-600 focus:ring-green-500',
-    warning: 'text-yellow-600 focus:ring-yellow-500',
-    danger: 'text-red-600 focus:ring-red-500'
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      handleClick();
+    }
   };
 
-  const elevationClasses = {
-    none: '',
-    sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg'
-  };
+  // Icons for different states
+  const CheckIcon = () => (
+    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+    </svg>
+  );
 
-  const labelSizeClasses = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg'
-  };
+  const IndeterminateIcon = () => (
+    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+      <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+    </svg>
+  );
 
   return (
     <div className={cn(
-      'flex items-start',
-      elevationClasses[elevation],
+      'paper-checkbox',
+      {
+        [`paper-checkbox--elevated-${elevation}`]: elevation !== 'none'
+      },
       className
     )}>
-      <div className="flex items-center">
+      <div className="flex items-start">
+        {/* Hidden native input for form integration and accessibility */}
         <input
           ref={inputRef}
           type="checkbox"
-          className={cn(
-            'border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200',
-            sizeClasses[size],
-            colorClasses[color]
-          )}
+          className="paper-checkbox__input"
           disabled={disabled}
+          checked={checked}
+          onChange={onChange}
           {...props}
         />
-      </div>
-      
-      {label && (
-        <div className="ml-3">
-          <label className={cn(
-            'font-medium text-gray-900 cursor-pointer',
-            labelSizeClasses[size],
+        
+        {/* Custom visual checkbox */}
+        <div
+          className={cn(
+            'paper-checkbox__control',
+            `paper-checkbox__control--${size}`,
+            `paper-checkbox__control--${color}`,
             {
-              'opacity-50 cursor-not-allowed': disabled
+              'paper-checkbox__control--checked': checked && !indeterminate,
+              'paper-checkbox__control--indeterminate': indeterminate,
+              'paper-checkbox__control--disabled': disabled
             }
-          )}>
-            {label}
-          </label>
-          
-          {(error || helperText) && (
-            <p className={cn(
-              'mt-1 text-sm',
-              error ? 'text-red-600' : 'text-gray-500'
-            )}>
-              {error || helperText}
-            </p>
           )}
+          onClick={handleClick}
+          onKeyDown={handleKeyDown}
+          tabIndex={disabled ? -1 : 0}
+          role="checkbox"
+          aria-checked={indeterminate ? 'mixed' : checked}
+          aria-disabled={disabled}
+        >
+          <div className="paper-checkbox__checkmark">
+            {indeterminate ? <IndeterminateIcon /> : <CheckIcon />}
+          </div>
         </div>
-      )}
+        
+        {/* Label and helper text */}
+        {label && (
+          <div className="paper-checkbox__label-container">
+            <label
+              className={cn(
+                'paper-checkbox__label',
+                `paper-checkbox__label--${size}`,
+                {
+                  'paper-checkbox__label--disabled': disabled
+                }
+              )}
+              onClick={handleClick}
+            >
+              {label}
+            </label>
+            
+            {(error || helperText) && (
+              <p className={error ? 'paper-checkbox__error' : 'paper-checkbox__helper'}>
+                {error || helperText}
+              </p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 });
