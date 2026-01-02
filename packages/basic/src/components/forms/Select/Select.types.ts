@@ -6,6 +6,12 @@ export interface SelectOption {
   disabled?: boolean;
 }
 
+export interface SelectOptGroup {
+  label: string;
+  options: SelectOption[];
+  disabled?: boolean;
+}
+
 export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
   /** Select variant */
   variant?: 'default' | 'filled' | 'outlined';
@@ -13,8 +19,10 @@ export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement
   size?: 'sm' | 'md' | 'lg';
   /** Select state */
   state?: 'default' | 'error' | 'success' | 'warning';
-  /** Options array */
+  /** Options array - can be flat options or grouped options */
   options?: SelectOption[];
+  /** Grouped options array */
+  optgroups?: SelectOptGroup[];
   /** Placeholder text */
   placeholder?: string;
   /** Leading icon */

@@ -9,6 +9,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((
     size = 'md',
     state = 'default',
     options = [],
+    optgroups = [],
     placeholder,
     startIcon,
     helperText,
@@ -22,12 +23,12 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((
 ) => {
   const finalState = error ? 'error' : state;
 
-  const baseClasses = 'w-full px-3 py-2 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed transition-colors duration-200';
+  const baseClasses = 'w-full px-3 py-2 text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-blue-500 dark:focus:border-blue-400 disabled:bg-gray-50 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 disabled:cursor-not-allowed transition-colors duration-200';
   
   const variantClasses = {
     default: '',
-    filled: 'bg-gray-50 border-gray-200',
-    outlined: 'bg-transparent border-2 border-gray-300'
+    filled: 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600',
+    outlined: 'bg-transparent border-2 border-gray-300 dark:border-gray-600'
   };
 
   const sizeClasses = {
@@ -38,9 +39,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((
 
   const stateClasses = {
     default: '',
-    error: 'border-red-300 focus:border-red-500 focus:ring-red-500',
-    success: 'border-green-300 focus:border-green-500 focus:ring-green-500',
-    warning: 'border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500'
+    error: 'border-red-300 dark:border-red-500 focus:border-red-500 dark:focus:border-red-400 focus:ring-red-500 dark:focus:ring-red-400',
+    success: 'border-green-300 dark:border-green-500 focus:border-green-500 dark:focus:border-green-400 focus:ring-green-500 dark:focus:ring-green-400',
+    warning: 'border-yellow-300 dark:border-yellow-500 focus:border-yellow-500 dark:focus:border-yellow-400 focus:ring-yellow-500 dark:focus:ring-yellow-400'
   };
 
   const elevationClasses = {
@@ -58,7 +59,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((
       className
     )}>
       {startIcon && (
-        <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+        <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
           {startIcon}
         </div>
       )}
@@ -82,6 +83,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((
           </option>
         )}
         
+        {/* Render flat options if provided */}
         {options.map((option) => (
           <option
             key={option.value}
@@ -92,17 +94,36 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((
           </option>
         ))}
         
+        {/* Render optgroups if provided */}
+        {optgroups.map((optgroup, groupIndex) => (
+          <optgroup
+            key={groupIndex}
+            label={optgroup.label}
+            disabled={optgroup.disabled}
+          >
+            {optgroup.options.map((option) => (
+              <option
+                key={option.value}
+                value={option.value}
+                disabled={option.disabled}
+              >
+                {option.label}
+              </option>
+            ))}
+          </optgroup>
+        ))}
+        
         {children}
       </select>
       
-      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
       
       {(error || helperText) && (
-        <div className={`mt-1 text-sm ${error ? 'text-red-600' : 'text-gray-600'}`}>
+        <div className={`mt-1 text-sm ${error ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-400'}`}>
           {error || helperText}
         </div>
       )}

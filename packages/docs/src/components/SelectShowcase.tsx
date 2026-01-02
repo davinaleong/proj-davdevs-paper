@@ -1,116 +1,5 @@
 import React, { useState } from 'react';
-
-// Mock Select component for demonstration
-const Select = ({ 
-  className = '',
-  variant = 'default',
-  size = 'md',
-  state = 'default',
-  placeholder = 'Select an option...',
-  options = [],
-  value,
-  onChange,
-  startIcon,
-  endIcon,
-  helperText,
-  error,
-  disabled,
-  fullWidth = false,
-  elevation = 'none',
-  allowSearch = false,
-  ...domProps 
-}: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const variants = {
-    default: 'bg-white border-gray-300',
-    filled: 'bg-gray-50 border-gray-200',
-    outlined: 'bg-transparent border-2 border-gray-300'
-  };
-
-  const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-3 py-2 text-base',
-    lg: 'px-4 py-3 text-lg'
-  };
-
-  const states = {
-    default: 'focus:border-blue-500 focus:ring-blue-500',
-    error: 'border-red-300 focus:border-red-500 focus:ring-red-500',
-    success: 'border-green-300 focus:border-green-500 focus:ring-green-500',
-    warning: 'border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500'
-  };
-
-  const elevations = {
-    none: '',
-    sm: 'shadow-[0_1px_3px_0_rgba(0,0,0,0.1)]',
-    md: 'shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]',
-    lg: 'shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]'
-  };
-
-  const finalState = error ? 'error' : state;
-  const selectedOption = options.find((opt: any) => opt.value === value);
-  const displayValue = selectedOption ? selectedOption.label : placeholder;
-
-  const ChevronIcon = () => (
-    <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-
-  return (
-    <div className={`relative ${fullWidth ? 'w-full' : ''} ${className}`}>
-      <div className="relative">
-        {startIcon && (
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none z-10">
-            {startIcon}
-          </div>
-        )}
-        
-        <button
-          type="button"
-          className={`w-full text-left border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0 disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed transition-all duration-200 ${variants[variant]} ${sizes[size]} ${states[finalState]} ${elevations[elevation]} ${startIcon ? 'pl-10' : ''} pr-10 ${!selectedOption ? 'text-gray-500' : ''}`}
-          onClick={() => !disabled && setIsOpen(!isOpen)}
-          disabled={disabled}
-          {...domProps}
-        >
-          {displayValue}
-        </button>
-        
-        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
-          {endIcon || <ChevronIcon />}
-        </div>
-      </div>
-      
-      {/* Dropdown */}
-      {isOpen && !disabled && (
-        <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
-          <div className="max-h-60 overflow-y-auto">
-            {options.map((option: any, index: number) => (
-              <button
-                key={option.value || index}
-                type="button"
-                className={`w-full text-left px-3 py-2 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition-colors ${option.value === value ? 'bg-blue-50 text-blue-700' : ''} ${index === 0 ? 'rounded-t-lg' : ''} ${index === options.length - 1 ? 'rounded-b-lg' : ''}`}
-                onClick={() => {
-                  onChange?.(option.value);
-                  setIsOpen(false);
-                }}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-      
-      {(error || helperText) && (
-        <div className={`mt-1 text-sm ${error ? 'text-red-600' : 'text-gray-600'}`}>
-          {error || helperText}
-        </div>
-      )}
-    </div>
-  );
-};
+import { Select } from '@davdevs/paper-basic';
 
 // Sample options for demonstrations
 const countryOptions = [
@@ -137,6 +26,64 @@ const teamOptions = [
   { value: 'sales', label: 'Sales Team' },
 ];
 
+// Grouped options for optgroup demonstrations
+const foodOptgroups = [
+  {
+    label: 'Fruits',
+    options: [
+      { value: 'apple', label: 'Apple' },
+      { value: 'banana', label: 'Banana' },
+      { value: 'orange', label: 'Orange' },
+      { value: 'grape', label: 'Grape' }
+    ]
+  },
+  {
+    label: 'Vegetables',
+    options: [
+      { value: 'carrot', label: 'Carrot' },
+      { value: 'lettuce', label: 'Lettuce' },
+      { value: 'tomato', label: 'Tomato' },
+      { value: 'broccoli', label: 'Broccoli' }
+    ]
+  },
+  {
+    label: 'Grains',
+    options: [
+      { value: 'rice', label: 'Rice' },
+      { value: 'wheat', label: 'Wheat' },
+      { value: 'oats', label: 'Oats' }
+    ]
+  }
+];
+
+const regionOptgroups = [
+  {
+    label: 'North America',
+    options: [
+      { value: 'us', label: 'United States' },
+      { value: 'ca', label: 'Canada' },
+      { value: 'mx', label: 'Mexico' }
+    ]
+  },
+  {
+    label: 'Europe',
+    options: [
+      { value: 'uk', label: 'United Kingdom' },
+      { value: 'de', label: 'Germany' },
+      { value: 'fr', label: 'France' },
+      { value: 'it', label: 'Italy' }
+    ]
+  },
+  {
+    label: 'Asia Pacific',
+    options: [
+      { value: 'jp', label: 'Japan' },
+      { value: 'au', label: 'Australia' },
+      { value: 'sg', label: 'Singapore' }
+    ]
+  }
+];
+
 // Icons for demonstration
 const LocationIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +103,9 @@ export function SelectShowcase() {
     country: '',
     priority: 'medium',
     team: '',
-    size: ''
+    size: '',
+    food: '',
+    region: ''
   });
 
   return (
@@ -206,6 +155,76 @@ export function SelectShowcase() {
   placeholder="Select priority"
   options={priorityOptions}
   helperText="Choose priority level"
+/>`}
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      {/* Option Groups */}
+      <section className="showcase-section">
+        <h2 className="showcase-subtitle">Option Groups (Optgroups)</h2>
+        <div className="showcase-grid grid-cols-1 md:grid-cols-2">
+          <div className="showcase-item">
+            <h3 className="font-semibold mb-2">Food Categories</h3>
+            <Select 
+              placeholder="Choose food type"
+              optgroups={foodOptgroups}
+              value={selectValues.food}
+              onChange={(value: string) => setSelectValues({...selectValues, food: value})}
+              className="mb-4" 
+            />
+            <pre className="showcase-code">
+{`<Select 
+  placeholder="Choose food type"
+  optgroups={[
+    {
+      label: 'Fruits',
+      options: [
+        { value: 'apple', label: 'Apple' },
+        { value: 'banana', label: 'Banana' }
+      ]
+    },
+    {
+      label: 'Vegetables',
+      options: [
+        { value: 'carrot', label: 'Carrot' },
+        { value: 'lettuce', label: 'Lettuce' }
+      ]
+    }
+  ]}
+/>`}
+            </pre>
+          </div>
+
+          <div className="showcase-item">
+            <h3 className="font-semibold mb-2">Regional Groups</h3>
+            <Select 
+              placeholder="Choose region"
+              optgroups={regionOptgroups}
+              value={selectValues.region}
+              onChange={(value: string) => setSelectValues({...selectValues, region: value})}
+              className="mb-4"
+            />
+            <pre className="showcase-code">
+{`<Select 
+  placeholder="Choose region"
+  optgroups={[
+    {
+      label: 'North America',
+      options: [
+        { value: 'us', label: 'United States' },
+        { value: 'ca', label: 'Canada' }
+      ]
+    },
+    {
+      label: 'Europe',
+      options: [
+        { value: 'uk', label: 'United Kingdom' },
+        { value: 'de', label: 'Germany' }
+      ]
+    }
+  ]}
 />`}
             </pre>
           </div>
