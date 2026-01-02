@@ -13,6 +13,9 @@
 /* Import Checkbox component styles */
 @import '../../basic/src/components/forms/Checkbox/Checkbox.styles.css';
 
+/* Import Radio component styles */
+@import '../../basic/src/components/forms/Radio/Radio.styles.css';
+
 /* Tailwind CSS imports */
 @import "tailwindcss/base";
 @import "tailwindcss/components";

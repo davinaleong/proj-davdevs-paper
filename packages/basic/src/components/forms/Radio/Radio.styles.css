@@ -1,0 +1,143 @@
+.paper-radio {
+  @apply relative flex items-start w-full;
+}
+
+.paper-radio__input {
+  @apply sr-only;
+}
+
+.paper-radio__control {
+  @apply relative flex-shrink-0 cursor-pointer rounded-full transition-all duration-200;
+  @apply bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600;
+  @apply hover:border-gray-400 dark:hover:border-gray-500;
+  @apply focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-white dark:focus-within:ring-offset-gray-900;
+}
+
+/* Size variants */
+.paper-radio__control--sm {
+  @apply w-4 h-4;
+  @apply focus-within:ring-1;
+}
+
+.paper-radio__control--md {
+  @apply w-5 h-5;
+}
+
+.paper-radio__control--lg {
+  @apply w-6 h-6;
+}
+
+/* Color variants for checked state */
+.paper-radio__control--primary.paper-radio__control--checked {
+  @apply bg-blue-600 dark:bg-blue-500 border-blue-600 dark:border-blue-500;
+  @apply focus-within:ring-blue-500 dark:focus-within:ring-blue-400;
+}
+
+.paper-radio__control--secondary.paper-radio__control--checked {
+  @apply bg-gray-600 dark:bg-gray-500 border-gray-600 dark:border-gray-500;
+  @apply focus-within:ring-gray-500 dark:focus-within:ring-gray-400;
+}
+
+.paper-radio__control--success.paper-radio__control--checked {
+  @apply bg-green-600 dark:bg-green-500 border-green-600 dark:border-green-500;
+  @apply focus-within:ring-green-500 dark:focus-within:ring-green-400;
+}
+
+.paper-radio__control--warning.paper-radio__control--checked {
+  @apply bg-yellow-600 dark:bg-yellow-500 border-yellow-600 dark:border-yellow-500;
+  @apply focus-within:ring-yellow-500 dark:focus-within:ring-yellow-400;
+}
+
+.paper-radio__control--danger.paper-radio__control--checked {
+  @apply bg-red-600 dark:bg-red-500 border-red-600 dark:border-red-500;
+  @apply focus-within:ring-red-500 dark:focus-within:ring-red-400;
+}
+
+/* Disabled state */
+.paper-radio__control--disabled {
+  @apply opacity-50 cursor-not-allowed;
+  @apply bg-gray-100 dark:bg-gray-700 border-gray-200 dark:border-gray-600;
+}
+
+/* Radio dot */
+.paper-radio__dot {
+  @apply absolute inset-0 flex items-center justify-center text-white;
+  @apply opacity-0 transform scale-0 transition-all duration-150 ease-in-out;
+}
+
+.paper-radio__control--checked .paper-radio__dot {
+  @apply opacity-100 scale-100;
+}
+
+.paper-radio__dot::before {
+  content: '';
+  @apply w-1.5 h-1.5 bg-current rounded-full;
+}
+
+.paper-radio__control--sm .paper-radio__dot::before {
+  @apply w-1 h-1;
+}
+
+.paper-radio__control--lg .paper-radio__dot::before {
+  @apply w-2 h-2;
+}
+
+/* Label container */
+.paper-radio__label-container {
+  @apply ml-3 flex flex-col;
+}
+
+.paper-radio__label {
+  @apply font-medium text-gray-900 dark:text-gray-100 cursor-pointer transition-colors duration-200;
+}
+
+.paper-radio__label--sm {
+  @apply text-sm;
+}
+
+.paper-radio__label--md {
+  @apply text-base;
+}
+
+.paper-radio__label--lg {
+  @apply text-lg;
+}
+
+.paper-radio__label--disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Helper/error text */
+.paper-radio__helper {
+  @apply mt-1 text-sm text-gray-500 dark:text-gray-400;
+}
+
+.paper-radio__error {
+  @apply mt-1 text-sm text-red-600 dark:text-red-400;
+}
+
+/* RadioGroup */
+.paper-radio-group {
+  @apply space-y-3;
+}
+
+.paper-radio-group--horizontal {
+  @apply flex flex-wrap gap-6 space-y-0;
+}
+
+.paper-radio-group__error {
+  @apply text-sm text-red-600 dark:text-red-400 mt-2;
+}
+
+/* Elevation */
+.paper-radio--elevated-sm {
+  @apply shadow-sm;
+}
+
+.paper-radio--elevated-md {
+  @apply shadow-md;
+}
+
+.paper-radio--elevated-lg {
+  @apply shadow-lg;
+}

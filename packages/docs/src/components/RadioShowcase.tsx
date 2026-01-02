@@ -1,131 +1,5 @@
 import React, { useState } from 'react';
-
-// Mock Radio component for demonstration
-const Radio = ({ 
-  className = '',
-  size = 'md',
-  color = 'primary',
-  checked = false,
-  disabled = false,
-  error = false,
-  label,
-  description,
-  value,
-  onChange,
-  name,
-  id,
-  ...domProps 
-}: any) => {
-  const sizes = {
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6'
-  };
-
-  const colors = {
-    primary: 'text-blue-600 focus:ring-blue-500',
-    secondary: 'text-gray-600 focus:ring-gray-500',
-    success: 'text-green-600 focus:ring-green-500',
-    warning: 'text-yellow-600 focus:ring-yellow-500',
-    danger: 'text-red-600 focus:ring-red-500'
-  };
-
-  const labelSizes = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg'
-  };
-
-  const radioId = id || `radio-${Math.random().toString(36).substr(2, 9)}`;
-  const finalColor = error ? 'danger' : color;
-
-  return (
-    <div className={`flex items-start gap-2 ${className}`}>
-      <div className="flex items-center h-5">
-        <input
-          type="radio"
-          id={radioId}
-          name={name}
-          value={value}
-          checked={checked}
-          onChange={onChange}
-          disabled={disabled}
-          className={`border-2 focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 ${sizes[size]} ${colors[finalColor]} ${error ? 'border-red-300' : 'border-gray-300'}`}
-          {...domProps}
-        />
-      </div>
-      
-      {(label || description) && (
-        <div className="flex flex-col">
-          {label && (
-            <label 
-              htmlFor={radioId}
-              className={`font-medium cursor-pointer ${labelSizes[size]} ${disabled ? 'text-gray-400 cursor-not-allowed' : error ? 'text-red-700' : 'text-gray-900'}`}
-            >
-              {label}
-            </label>
-          )}
-          {description && (
-            <p className={`text-gray-600 ${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-sm' : 'text-sm'} ${disabled ? 'text-gray-400' : ''}`}>
-              {description}
-            </p>
-          )}
-        </div>
-      )}
-    </div>
-  );
-};
-
-// Mock RadioGroup component for demonstration
-const RadioGroup = ({ 
-  className = '',
-  orientation = 'vertical',
-  gap = 'md',
-  children,
-  value,
-  onChange,
-  name,
-  error,
-  label,
-  description,
-  ...domProps 
-}: any) => {
-  const gaps = {
-    sm: 'gap-2',
-    md: 'gap-3',
-    lg: 'gap-4'
-  };
-
-  const orientationClass = orientation === 'horizontal' ? 'flex-row flex-wrap' : 'flex-col';
-
-  return (
-    <fieldset className={className} {...domProps}>
-      {label && (
-        <legend className={`font-medium mb-2 ${error ? 'text-red-700' : 'text-gray-900'}`}>
-          {label}
-        </legend>
-      )}
-      {description && (
-        <p className={`text-sm mb-3 ${error ? 'text-red-600' : 'text-gray-600'}`}>
-          {description}
-        </p>
-      )}
-      <div className={`flex ${orientationClass} ${gaps[gap]}`}>
-        {React.Children.map(children, (child) => {
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child, {
-              name: name,
-              checked: child.props.value === value,
-              onChange: (e: any) => onChange?.(e.target.value),
-              error: error
-            });
-          }
-          return child;
-        })}
-      </div>
-    </fieldset>
-  );
-};
+import { Radio, RadioGroup } from '@davdevs/paper-basic';
 
 export function RadioShowcase() {
   const [singleValue, setSingleValue] = useState('');
@@ -188,7 +62,7 @@ export function RadioShowcase() {
   name="described"
   value="option-1"
   label="Option with description"
-  description="Additional context"
+  helperText="Additional context"
 />`}
             </pre>
           </div>
@@ -203,7 +77,6 @@ export function RadioShowcase() {
             <h3 className="font-semibold mb-2">Subscription Plans</h3>
             <RadioGroup 
               label="Choose your plan"
-              description="Select the plan that best fits your needs"
               name="subscription"
               value={planValue}
               onChange={setPlanValue}
@@ -212,17 +85,17 @@ export function RadioShowcase() {
               <Radio 
                 value="free"
                 label="Free Plan"
-                description="Perfect for getting started"
+                helperText="Perfect for getting started"
               />
               <Radio 
                 value="pro"
                 label="Pro Plan"
-                description="For professional users"
+                helperText="For professional users"
               />
               <Radio 
                 value="enterprise"
                 label="Enterprise Plan"
-                description="For large organizations"
+                helperText="For large organizations"
               />
             </RadioGroup>
             <pre className="showcase-code">
@@ -251,17 +124,17 @@ export function RadioShowcase() {
               <Radio 
                 value="credit-card"
                 label="Credit Card"
-                description="Pay with Visa, Mastercard, or Amex"
+                helperText="Pay with Visa, Mastercard, or Amex"
               />
               <Radio 
                 value="paypal"
                 label="PayPal"
-                description="Pay securely with your PayPal account"
+                helperText="Pay securely with your PayPal account"
               />
               <Radio 
                 value="bank-transfer"
                 label="Bank Transfer"
-                description="Direct transfer from your bank account"
+                helperText="Direct transfer from your bank account"
               />
             </RadioGroup>
             <pre className="showcase-code">
@@ -491,7 +364,7 @@ export function RadioShowcase() {
         <h2 className="showcase-subtitle">Practical Example</h2>
         <div className="showcase-item">
           <h3 className="font-semibold mb-4">Contact Preferences</h3>
-          <div className="p-6 border border-gray-200 rounded-lg bg-gray-50">
+          <div className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800">
             <RadioGroup 
               label="How would you like to be contacted?"
               description="We'll use this method for important updates about your account"
@@ -503,7 +376,7 @@ export function RadioShowcase() {
               <Radio 
                 value="email"
                 label="Email"
-                description="Send updates to your registered email address"
+                helperText="Send updates to your registered email address"
               />
               <Radio 
                 value="sms"
@@ -513,18 +386,18 @@ export function RadioShowcase() {
               <Radio 
                 value="phone"
                 label="Phone Call"
-                description="Call you directly for important matters"
+                helperText="Call you directly for important matters"
               />
               <Radio 
                 value="none"
                 label="No Contact"
-                description="Only contact me if absolutely necessary"
+                helperText="Only contact me if absolutely necessary"
               />
             </RadioGroup>
             
             {preferenceValue && (
-              <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded">
-                <p className="text-sm text-blue-800">
+              <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded">
+                <p className="text-sm text-blue-800 dark:text-blue-200">
                   Selected: <strong>{preferenceValue}</strong>
                 </p>
               </div>

@@ -22,13 +22,19 @@ export interface RadioGroupProps {
   value?: string;
   /** Change handler */
   onChange?: (value: string) => void;
-  /** Radio options */
-  options: Array<{
+  /** Radio options (alternative to children) */
+  options?: Array<{
     value: string;
     label: ReactNode;
     disabled?: boolean;
     helperText?: string;
   }>;
+  /** Children Radio components */
+  children?: ReactNode;
+  /** Group label */
+  label?: string;
+  /** Group description */
+  description?: string;
   /** Group size */
   size?: 'sm' | 'md' | 'lg';
   /** Color variant */
