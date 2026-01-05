@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import { X } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 import type { DrawerProps, DrawerRef } from './Drawer.types';
 
@@ -66,7 +67,7 @@ export const Drawer = React.forwardRef<DrawerRef, DrawerProps>(
     const baseClasses = [
       'paper-drawer',
       'fixed',
-      'bg-white',
+      'bg-white dark:bg-black',
       'outline-none',
       'transition-transform',
       'duration-300',
@@ -149,10 +150,10 @@ export const Drawer = React.forwardRef<DrawerRef, DrawerProps>(
       currentSide.sizes[size],
       elevationClasses[elevation],
       slideInClasses[side],
-      bordered && side === 'left' && 'border-r border-gray-200',
-      bordered && side === 'right' && 'border-l border-gray-200',
-      bordered && side === 'top' && 'border-b border-gray-200',
-      bordered && side === 'bottom' && 'border-t border-gray-200',
+      bordered && side === 'left' && 'border-r border-gray-200 dark:border-gray-800',
+      bordered && side === 'right' && 'border-l border-gray-200 dark:border-gray-800',
+      bordered && side === 'top' && 'border-b border-gray-200 dark:border-gray-800',
+      bordered && side === 'bottom' && 'border-t border-gray-200 dark:border-gray-800',
       className
     );
 
@@ -182,22 +183,20 @@ export const Drawer = React.forwardRef<DrawerRef, DrawerProps>(
         >
           {/* Header */}
           {(title || showCloseButton) && (
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
               {title && (
-                <h2 id="drawer-title" className="text-lg font-semibold text-gray-900">
+                <h2 id="drawer-title" className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   {title}
                 </h2>
               )}
               {showCloseButton && (
                 <button
                   type="button"
-                  className="p-1 ml-3 rounded-sm text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600 transition-colors"
+                  className="p-1 ml-3 rounded-sm text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-500 focus:outline-none focus:text-gray-600 dark:focus:text-gray-500 transition-colors"
                   onClick={onClose}
                   aria-label="Close drawer"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X className="w-6 h-6" />
                 </button>
               )}
             </div>

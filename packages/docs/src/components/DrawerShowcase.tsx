@@ -1,78 +1,7 @@
 import React, { useState } from 'react';
 import { Gauge, Briefcase, Users, ChartSpline, Cog } from 'lucide-react';
-
-// Mock Drawer component for demonstration
-const Drawer = ({ 
-  children, 
-  open = false, 
-  onClose, 
-  side = 'right', 
-  size = 'md', 
-  title, 
-  showCloseButton = true,
-  className = '' 
-}: any) => {
-  if (!open) return null;
-
-  const sides = {
-    left: 'inset-y-0 left-0',
-    right: 'inset-y-0 right-0',
-    top: 'inset-x-0 top-0',
-    bottom: 'inset-x-0 bottom-0'
-  };
-
-  const sizes = {
-    sm: side === 'left' || side === 'right' ? 'w-64' : 'h-64',
-    md: side === 'left' || side === 'right' ? 'w-80' : 'h-80',
-    lg: side === 'left' || side === 'right' ? 'w-96' : 'h-96',
-    xl: side === 'left' || side === 'right' ? 'w-[32rem]' : 'h-[32rem]'
-  };
-
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose?.();
-    }
-  };
-
-  return (
-    <>
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-        onClick={handleBackdropClick}
-      />
-
-      {/* Drawer */}
-      <div className={`fixed z-50 bg-white shadow-xl border-gray-200 ${sides[side]} ${sizes[size]} ${
-        side === 'left' ? 'border-r' : 
-        side === 'right' ? 'border-l' : 
-        side === 'top' ? 'border-b' : 'border-t'
-      } ${className}`}>
-        {(title || showCloseButton) && (
-          <div className="flex items-center justify-between p-6 border-b border-gray-200">
-            {title && (
-              <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-            )}
-            {showCloseButton && (
-              <button
-                type="button"
-                className="p-1 ml-3 rounded-sm text-gray-400 hover:text-gray-600 transition-colors"
-                onClick={onClose}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            )}
-          </div>
-        )}
-        <div className="flex-1 overflow-y-auto p-6">
-          {children}
-        </div>
-      </div>
-    </>
-  );
-};
+import { Drawer } from '../../../basic/src/components/feedback';
+import { Select, Checkbox, Label } from '../../../basic/src/components/forms';
 
 export function DrawerShowcase() {
   const [drawers, setDrawers] = useState<{[key: string]: boolean}>({});
@@ -89,7 +18,7 @@ export function DrawerShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Drawer Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Display content in a sliding panel with paper-inspired design, focus management, and smooth animations.
         </p>
       </div>
@@ -283,7 +212,7 @@ export function DrawerShowcase() {
         title="Left Drawer"
       >
         <p>This drawer slides in from the left side.</p>
-        <p className="mt-4 text-gray-600">Perfect for navigation menus or secondary content.</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">Perfect for navigation menus or secondary content.</p>
       </Drawer>
 
       <Drawer 
@@ -293,7 +222,7 @@ export function DrawerShowcase() {
         title="Right Drawer"
       >
         <p>This drawer slides in from the right side.</p>
-        <p className="mt-4 text-gray-600">Commonly used for settings, filters, or additional information.</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">Commonly used for settings, filters, or additional information.</p>
       </Drawer>
 
       <Drawer 
@@ -303,7 +232,7 @@ export function DrawerShowcase() {
         title="Top Drawer"
       >
         <p>This drawer slides in from the top.</p>
-        <p className="mt-4 text-gray-600">Useful for notifications or quick actions.</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">Useful for notifications or quick actions.</p>
       </Drawer>
 
       <Drawer 
@@ -313,7 +242,7 @@ export function DrawerShowcase() {
         title="Bottom Drawer"
       >
         <p>This drawer slides in from the bottom.</p>
-        <p className="mt-4 text-gray-600">Great for mobile interfaces and quick forms.</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">Great for mobile interfaces and quick forms.</p>
       </Drawer>
 
       <Drawer 
@@ -344,7 +273,7 @@ export function DrawerShowcase() {
         title="Large Drawer"
       >
         <p>This is a large drawer (384px wide).</p>
-        <p className="mt-4 text-gray-600">More space for complex content.</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">More space for complex content.</p>
       </Drawer>
 
       <Drawer 
@@ -355,7 +284,7 @@ export function DrawerShowcase() {
         title="Extra Large Drawer"
       >
         <p>This is an extra large drawer (512px wide).</p>
-        <p className="mt-4 text-gray-600">Maximum space for detailed forms or content.</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">Maximum space for detailed forms or content.</p>
       </Drawer>
 
       <Drawer 
@@ -365,23 +294,23 @@ export function DrawerShowcase() {
         title="Navigation"
       >
         <nav className="space-y-2">
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 hover:dark:bg-gray-900 transition-colors">
             <Gauge size={16} />
             Dashboard
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 hover:dark:bg-gray-900 transition-colors">
             <Briefcase size={16} />
             Projects
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 hover:dark:bg-gray-900 transition-colors">
             <Users size={16} />
             Team
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 hover:dark:bg-gray-900 transition-colors">
             <ChartSpline size={16} />
             Analytics
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 hover:dark:bg-gray-900 transition-colors">
             <Cog size={16} />
             Settings
           </a>
@@ -397,44 +326,44 @@ export function DrawerShowcase() {
       >
         <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium mb-2">Theme</label>
-            <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <Label className="block text-sm font-medium mb-2">Theme</Label>
+            <Select>
               <option>Light</option>
               <option>Dark</option>
               <option>System</option>
-            </select>
+            </Select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">Language</label>
-            <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <Label className="block text-sm font-medium mb-2">Language</Label>
+            <Select>
               <option>English</option>
               <option>Spanish</option>
               <option>French</option>
-            </select>
+            </Select>
           </div>
           <div className="space-y-3">
             <h3 className="text-sm font-medium">Notifications</h3>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" defaultChecked />
+            <Label className="flex gap-1 items-center">
+              <Checkbox defaultChecked />
               Email notifications
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
+            </Label>
+            <Label className="flex gap-1 items-center">
+              <Checkbox />
               Push notifications
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" defaultChecked />
+            </Label>
+            <Label className="flex gap-1 items-center">
+              <Checkbox defaultChecked />
               Marketing emails
-            </label>
+            </Label>
           </div>
-          <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200">
+          <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200 dark:border-gray-800">
             <button 
-              className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+              className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-800 hover:dark:text-gray-200 transition-colors"
               onClick={() => closeDrawer('settings')}
             >
               Cancel
             </button>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+            <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
               Save Settings
             </button>
           </div>
