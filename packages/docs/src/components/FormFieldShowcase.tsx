@@ -503,7 +503,7 @@ export function FormFieldShowcase() {
           <h3 className="font-semibold mb-4">Form Field Guidelines</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h4 className="font-medium text-green-700">✅ Do</h4>
+              <h4 className="font-medium text-green-700 dark:text-green-300">✅ Do</h4>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-disc list-inside">
                 <li>Use clear, descriptive labels</li>
                 <li>Provide helpful text for complex fields</li>
@@ -514,7 +514,7 @@ export function FormFieldShowcase() {
               </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="font-medium text-red-700">❌ Don't</h4>
+              <h4 className="font-medium text-red-700 dark:text-red-300">❌ Don't</h4>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-disc list-inside">
                 <li>Use vague or technical labels</li>
                 <li>Show error messages before user interaction</li>
