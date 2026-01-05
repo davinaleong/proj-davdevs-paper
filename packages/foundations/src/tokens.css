@@ -17,6 +17,7 @@
 @import "./components/Page/Page.styles.css";
 @import "./components/Section/Section.styles.css";
 @import "./components/Grid/Grid.styles.css";
+@import "./components/Skeleton/Skeleton.styles.css";
 
 /* Basic tokens for development */
 :root {
@@ -37,6 +38,7 @@
   --color-gray-700: #374151;
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
+  --color-gray-950: #030712;
   
   /* Surface colors */
   --surface-primary: var(--color-white);
@@ -63,6 +65,29 @@
   --transition-colors: color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out;
   --transition-shadow: box-shadow 150ms ease-in-out;
   --transition-transform: transform 150ms ease-in-out;
+  
+  /* Skeleton tokens */
+  --skeleton-bg: var(--color-gray-200);
+  --skeleton-bg-dark: var(--color-gray-800);
+  --skeleton-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  /* Skeleton preset sizes */
+  --skeleton-height-xs: 0.75rem;    /* 12px - small text */
+  --skeleton-height-sm: 1rem;       /* 16px - default text */
+  --skeleton-height-base: 2.5rem;   /* 40px - medium elements */
+  --skeleton-height-md: 3rem;       /* 48px - larger elements */
+  --skeleton-height-lg: 4rem;       /* 64px - large elements */
+  --skeleton-height-xl: 6rem;       /* 96px - extra large */
+  --skeleton-height-2xl: 8rem;      /* 128px - very large */
+  
+  --skeleton-width-xs: 3rem;        /* 48px */
+  --skeleton-width-sm: 4rem;        /* 64px */
+  --skeleton-width-base: 6rem;      /* 96px */
+  --skeleton-width-md: 8rem;        /* 128px */
+  --skeleton-width-lg: 12rem;       /* 192px */
+  --skeleton-width-xl: 16rem;       /* 256px */
+  --skeleton-width-2xl: 20rem;      /* 320px */
+  --skeleton-width-full: 100%;
 }
 
 /* Dark mode tokens */
@@ -79,6 +104,9 @@
   /* Override base text tokens for automatic dark mode */
   --text-primary: var(--color-gray-100);
   --text-secondary: var(--color-gray-400);
+  
+  /* Skeleton dark mode */
+  --skeleton-bg: var(--skeleton-bg-dark);
   
   /* Keep the specific dark variants for components that need them */
   --surface-primary-dark: var(--color-gray-900);

@@ -1,0 +1,170 @@
+/* =========================================================
+   Skeleton Component Styles
+   Foundation-level styles with design system tokens
+   ========================================================= */
+
+/* Base skeleton styles */
+.skeleton {
+  background-color: var(--skeleton-bg);
+  overflow: hidden;
+  display: block;
+  min-height: 1px;
+}
+
+.skeleton--animate {
+  animation: var(--skeleton-animation);
+}
+
+/* Keyframe for pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Keyframe for wave animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton--wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton--wave::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Variant styles */
+.skeleton--text {
+  border-radius: 0.25rem;
+  height: var(--skeleton-height-sm);
+}
+
+.skeleton--rectangular {
+  border-radius: 0;
+}
+
+.skeleton--rounded {
+  border-radius: 0.5rem;
+}
+
+.skeleton--circular {
+  border-radius: 9999px;
+}
+
+/* Size presets - Heights */
+.skeleton--height-xs {
+  height: var(--skeleton-height-xs);
+}
+
+.skeleton--height-sm {
+  height: var(--skeleton-height-sm);
+}
+
+.skeleton--height-base {
+  height: var(--skeleton-height-base);
+}
+
+.skeleton--height-md {
+  height: var(--skeleton-height-md);
+}
+
+.skeleton--height-lg {
+  height: var(--skeleton-height-lg);
+}
+
+.skeleton--height-xl {
+  height: var(--skeleton-height-xl);
+}
+
+.skeleton--height-2xl {
+  height: var(--skeleton-height-2xl);
+}
+
+/* Size presets - Widths */
+.skeleton--width-xs {
+  width: var(--skeleton-width-xs);
+}
+
+.skeleton--width-sm {
+  width: var(--skeleton-width-sm);
+}
+
+.skeleton--width-base {
+  width: var(--skeleton-width-base);
+}
+
+.skeleton--width-md {
+  width: var(--skeleton-width-md);
+}
+
+.skeleton--width-lg {
+  width: var(--skeleton-width-lg);
+}
+
+.skeleton--width-xl {
+  width: var(--skeleton-width-xl);
+}
+
+.skeleton--width-2xl {
+  width: var(--skeleton-width-2xl);
+}
+
+.skeleton--width-full {
+  width: var(--skeleton-width-full);
+}
+
+/* Responsive width utilities */
+.skeleton--width-1-2 {
+  width: 50%;
+}
+
+.skeleton--width-1-3 {
+  width: 33.333333%;
+}
+
+.skeleton--width-2-3 {
+  width: 66.666667%;
+}
+
+.skeleton--width-1-4 {
+  width: 25%;
+}
+
+.skeleton--width-3-4 {
+  width: 75%;
+}
+
+.skeleton--width-4-5 {
+  width: 80%;
+}
+
+.skeleton--width-3-5 {
+  width: 60%;
+}
+
+/* Multi-line text utilities */
+.skeleton__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton__line--short {
+  width: 75%;
+}

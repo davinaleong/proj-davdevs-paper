@@ -1199,22 +1199,6 @@ code, pre {
   transition: var(--transition-tooltip);
 }
 
-/* Skeleton loading animation */
-@keyframes skeleton-pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: var(--opacity-50);
-  }
-}
-
-.skeleton {
-  animation: skeleton-pulse var(--duration-1500) var(--ease-in-out) infinite;
-  background-color: var(--surface-secondary);
-  border-radius: var(--radius-base);
-}
-
 /* Progress indicators */
 @keyframes progress-indeterminate {
   0% {

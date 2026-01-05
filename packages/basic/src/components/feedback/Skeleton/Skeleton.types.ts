@@ -1,5 +1,9 @@
 import React from 'react';
 
+// Preset size types
+export type SkeletonSizePreset = 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl';
+export type SkeletonWidthPreset = SkeletonSizePreset | 'full' | '1/2' | '1/3' | '2/3' | '1/4' | '3/4' | '4/5' | '3/5';
+
 // Base props for Skeleton component
 export interface SkeletonProps {
   /**
@@ -8,16 +12,16 @@ export interface SkeletonProps {
   className?: string;
 
   /**
-   * Width of the skeleton
+   * Width of the skeleton - can be a preset, custom string, number, or 'auto'
    * @default 'full'
    */
-  width?: string | number | 'full' | 'auto';
+  width?: SkeletonWidthPreset | string | number | 'auto';
 
   /**
-   * Height of the skeleton
+   * Height of the skeleton - can be a preset, custom string, number, or 'auto'
    * @default 'auto'
    */
-  height?: string | number | 'auto';
+  height?: SkeletonSizePreset | string | number | 'auto';
 
   /**
    * Shape variant of the skeleton
