@@ -1,117 +1,5 @@
 import React, { useState } from 'react';
-
-// Mock components for demonstration
-const Label = ({ className = '', children, ...props }: any) => (
-  <label className={`block font-medium text-gray-700 mb-1 ${className}`} {...props}>
-    {children}
-  </label>
-);
-
-const Input = ({ className = '', error, ...props }: any) => (
-  <input
-    className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0 transition-colors ${error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'} ${className}`}
-    {...props}
-  />
-);
-
-const Textarea = ({ className = '', error, ...props }: any) => (
-  <textarea
-    className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0 transition-colors resize-none min-h-[80px] ${error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'} ${className}`}
-    {...props}
-  />
-);
-
-const Select = ({ className = '', error, children, ...props }: any) => (
-  <select
-    className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0 transition-colors ${error ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'} ${className}`}
-    {...props}
-  >
-    {children}
-  </select>
-);
-
-// Mock FormField component for demonstration
-const FormField = ({ 
-  className = '',
-  label,
-  required = false,
-  optional = false,
-  helperText,
-  errorText,
-  successText,
-  warningText,
-  size = 'md',
-  labelProps = {},
-  children,
-  ...domProps 
-}: any) => {
-  const hasError = Boolean(errorText);
-  const hasSuccess = Boolean(successText);
-  const hasWarning = Boolean(warningText);
-  
-  const sizes = {
-    sm: { gap: 'space-y-1', text: 'text-xs' },
-    md: { gap: 'space-y-2', text: 'text-sm' },
-    lg: { gap: 'space-y-3', text: 'text-base' }
-  };
-
-  const messageColors = {
-    error: 'text-red-600',
-    success: 'text-green-600', 
-    warning: 'text-yellow-600',
-    helper: 'text-gray-600'
-  };
-
-  const sizeClasses = sizes[size];
-  let messageText = helperText;
-  let messageColor = messageColors.helper;
-  
-  if (hasError) {
-    messageText = errorText;
-    messageColor = messageColors.error;
-  } else if (hasSuccess) {
-    messageText = successText;
-    messageColor = messageColors.success;
-  } else if (hasWarning) {
-    messageText = warningText;
-    messageColor = messageColors.warning;
-  }
-
-  return (
-    <div className={`${sizeClasses.gap} ${className}`} {...domProps}>
-      {label && (
-        <Label {...labelProps}>
-          {label}
-          {required && (
-            <span className="text-red-500 ml-1" aria-label="Required field">
-              *
-            </span>
-          )}
-          {optional && (
-            <span className="text-gray-400 ml-1 font-normal">
-              (optional)
-            </span>
-          )}
-        </Label>
-      )}
-      
-      {React.Children.map(children, child => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            error: hasError
-          });
-        }
-        return child;
-      })}
-      
-      {messageText && (
-        <p className={`${sizeClasses.text} ${messageColor}`}>
-          {messageText}
-        </p>
-      )}
-    </div>
-  );
-};
+import { Input, Textarea, Select, Label, FormField } from '../../../basic/src/components/forms';
 
 export function FormFieldShowcase() {
   const [formData, setFormData] = useState({
@@ -237,7 +125,7 @@ export function FormFieldShowcase() {
               <FormField 
                 label="Email Address"
                 required
-                errorText="Please enter a valid email address"
+                error="Please enter a valid email address"
               >
                 <Input 
                   type="email" 
@@ -250,7 +138,7 @@ export function FormFieldShowcase() {
 {`<FormField 
   label="Email Address"
   required
-  errorText="Invalid email address"
+  error="Invalid email address"
 >
   <Input type="email" />
 </FormField>`}
@@ -263,7 +151,8 @@ export function FormFieldShowcase() {
               <FormField 
                 label="Username"
                 required
-                successText="Username is available!"
+                helperText="Username is available!"
+                className="[&>p]:text-green-600" // Custom styling for success message
               >
                 <Input 
                   placeholder="Available username" 
@@ -275,7 +164,8 @@ export function FormFieldShowcase() {
 {`<FormField 
   label="Username"
   required
-  successText="Username is available!"
+  helperText="Username is available!"
+  className="[&>p]:text-green-600"
 >
   <Input placeholder="Username" />
 </FormField>`}
@@ -288,7 +178,8 @@ export function FormFieldShowcase() {
               <FormField 
                 label="Password"
                 required
-                warningText="Password should be stronger"
+                helperText="Password should be stronger"
+                className="[&>p]:text-yellow-600" // Custom styling for warning message
               >
                 <Input 
                   type="password" 
@@ -301,7 +192,8 @@ export function FormFieldShowcase() {
 {`<FormField 
   label="Password"
   required
-  warningText="Password should be stronger"
+  helperText="Password should be stronger"
+  className="[&>p]:text-yellow-600"
 >
   <Input type="password" />
 </FormField>`}
@@ -312,8 +204,7 @@ export function FormFieldShowcase() {
             <h3 className="font-semibold mb-2">Optional Field</h3>
             <div className="mb-4">
               <FormField 
-                label="Phone Number"
-                optional
+                label="Phone Number (optional)"
                 helperText="We'll only use this for important updates"
               >
                 <Input type="tel" placeholder="Enter phone number" />
@@ -321,8 +212,7 @@ export function FormFieldShowcase() {
             </div>
             <pre className="showcase-code">
 {`<FormField 
-  label="Phone Number"
-  optional
+  label="Phone Number (optional)"
   helperText="For important updates only"
 >
   <Input type="tel" />
@@ -468,12 +358,12 @@ export function FormFieldShowcase() {
         <h2 className="showcase-subtitle">Complete Form Example</h2>
         <div className="showcase-item">
           <h3 className="font-semibold mb-4">User Registration Form</h3>
-          <form onSubmit={handleSubmit} className="max-w-lg p-6 border border-gray-200 rounded-lg bg-gray-50 space-y-4">
+          <form onSubmit={handleSubmit} className="max-w-lg p-6 border border-gray-200 dark:border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-950 space-y-4">
             <FormField 
               label="Full Name"
               required
-              errorText={submitted ? errors.name : ''}
-              helperText="Enter your first and last name"
+              error={submitted ? errors.name : ''}
+              helperText={!submitted || !errors.name ? "Enter your first and last name" : undefined}
             >
               <Input 
                 value={formData.name}
@@ -485,9 +375,9 @@ export function FormFieldShowcase() {
             <FormField 
               label="Email Address"
               required
-              errorText={submitted ? errors.email : ''}
-              successText={formData.email && !errors.email && submitted ? 'Email looks good!' : ''}
-              helperText="We'll use this to send you important updates"
+              error={submitted ? errors.email : ''}
+              helperText={(!submitted || !errors.email) ? (formData.email && !errors.email && submitted ? 'Email looks good!' : "We'll use this to send you important updates") : undefined}
+              className={formData.email && !errors.email && submitted ? '[&>p]:text-green-600' : ''}
             >
               <Input 
                 type="email"
@@ -500,9 +390,9 @@ export function FormFieldShowcase() {
             <FormField 
               label="Password"
               required
-              errorText={submitted ? errors.password : ''}
-              warningText={formData.password && formData.password.length < 8 ? 'Password should be at least 8 characters' : ''}
-              helperText="Must be at least 8 characters long"
+              error={submitted ? errors.password : ''}
+              helperText={(!submitted || !errors.password) ? (formData.password && formData.password.length < 8 ? 'Password should be at least 8 characters' : 'Must be at least 8 characters long') : undefined}
+              className={formData.password && formData.password.length < 8 && formData.password.length > 0 ? '[&>p]:text-yellow-600' : ''}
             >
               <Input 
                 type="password"
@@ -515,9 +405,9 @@ export function FormFieldShowcase() {
             <FormField 
               label="Confirm Password"
               required
-              errorText={submitted ? errors.confirmPassword : ''}
-              successText={formData.confirmPassword && formData.password === formData.confirmPassword ? 'Passwords match!' : ''}
-              helperText="Re-enter your password to confirm"
+              error={submitted ? errors.confirmPassword : ''}
+              helperText={(!submitted || !errors.confirmPassword) ? (formData.confirmPassword && formData.password === formData.confirmPassword ? 'Passwords match!' : 'Re-enter your password to confirm') : undefined}
+              className={formData.confirmPassword && formData.password === formData.confirmPassword ? '[&>p]:text-green-600' : ''}
             >
               <Input 
                 type="password"
@@ -528,8 +418,7 @@ export function FormFieldShowcase() {
             </FormField>
 
             <FormField 
-              label="Bio"
-              optional
+              label="Bio (optional)"
               helperText="Tell us a bit about yourself (optional)"
             >
               <Textarea 
@@ -571,7 +460,7 @@ export function FormFieldShowcase() {
   <FormField 
     label="Full Name"
     required
-    errorText={errors.name}
+    error={errors.name}
     helperText="First and last name"
   >
     <Input 
@@ -584,8 +473,8 @@ export function FormFieldShowcase() {
   <FormField 
     label="Email Address"
     required
-    errorText={errors.email}
-    successText={emailValid ? 'Looks good!' : ''}
+    error={errors.email}
+    helperText="We'll send updates here"
   >
     <Input 
       type="email"
@@ -597,8 +486,8 @@ export function FormFieldShowcase() {
   <FormField 
     label="Password"
     required
-    errorText={errors.password}
-    warningText={weakPassword ? 'Too weak' : ''}
+    error={errors.password}
+    helperText="At least 8 characters"
   >
     <Input type="password" />
   </FormField>
@@ -615,24 +504,24 @@ export function FormFieldShowcase() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <h4 className="font-medium text-green-700">✅ Do</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li>• Use clear, descriptive labels</li>
-                <li>• Provide helpful text for complex fields</li>
-                <li>• Show validation messages immediately</li>
-                <li>• Use consistent sizing throughout forms</li>
-                <li>• Mark required fields clearly</li>
-                <li>• Group related fields logically</li>
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-disc list-inside">
+                <li>Use clear, descriptive labels</li>
+                <li>Provide helpful text for complex fields</li>
+                <li>Show validation messages immediately</li>
+                <li>Use consistent sizing throughout forms</li>
+                <li>Mark required fields clearly</li>
+                <li>Group related fields logically</li>
               </ul>
             </div>
             <div className="space-y-4">
               <h4 className="font-medium text-red-700">❌ Don't</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li>• Use vague or technical labels</li>
-                <li>• Show error messages before user interaction</li>
-                <li>• Mix different field sizes randomly</li>
-                <li>• Make optional fields look required</li>
-                <li>• Overuse helper text for simple fields</li>
-                <li>• Nest FormFields inside each other</li>
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-disc list-inside">
+                <li>Use vague or technical labels</li>
+                <li>Show error messages before user interaction</li>
+                <li>Mix different field sizes randomly</li>
+                <li>Make optional fields look required</li>
+                <li>Overuse helper text for simple fields</li>
+                <li>Nest FormFields inside each other</li>
               </ul>
             </div>
           </div>
