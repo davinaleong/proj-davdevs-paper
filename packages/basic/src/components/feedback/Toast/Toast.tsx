@@ -84,10 +84,10 @@ export const Toast = React.forwardRef<ToastRef, ToastProps>(
 
     // Variant classes
     const variantClasses = {
-      info: 'bg-blue-50/90 border-blue-200 text-blue-800',
-      success: 'bg-green-50/90 border-green-200 text-green-800',
-      warning: 'bg-yellow-50/90 border-yellow-200 text-yellow-800',
-      error: 'bg-red-50/90 border-red-200 text-red-800'
+      info: 'bg-blue-50/90 border-blue-200 text-blue-800 dark:bg-blue-900/80 dark:border-blue-700 dark:text-blue-200',
+      success: 'bg-green-50/90 border-green-200 text-green-800 dark:bg-green-900/80 dark:border-green-700 dark:text-green-200',
+      warning: 'bg-yellow-50/90 border-yellow-200 text-yellow-800 dark:bg-yellow-900/80 dark:border-yellow-700 dark:text-yellow-200',
+      error: 'bg-red-50/90 border-red-200 text-red-800 dark:bg-red-900/80 dark:border-red-700 dark:text-red-200'
     };
 
     // Elevation classes (shadow)
