@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import { X } from 'lucide-react';
 import { cn } from '../../../utils/cn';
 import type { ModalProps, ModalRef } from './Modal.types';
 
@@ -67,7 +68,7 @@ export const Modal = React.forwardRef<ModalRef, ModalProps>(
     const baseClasses = [
       'paper-modal',
       'relative',
-      'bg-white',
+      'bg-white dark:bg-black',
       'outline-none',
       'transition-all',
       'duration-200',
@@ -136,9 +137,9 @@ export const Modal = React.forwardRef<ModalRef, ModalProps>(
         >
           {/* Header */}
           {(title || showCloseButton) && (
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               {title && (
-                <h2 id="modal-title" className="text-lg font-semibold text-gray-900">
+                <h2 id="modal-title" className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   {title}
                 </h2>
               )}
@@ -149,9 +150,7 @@ export const Modal = React.forwardRef<ModalRef, ModalProps>(
                   onClick={onClose}
                   aria-label="Close modal"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X className="w-6 h-6" />
                 </button>
               )}
             </div>
