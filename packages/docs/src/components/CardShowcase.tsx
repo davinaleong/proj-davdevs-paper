@@ -54,7 +54,7 @@ export function CardShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Card Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           A versatile container component that provides a paper-like surface with elevation, padding, and interactive states.
         </p>
       </div>

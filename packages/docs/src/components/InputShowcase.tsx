@@ -32,7 +32,7 @@ export function InputShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Input Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Versatile text input component with paper-inspired styling, icons, states, and accessibility features.
         </p>
       </div>

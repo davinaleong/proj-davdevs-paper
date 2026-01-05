@@ -6,7 +6,7 @@ export function SectionShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Section</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Page section dividers with paper styling for organizing content into semantic sections.
         </p>
       </div>

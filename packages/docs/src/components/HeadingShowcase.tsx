@@ -14,7 +14,7 @@ export function HeadingShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Headings</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Semantic headings with paper-appropriate typography, supporting multiple sizes, weights, and styling options.
         </p>
       </div>

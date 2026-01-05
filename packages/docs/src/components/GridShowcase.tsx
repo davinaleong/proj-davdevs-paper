@@ -6,7 +6,7 @@ export function GridShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Grid</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           CSS Grid with paper gaps and responsive layout for flexible content organization.
         </p>
       </div>

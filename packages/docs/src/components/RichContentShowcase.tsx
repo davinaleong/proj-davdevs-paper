@@ -17,7 +17,7 @@ export function RichContentShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Rich Content</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Rich content components including lists, blockquotes, and examples of typography working together in context.
         </p>
       </div>

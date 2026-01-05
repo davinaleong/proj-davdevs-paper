@@ -62,7 +62,7 @@ export function FormFieldShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">FormField Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Complete form field wrapper with labels, validation messages, and consistent spacing.
         </p>
       </div>

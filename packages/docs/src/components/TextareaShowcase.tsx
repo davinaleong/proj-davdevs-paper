@@ -13,7 +13,7 @@ export function TextareaShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Textarea Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Multi-line text input component with auto-resize, character counting, and paper-inspired styling.
         </p>
       </div>

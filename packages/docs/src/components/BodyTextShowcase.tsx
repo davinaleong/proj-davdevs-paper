@@ -13,7 +13,7 @@ export function BodyTextShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Body Text</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Flexible text components for body content, supporting various sizes, variants, and styling options with paper-inspired typography.
         </p>
       </div>

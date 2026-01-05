@@ -6,7 +6,7 @@ export function PageShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Page</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Full-page paper background container with variants, padding control, and responsive design capabilities.
         </p>
       </div>

@@ -6,7 +6,7 @@ export function ProseShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Prose</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Typography component for styling markdown and MDX content with a paper-inspired aesthetic.
         </p>
       </div>
