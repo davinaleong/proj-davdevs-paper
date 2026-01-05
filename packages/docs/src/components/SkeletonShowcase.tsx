@@ -1,59 +1,5 @@
 import React from 'react';
-
-// Mock Skeleton component for demonstration
-const Skeleton = ({ 
-  width = 'full', 
-  height = 'auto', 
-  variant = 'rounded', 
-  animate = true,
-  lines = 1,
-  className = '' 
-}: any) => {
-  const variants = {
-    text: 'rounded h-4',
-    circular: 'rounded-full aspect-square',
-    rectangular: 'rounded-none',
-    rounded: 'rounded'
-  };
-
-  const getWidthClass = (w: any) => {
-    if (w === 'full') return 'w-full';
-    if (w === 'auto') return 'w-auto';
-    if (typeof w === 'string' && w.includes('%')) return `w-[${w}]`;
-    return 'w-full';
-  };
-
-  const getHeightClass = (h: any) => {
-    if (h === 'auto') return variant === 'text' ? 'h-4' : 'h-auto';
-    if (typeof h === 'string') return `h-[${h}]`;
-    return 'h-auto';
-  };
-
-  const classes = `
-    bg-gray-200 overflow-hidden
-    ${variants[variant]}
-    ${getWidthClass(width)}
-    ${getHeightClass(height)}
-    ${animate ? 'animate-pulse' : ''}
-    ${className}
-  `.trim().replace(/\s+/g, ' ');
-
-  // For text variant with multiple lines
-  if (variant === 'text' && lines > 1) {
-    return (
-      <div className="space-y-2">
-        {Array.from({ length: lines }, (_, index) => (
-          <div
-            key={index}
-            className={`${classes} ${index === lines - 1 ? 'w-3/4' : ''}`}
-          />
-        ))}
-      </div>
-    );
-  }
-
-  return <div className={classes} />;
-};
+import { Skeleton } from '@davdevs/paper-basic';
 
 export function SkeletonShowcase() {
   return (
@@ -83,12 +29,12 @@ export function SkeletonShowcase() {
 
           <div className="showcase-item">
             <h3 className="font-semibold mb-4">Rectangular</h3>
-            <Skeleton variant="rectangular" height="100px" />
+            <Skeleton variant="rectangular" width="64px" height="64px" />
           </div>
 
           <div className="showcase-item">
             <h3 className="font-semibold mb-4">Rounded</h3>
-            <Skeleton variant="rounded" height="80px" />
+            <Skeleton variant="rounded" width="64px" height="64px" />
           </div>
         </div>
 
@@ -116,7 +62,7 @@ export function SkeletonShowcase() {
       <section className="showcase-section">
         <h2 className="showcase-subtitle">Card Skeleton</h2>
         <div className="max-w-sm">
-          <div className="border border-gray-200 rounded-lg p-4 space-y-4">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4 space-y-4">
             <Skeleton variant="rounded" height="200px" />
             <div className="space-y-2">
               <Skeleton variant="text" />
@@ -155,7 +101,7 @@ export function SkeletonShowcase() {
       <section className="showcase-section">
         <h2 className="showcase-subtitle">Profile Skeleton</h2>
         <div className="max-w-md">
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
+          <div className="bg-white border dark:bg-black dark:border-gray-800 rounded-lg p-6">
             <div className="flex items-center space-x-4 mb-4">
               <Skeleton variant="circular" width="80px" height="80px" />
               <div className="flex-1 space-y-2">
@@ -204,7 +150,7 @@ export function SkeletonShowcase() {
         <div className="max-w-md">
           <div className="space-y-3">
             {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="flex items-center space-x-3 p-3 bg-white border border-gray-200 rounded-md">
+              <div key={item} className="flex items-center space-x-3 p-3 bg-white dark:bg-black dark:border-gray-800 border border-gray-200 rounded-md">
                 <Skeleton variant="circular" width="48px" height="48px" />
                 <div className="flex-1 space-y-2">
                   <Skeleton variant="text" width="70%" />
@@ -234,9 +180,9 @@ export function SkeletonShowcase() {
       {/* Table Skeleton */}
       <section className="showcase-section">
         <h2 className="showcase-subtitle">Table Skeleton</h2>
-        <div className="overflow-hidden border border-gray-200 rounded-lg">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+        <div className="overflow-hidden border border-gray-200 dark:border-gray-800 rounded-lg">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-800">
+            <thead className="bg-gray-50 dark:bg-gray-900">
               <tr>
                 <th className="px-6 py-3">
                   <Skeleton variant="text" width="60px" />
@@ -252,7 +198,7 @@ export function SkeletonShowcase() {
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white dark:bg-black divide-y divide-gray-200 dark:divide-gray-800">
               {[1, 2, 3, 4, 5].map((row) => (
                 <tr key={row}>
                   <td className="px-6 py-4">
