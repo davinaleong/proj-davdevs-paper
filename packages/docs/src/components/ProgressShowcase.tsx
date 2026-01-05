@@ -1,74 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-// Mock Progress component for demonstration
-const Progress = ({ 
-  value = 0, 
-  max = 100, 
-  size = 'md', 
-  variant = 'primary', 
-  showPercentage = false,
-  label,
-  labelPosition = 'top',
-  animated = true,
-  striped = false,
-  indeterminate = false,
-  className = '' 
-}: any) => {
-  const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
-
-  const sizes = {
-    sm: 'h-1',
-    md: 'h-2',
-    lg: 'h-3',
-    xl: 'h-4'
-  };
-
-  const variants = {
-    primary: 'bg-blue-600',
-    secondary: 'bg-gray-600',
-    success: 'bg-green-600',
-    warning: 'bg-yellow-600',
-    error: 'bg-red-600'
-  };
-
-  const trackClasses = `relative overflow-hidden bg-gray-200 rounded ${sizes[size]} ${className}`;
-  
-  const fillClasses = `h-full transition-all duration-500 ease-out rounded ${variants[variant]} ${
-    animated ? 'transition-all duration-500 ease-out' : ''
-  } ${striped ? 'bg-stripes' : ''}`;
-
-  const fillStyle = {
-    width: indeterminate ? '100%' : `${percentage}%`,
-    ...(indeterminate && {
-      backgroundImage: 'linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.2) 75%)',
-      backgroundSize: '1rem 1rem',
-      animation: 'progress-indeterminate 2s linear infinite'
-    })
-  };
-
-  const LabelComponent = () => {
-    if (!label && !showPercentage) return null;
-    const labelText = label || (showPercentage ? `${Math.round(percentage)}%` : '');
-    return (
-      <div className={`text-sm font-medium text-gray-700 ${
-        labelPosition === 'inline' ? 'absolute inset-0 flex items-center justify-center text-xs text-white' : ''
-      }`}>
-        {labelText}
-      </div>
-    );
-  };
-
-  return (
-    <div className="space-y-1">
-      {labelPosition === 'top' && <LabelComponent />}
-      <div className={trackClasses}>
-        <div className={fillClasses} style={fillStyle} />
-        {labelPosition === 'inline' && <LabelComponent />}
-      </div>
-      {labelPosition === 'bottom' && <LabelComponent />}
-    </div>
-  );
-};
+import { Progress } from '@davdevs/paper-basic';
 
 export function ProgressShowcase() {
   const [progressValue, setProgressValue] = useState(0);
@@ -100,7 +31,7 @@ export function ProgressShowcase() {
     <div>
       <div className="showcase-section">
         <h1 className="showcase-title">Progress Component</h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Display progress with paper-inspired design, animations, and clear visual feedback for loading states and completion.
         </p>
       </div>
