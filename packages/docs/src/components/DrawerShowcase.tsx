@@ -344,16 +344,13 @@ export function DrawerShowcase() {
           <div className="space-y-3">
             <h3 className="text-sm font-medium">Notifications</h3>
             <Label className="flex gap-1 items-center">
-              <Checkbox defaultChecked />
-              Email notifications
+              <Checkbox label="Email notifications" defaultChecked />
             </Label>
             <Label className="flex gap-1 items-center">
-              <Checkbox />
-              Push notifications
+              <Checkbox label="Push notifications" />
             </Label>
             <Label className="flex gap-1 items-center">
-              <Checkbox defaultChecked />
-              Marketing emails
+              <Checkbox label="Marketing emails" defaultChecked />
             </Label>
           </div>
           <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200 dark:border-gray-800">

@@ -1,4 +1,5 @@
 import React, { forwardRef, useEffect, useRef } from 'react';
+import { Check, Minus } from 'lucide-react';
 import { cn } from '../../../utils';
 import { CheckboxProps } from './Checkbox.types';
 import './Checkbox.styles.css';
@@ -46,17 +47,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((
   };
 
   // Icons for different states
-  const CheckIcon = () => (
-    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-    </svg>
-  );
-
-  const IndeterminateIcon = () => (
-    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-      <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-    </svg>
-  );
+  const CheckIcon = () => <Check className="w-3 h-3" />;
+  const IndeterminateIcon = () => <Minus className="w-3 h-3" />;
 
   return (
     <div className={cn(
