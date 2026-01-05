@@ -72,7 +72,7 @@ export function FormFieldShowcase() {
         <h2 className="showcase-subtitle">Basic Usage</h2>
         <div className="showcase-grid grid-cols-1 md:grid-cols-2">
           <div className="showcase-item">
-            <h3 className="font-semibold mb-2">Simple FormField</h3>
+            <h3 className="font-semibold mb-2">Simple Form Field</h3>
             <div className="mb-4">
               <FormField 
                 label="Email Address"
