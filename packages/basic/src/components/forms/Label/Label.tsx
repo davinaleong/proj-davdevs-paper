@@ -31,9 +31,9 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>((
   };
 
   const variantClasses = {
-    default: 'font-medium text-gray-900',
-    subtle: 'font-normal text-gray-700',
-    bold: 'font-semibold text-gray-900'
+    default: 'font-medium text-gray-900 dark:text-gray-100',
+    subtle: 'font-normal text-gray-700 dark:text-gray-300',
+    bold: 'font-semibold text-gray-900 dark:text-gray-100'
   };
 
   return (
