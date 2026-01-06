@@ -220,10 +220,99 @@
 }
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
+.dark .sidebar-layout-sidebar-content,
+.dark .sidebar-layout-main-content {
+  background: theme('colors.gray.800');
+  border-color: theme('colors.gray.700');
+}
+
+/* Dark Mode Toggle Button */
+.dark .sidebar-layout-toggle {
+  background: theme('colors.gray.700');
+  border-color: theme('colors.gray.600');
+  color: theme('colors.gray.200');
+}
+
+.dark .sidebar-layout-toggle:hover {
+  background: theme('colors.gray.600');
+}
+
+/* Dark Mode Textures */
+.dark .sidebar-layout-texture-grain
   .sidebar-layout-sidebar-content,
+.dark .sidebar-layout-texture-grain
   .sidebar-layout-main-content {
-    background: theme('colors.gray.800');
-    border-color: theme('colors.gray.700');
-  }
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.025) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .sidebar-layout-texture-linen
+  .sidebar-layout-sidebar-content,
+.dark .sidebar-layout-texture-linen
+  .sidebar-layout-main-content {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.02) 2px,
+      rgba(255,255,255,0.02) 4px
+    );
+}
+
+.dark .sidebar-layout-texture-fiber
+  .sidebar-layout-sidebar-content,
+.dark .sidebar-layout-texture-fiber
+  .sidebar-layout-main-content {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(255,255,255,0.02) 1px,
+      rgba(255,255,255,0.02) 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(255,255,255,0.02) 1px,
+      rgba(255,255,255,0.02) 2px
+    );
+}
+
+/* Dark Mode Enhanced Shadows */
+.dark .sidebar-layout-elevated
+  .sidebar-layout-sidebar-content,
+.dark .sidebar-layout-elevated
+  .sidebar-layout-main-content {
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.3),
+    0 2px 4px -1px rgb(0 0 0 / 0.15);
+}
+
+.dark .sidebar-layout-stacked
+  .sidebar-layout-sidebar-content,
+.dark .sidebar-layout-stacked
+  .sidebar-layout-main-content {
+  box-shadow:
+    0 6px 10px -4px rgba(0, 0, 0, 0.4),
+    0 2px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+.dark .sidebar-layout-stacked
+  .sidebar-layout-sidebar-content::before,
+.dark .sidebar-layout-stacked
+  .sidebar-layout-main-content::before {
+  box-shadow:
+    0 4px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .sidebar-layout-stacked
+  .sidebar-layout-sidebar-content::after,
+.dark .sidebar-layout-stacked
+  .sidebar-layout-main-content::after {
+  box-shadow:
+    0 2px 6px -4px rgba(0, 0, 0, 0.25);
 }

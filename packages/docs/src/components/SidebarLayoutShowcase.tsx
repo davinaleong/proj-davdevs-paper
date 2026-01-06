@@ -5,7 +5,7 @@ export function SidebarLayoutShowcase() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-8">Sidebar Layout</h1>
-      <p className="text-lg text-gray-600 mb-8">
+      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
         Two-column paper layouts with premium styling and interactive features
       </p>
 
@@ -31,11 +31,11 @@ export function SidebarLayoutShowcase() {
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Main Content Area</h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-500 mb-4">
                     This is the main content area of the sidebar layout. It automatically adjusts 
                     to fill the remaining space after the sidebar.
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-500">
                     The layout is responsive and will stack on smaller screens when the responsive 
                     prop is enabled.
                   </p>
@@ -55,13 +55,13 @@ export function SidebarLayoutShowcase() {
                 sidebar={
                   <div>
                     <h4 className="font-medium mb-2">Flat Style</h4>
-                    <p className="text-sm text-gray-600">Clean, minimal appearance.</p>
+                    <p className="text-sm text-gray-500">Clean, minimal appearance.</p>
                   </div>
                 }
               >
                 <div>
                   <h4 className="font-medium">Content</h4>
-                  <p className="text-sm text-gray-600">No shadows or depth effects.</p>
+                  <p className="text-sm text-gray-500">No shadows or depth effects.</p>
                 </div>
               </SidebarLayout>
             </div>
@@ -73,13 +73,13 @@ export function SidebarLayoutShowcase() {
                 sidebar={
                   <div>
                     <h4 className="font-medium mb-2">Elevated Style</h4>
-                    <p className="text-sm text-gray-600">Subtle shadows for depth.</p>
+                    <p className="text-sm text-gray-500">Subtle shadows for depth.</p>
                   </div>
                 }
               >
                 <div>
                   <h4 className="font-medium">Content</h4>
-                  <p className="text-sm text-gray-600">Modern elevated appearance.</p>
+                  <p className="text-sm text-gray-500">Modern elevated appearance.</p>
                 </div>
               </SidebarLayout>
             </div>
@@ -91,13 +91,13 @@ export function SidebarLayoutShowcase() {
                 sidebar={
                   <div>
                     <h4 className="font-medium mb-2">Stacked Style</h4>
-                    <p className="text-sm text-gray-600">Multiple paper layers.</p>
+                    <p className="text-sm text-gray-500">Multiple paper layers.</p>
                   </div>
                 }
               >
                 <div>
                   <h4 className="font-medium">Content</h4>
-                  <p className="text-sm text-gray-600">Realistic stacked paper effect.</p>
+                  <p className="text-sm text-gray-500">Realistic stacked paper effect.</p>
                 </div>
               </SidebarLayout>
             </div>
@@ -119,9 +119,9 @@ export function SidebarLayoutShowcase() {
                       <div>
                         <h4 className="font-medium text-sm mb-2">Recent Activity</h4>
                         <div className="space-y-2">
-                          <div className="text-xs text-gray-600">User logged in</div>
-                          <div className="text-xs text-gray-600">Document saved</div>
-                          <div className="text-xs text-gray-600">Settings updated</div>
+                          <div className="text-xs text-gray-500">User logged in</div>
+                          <div className="text-xs text-gray-500">Document saved</div>
+                          <div className="text-xs text-gray-500">Settings updated</div>
                         </div>
                       </div>
                       <div>
@@ -141,11 +141,11 @@ export function SidebarLayoutShowcase() {
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Right-Aligned Sidebar</h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-500 mb-4">
                     The sidebar can be positioned on either the left or right side of the layout.
                     This example shows a right-aligned sidebar with grain texture.
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-500">
                     The main content area automatically adjusts its order and spacing based on 
                     the sidebar position.
                   </p>
@@ -183,17 +183,17 @@ export function SidebarLayoutShowcase() {
             >
               <div>
                 <h3 className="text-xl font-semibold mb-4">Collapsible Sidebar Demo</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-500 mb-4">
                   Click the toggle button on the sidebar to collapse and expand it. The main 
                   content area will automatically adjust to use the available space.
                 </p>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-500 mb-4">
                   This is perfect for applications that need to maximize content space while 
                   keeping navigation accessible.
                 </p>
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-blue-900 mb-2">💡 Pro Tip</h4>
-                  <p className="text-blue-800 text-sm">
+                <div className="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">💡 Pro Tip</h4>
+                  <p className="text-blue-800 dark:text-blue-200 text-sm">
                     The collapsible state is managed internally, but you can also control it 
                     externally by managing your own state and passing the collapsed state to the component.
                   </p>
