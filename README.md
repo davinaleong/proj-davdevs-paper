@@ -1,4 +1,4 @@
-# 📄 Dav/Devs Paper
+# 📄 Dav/Devs Paper UI
 
 > **A premium paper-inspired design system that brings the warmth and elegance of real paper to your digital interfaces.**
 
