@@ -55,7 +55,7 @@ interface BaseTypographyProps {
 }
 
 // Heading-specific props
-interface HeadingProps extends BaseTypographyProps {
+export interface BaseHeadingProps extends BaseTypographyProps {
   /**
    * Heading level
    */
@@ -74,7 +74,7 @@ interface HeadingProps extends BaseTypographyProps {
 }
 
 // Text-specific props
-interface TextProps extends BaseTypographyProps {
+export interface BaseTextProps extends BaseTypographyProps {
   /**
    * Size variant for body text
    * @default 'base'
@@ -95,7 +95,7 @@ interface TextProps extends BaseTypographyProps {
 }
 
 // List-specific props
-interface ListProps extends Omit<BaseTypographyProps, 'children'> {
+export interface BaseListProps extends Omit<BaseTypographyProps, 'children'> {
   /**
    * List items
    */
@@ -121,7 +121,7 @@ interface ListProps extends Omit<BaseTypographyProps, 'children'> {
 }
 
 // Blockquote-specific props
-interface BlockquoteProps extends BaseTypographyProps {
+export interface BaseBlockquoteProps extends BaseTypographyProps {
   /**
    * Citation text
    */
@@ -151,35 +151,35 @@ interface BlockquoteProps extends BaseTypographyProps {
 }
 
 // Component types with polymorphic support
-export type HeadingProps<T extends React.ElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'> = HeadingProps & {
+export type HeadingProps<T extends React.ElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'> = BaseHeadingProps & {
   /**
    * The HTML element or React component to render as
    */
   as?: T;
-} & Omit<React.ComponentPropsWithoutRef<T>, keyof HeadingProps>;
+} & Omit<React.ComponentPropsWithoutRef<T>, keyof BaseHeadingProps>;
 
-export type TextProps<T extends React.ElementType = 'p'> = TextProps & {
+export type TextProps<T extends React.ElementType = 'p'> = BaseTextProps & {
   /**
    * The HTML element or React component to render as
    * @default 'p'
    */
   as?: T;
-} & Omit<React.ComponentPropsWithoutRef<T>, keyof TextProps>;
+} & Omit<React.ComponentPropsWithoutRef<T>, keyof BaseTextProps>;
 
-export type ListProps<T extends React.ElementType = 'ul' | 'ol'> = ListProps & {
+export type ListProps<T extends React.ElementType = 'ul' | 'ol'> = BaseListProps & {
   /**
    * The HTML element or React component to render as
    */
   as?: T;
-} & Omit<React.ComponentPropsWithoutRef<T>, keyof ListProps>;
+} & Omit<React.ComponentPropsWithoutRef<T>, keyof BaseListProps>;
 
-export type BlockquoteProps<T extends React.ElementType = 'blockquote'> = BlockquoteProps & {
+export type BlockquoteProps<T extends React.ElementType = 'blockquote'> = BaseBlockquoteProps & {
   /**
    * The HTML element or React component to render as
    * @default 'blockquote'
    */
   as?: T;
-} & Omit<React.ComponentPropsWithoutRef<T>, keyof BlockquoteProps>;
+} & Omit<React.ComponentPropsWithoutRef<T>, keyof BaseBlockquoteProps>;
 
 // Ref types
 export type HeadingRef = HTMLHeadingElement;

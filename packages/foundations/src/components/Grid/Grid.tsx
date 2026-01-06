@@ -59,14 +59,14 @@ export const Grid = React.forwardRef<GridRef, GridProps>(({
   }
 
   // Custom CSS properties
-  const style: React.CSSProperties = {
+  const style: React.CSSProperties & { [key: string]: any } = {
     '--min-col-width': minColWidth,
     ...props.style,
   };
 
   return (
     <Component
-      ref={ref}
+      ref={ref as any}
       className={classes}
       style={style}
       {...dataAttributes}

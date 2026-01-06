@@ -55,7 +55,7 @@ export const Tag = React.forwardRef<TagRef, TagProps>((
     selectable && 'focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500'
   ].filter(Boolean);
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (selectable && onToggle) {
       onToggle(!selected);
     }
@@ -69,7 +69,7 @@ export const Tag = React.forwardRef<TagRef, TagProps>((
 
   return (
     <Component
-      ref={ref}
+      ref={ref as any}
       className={cn(
         baseClasses,
         sizeClasses[size],

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseTagProps {
+export interface BaseTagProps {
   /**
    * The content to be rendered inside the Tag
    */
@@ -70,4 +70,4 @@ export type TagProps<T extends React.ElementType = 'span'> = BaseTagProps &
     as?: T;
   };
 
-export type TagRef = HTMLSpanElement;
+export type TagRef = HTMLElement;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props for Section component
-interface BaseSectionProps {
+export interface BaseSectionProps {
   /**
    * The content to be rendered inside the Section
    */

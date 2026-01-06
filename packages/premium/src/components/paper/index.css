@@ -1,0 +1,155 @@
+/* =========================================================
+   Paper Components — Premium Tier
+   Advanced paper effects and interactive components
+   ========================================================= */
+
+/* PaperStack Component Styles */
+.paper-stack {
+  position: relative;
+  background: var(--surface, white);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+}
+
+.paper-stack::before,
+.paper-stack::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--surface, white);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  z-index: -1;
+}
+
+/* Stack offset variations */
+.paper-stack--offset-sm::before {
+  transform: translate(2px, 2px);
+}
+
+.paper-stack--offset-sm::after {
+  transform: translate(4px, 4px);
+}
+
+.paper-stack--offset-md::before {
+  transform: translate(4px, 4px);
+}
+
+.paper-stack--offset-md::after {
+  transform: translate(8px, 8px);
+}
+
+.paper-stack--offset-lg::before {
+  transform: translate(6px, 6px);
+}
+
+.paper-stack--offset-lg::after {
+  transform: translate(12px, 12px);
+}
+
+/* Shadow variations */
+.paper-stack--shadow-none {
+  box-shadow: none;
+}
+
+.paper-stack--shadow-none::before,
+.paper-stack--shadow-none::after {
+  box-shadow: none;
+}
+
+.paper-stack--shadow-soft {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.paper-stack--shadow-soft::before {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.paper-stack--shadow-soft::after {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.paper-stack--shadow-medium {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.paper-stack--shadow-medium::before {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.paper-stack--shadow-medium::after {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.paper-stack--shadow-strong {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paper-stack--shadow-strong::before {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.paper-stack--shadow-strong::after {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+/* Dark mode adjustments */
+:root.dark .paper-stack,
+:root.dark .paper-stack::before,
+:root.dark .paper-stack::after {
+  background: var(--surface, #1f2937);
+  border-color: var(--border, #374151);
+}
+
+/* Notebook Component Styles */
+.notebook {
+  background: var(--surface, white);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  position: relative;
+}
+
+.notebook--lined::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border, #e5e7eb);
+}
+
+.notebook--grid {
+  background-image: 
+    linear-gradient(to right, var(--border, #e5e7eb) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border, #e5e7eb) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.notebook--dots {
+  background-image: radial-gradient(circle, var(--border, #e5e7eb) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Dark mode adjustments for notebook */
+:root.dark .notebook {
+  background: var(--surface, #1f2937);
+  border-color: var(--border, #374151);
+}
+
+:root.dark .notebook--lined::before {
+  background: var(--border, #374151);
+}
+
+:root.dark .notebook--grid {
+  background-image: 
+    linear-gradient(to right, var(--border, #374151) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border, #374151) 1px, transparent 1px);
+}
+
+:root.dark .notebook--dots {
+  background-image: radial-gradient(circle, var(--border, #374151) 1px, transparent 1px);
+}

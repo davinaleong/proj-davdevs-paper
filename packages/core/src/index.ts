@@ -1,7 +1,6 @@
 /* =========================================================
-   Core CSS Foundation Export
+   Core Foundation Export
    ========================================================= */
 
-export * from './paper.css';
-export * from './theme.css'; 
-export * from './typography.css';
+// Export utilities (CSS files are imported directly via @import in styles package)
+export * from './utils';

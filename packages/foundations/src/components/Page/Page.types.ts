@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props for Page component
-interface BasePageProps {
+export interface BasePageProps {
   /**
    * The content to be rendered inside the Page
    */

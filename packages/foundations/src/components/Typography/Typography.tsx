@@ -64,15 +64,17 @@ export const Heading = React.forwardRef<HeadingRef, HeadingProps>(({
     'data-clamp': clamp,
   };
 
+  const Element = Component as any;
+  
   return (
-    <Component
+    <Element
       ref={ref}
       className={classes}
       {...dataAttributes}
       {...props}
     >
       {children}
-    </Component>
+    </Element>
   );
 });
 
@@ -127,7 +129,7 @@ export const Text = React.forwardRef<TextRef, TextProps>(({
 
   return (
     <Component
-      ref={ref}
+      ref={ref as any}
       className={classes}
       {...dataAttributes}
       {...props}
@@ -181,7 +183,7 @@ export const List = React.forwardRef<ListRef, ListProps>(({
 
   return (
     <Component
-      ref={ref}
+      ref={ref as any}
       className={classes}
       {...dataAttributes}
       {...props}
@@ -324,6 +326,6 @@ export const Overline = React.forwardRef<TextRef, Omit<TextProps, 'variant'>>(
 Overline.displayName = 'Overline';
 
 export const Code = React.forwardRef<TextRef, Omit<TextProps, 'code' | 'font'>>(
-  (props, ref) => <Text ref={ref} code font="mono" as="code" {...props} />
+  (props, ref) => <Text ref={ref} code font="mono" as="code" {...(props as any)} />
 );
 Code.displayName = 'Code';

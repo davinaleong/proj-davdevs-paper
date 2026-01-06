@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseAvatarProps {
+export interface BaseAvatarProps {
   /**
    * Additional CSS classes to apply
    */
@@ -91,4 +91,4 @@ export type AvatarProps<T extends React.ElementType = 'div'> = BaseAvatarProps &
     as?: T;
   };
 
-export type AvatarRef = HTMLDivElement;
+export type AvatarRef = HTMLElement;

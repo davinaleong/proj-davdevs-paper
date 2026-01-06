@@ -1,0 +1,7 @@
+/* =========================================================
+   Paper Components CSS — Redirected from Premium Package
+   This file exists to resolve build system path resolution issues
+   ========================================================= */
+
+/* Import the actual styles from the premium package */
+@import "../../../premium/src/components/paper/index.css";

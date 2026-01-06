@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseTooltipProps {
+export interface BaseTooltipProps {
   /**
    * The content to be displayed in the tooltip
    */

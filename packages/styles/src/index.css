@@ -4,9 +4,9 @@
    ========================================================= */
 
 /* Import core foundation styles */
-@import "@davdevs/paper-core/src/paper.css";
-@import "@davdevs/paper-core/src/theme.css";
-@import "@davdevs/paper-core/src/typography.css";
+@import "../../core/src/paper.css";
+@import "../../core/src/theme.css";
+@import "../../core/src/typography.css";
 
 /* Import foundation tokens and components */
-@import "@davdevs/paper-foundations/src/tokens.css";
+@import "../../foundations/src/tokens.css";

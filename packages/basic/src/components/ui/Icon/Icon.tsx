@@ -162,7 +162,7 @@ export const Icon = React.forwardRef<IconRef, IconProps>((
 
   return (
     <Component
-      ref={ref}
+      ref={ref as any}
       className={cn(
         baseClasses,
         sizeClasses[size],

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseIconProps {
+export interface BaseIconProps {
   /**
    * Additional CSS classes to apply
    */
@@ -75,4 +75,4 @@ export type IconProps<T extends React.ElementType = 'span'> = BaseIconProps &
     as?: T;
   };
 
-export type IconRef = HTMLSpanElement;
+export type IconRef = HTMLElement;

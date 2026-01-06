@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer } from '@davdevs/paper-basic';
-import Logo from "./../../../../assets/logo.svg"
+// import Logo from "../../../../../assets/logo.svg"
 
 export function FooterShowcase() {
   const footerSections = [

@@ -12,8 +12,10 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@davdevs/paper-core": "workspace:*",
-    "@davdevs/paper-foundations": "workspace:*"
+    "@davdevs/paper-core": "file:../core",
+    "@davdevs/paper-foundations": "file:../foundations",
+    "autoprefixer": "^10.4.23",
+    "postcss-import": "^15.1.0"
   },
   "devDependencies": {
     "postcss": "^8.0.0",

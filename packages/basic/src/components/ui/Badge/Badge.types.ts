@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseBadgeProps {
+export interface BaseBadgeProps {
   /**
    * The content to be rendered inside the Badge
    */

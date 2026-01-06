@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseButtonProps {
+export interface BaseButtonProps {
   /**
    * The content to be rendered inside the Button
    */

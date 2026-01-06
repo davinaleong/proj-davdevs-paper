@@ -28,7 +28,7 @@ export const Tooltip = React.forwardRef<TooltipRef, TooltipProps>((
     zIndex = 1000,
     portal
   },
-  ref
+  _ref // Ref parameter intentionally unused but required by forwardRef
 ) => {
   const [isOpen, setIsOpen] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });

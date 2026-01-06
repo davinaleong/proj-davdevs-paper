@@ -1,53 +1,5 @@
 import React from 'react';
-
-// Mock Card component for demonstration
-const Card = ({ 
-  children, 
-  variant = 'default', 
-  elevation = 'sm', 
-  padding = 'md', 
-  interactive = false,
-  className = '', 
-  // Destructure non-DOM props
-  as,
-  ...domProps 
-}: any) => {
-  const variants = {
-    default: 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
-    outlined: 'bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600',
-    filled: 'bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600',
-    ghost: 'bg-transparent border border-dashed border-gray-300 dark:border-gray-600'
-  };
-
-  const elevations = {
-    none: 'shadow-none',
-    sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg',
-    xl: 'shadow-xl'
-  };
-
-  const paddings = {
-    none: 'p-0',
-    sm: 'p-3',
-    md: 'p-4',
-    lg: 'p-6',
-    xl: 'p-8'
-  };
-
-  const interactiveStyles = interactive 
-    ? 'hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer' 
-    : '';
-
-  return (
-    <div 
-      className={`rounded-lg ${variants[variant]} ${elevations[elevation]} ${paddings[padding]} ${interactiveStyles} ${className}`}
-      {...domProps}
-    >
-      {children}
-    </div>
-  );
-};
+import { Card } from '@davdevs/paper-basic';
 
 export function CardShowcase() {
   return (

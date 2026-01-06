@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props for Grid component
-interface BaseGridProps {
+export interface BaseGridProps {
   /**
    * The content to be rendered inside the Grid
    */

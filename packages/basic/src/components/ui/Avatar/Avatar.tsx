@@ -164,7 +164,7 @@ export const Avatar = React.forwardRef<AvatarRef, AvatarProps>((
 
   return (
     <Component
-      ref={ref}
+      ref={ref as any}
       className={cn(
         baseClasses,
         sizeClasses[size],
@@ -175,7 +175,7 @@ export const Avatar = React.forwardRef<AvatarRef, AvatarProps>((
       data-variant={variant}
       data-size={size}
       onClick={interactive ? onClick : undefined}
-      {...props}
+      {...(props as any)}
     >
       {renderContent()}
       {renderStatus()}

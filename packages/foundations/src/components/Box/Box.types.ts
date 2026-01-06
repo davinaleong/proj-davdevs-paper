@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base props that are always available
-interface BaseBoxProps {
+export interface BaseBoxProps {
   /**
    * The content to be rendered inside the Box
    */

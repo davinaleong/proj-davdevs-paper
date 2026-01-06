@@ -144,7 +144,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
           name={name}
           value={option.value}
           checked={value === option.value}
-          onChange={(e) => onChange?.(option.value)}
+          onChange={(_e) => onChange?.(option.value)}
           label={option.label}
           helperText={option.helperText}
           size={size}
@@ -159,7 +159,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
           return React.cloneElement(child as React.ReactElement<RadioProps>, {
             name: name,
             checked: child.props.value === value,
-            onChange: (e) => onChange?.(child.props.value),
+            onChange: (_e) => onChange?.(child.props.value),
             size: size,
             color: color,
             disabled: disabled || child.props.disabled

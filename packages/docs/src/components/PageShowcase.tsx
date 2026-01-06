@@ -124,7 +124,7 @@ export function PageShowcase() {
               <div className="space-y-4">
                 <div className="text-center py-8 border-b border-gray-200 dark:border-gray-800">
                   <Text size="xl" className="font-bold">Welcome</Text>
-                  <Text size="md" className="text-gray-600 mt-2">
+                  <Text size="base" className="text-gray-600 mt-2">
                     This is a typical page layout with paper background
                   </Text>
                 </div>
