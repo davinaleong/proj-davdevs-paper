@@ -14,7 +14,7 @@ export function NotebookComponentShowcase() {
         <div className="space-y-4">
           <div>
             <h3 className="text-lg font-semibold mb-2">Project Kickoff Meeting</h3>
-            <p className="text-gray-600 text-sm mb-4">December 31, 2025 - 2:00 PM</p>
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">December 31, 2025 - 2:00 PM</p>
           </div>
           
           <div className="space-y-3">
@@ -60,33 +60,33 @@ export function NotebookComponentShowcase() {
           <h3 className="text-lg font-semibold mb-4">Feature Ideas</h3>
           
           <div className="space-y-6">
-            <div className="border-l-4 border-yellow-400 pl-4">
-              <h4 className="font-medium text-yellow-800">Paper Animation Effects</h4>
-              <p className="text-sm text-gray-600 mt-1">
+            <div className="border-l-4 border-yellow-400 dark:border-yellow-600 pl-4">
+              <h4 className="font-medium text-yellow-800 dark:text-yellow-600">Paper Animation Effects</h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
                 Add subtle animations when pages turn or stack layers shift. Could include 
                 paper flutter effects and realistic physics-based movements.
               </p>
             </div>
             
-            <div className="border-l-4 border-blue-400 pl-4">
-              <h4 className="font-medium text-blue-800">Handwriting Font Integration</h4>
-              <p className="text-sm text-gray-600 mt-1">
+            <div className="border-l-4 border-blue-400 dark:border-blue-600 pl-4">
+              <h4 className="font-medium text-blue-800 dark:text-blue-600">Handwriting Font Integration</h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
                 Integrate with handwriting fonts to make text look more natural on paper surfaces.
                 Could be toggleable for different use cases.
               </p>
             </div>
             
-            <div className="border-l-4 border-green-400 pl-4">
-              <h4 className="font-medium text-green-800">Coffee Stain Effects</h4>
-              <p className="text-sm text-gray-600 mt-1">
+            <div className="border-l-4 border-green-400 dark:border-green-600 pl-4">
+              <h4 className="font-medium text-green-800 dark:text-green-600">Coffee Stain Effects</h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
                 Optional weathering effects like coffee stains, ink blots, or aging marks 
                 for more authentic paper feel.
               </p>
             </div>
             
-            <div className="border-l-4 border-purple-400 pl-4">
-              <h4 className="font-medium text-purple-800">Multi-Notebook Views</h4>
-              <p className="text-sm text-gray-600 mt-1">
+            <div className="border-l-4 border-purple-400 dark:border-purple-600 pl-4">
+              <h4 className="font-medium text-purple-800 dark:text-purple-600">Multi-Notebook Views</h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
                 Allow multiple notebooks to be open simultaneously with tab management 
                 and cross-notebook linking.
               </p>
@@ -145,12 +145,12 @@ export function NotebookComponentShowcase() {
             </div>
           </div>
           
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <h4 className="font-medium text-blue-900 mb-2">Progress Summary</h4>
+          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
+            <h4 className="font-medium text-blue-900 dark:text-blue-300 mb-2">Progress Summary</h4>
             <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
               <div className="bg-blue-600 h-2 rounded-full" style={{ width: '37.5%' }}></div>
             </div>
-            <p className="text-sm text-blue-800">3 of 8 tasks completed</p>
+            <p className="text-sm text-blue-800 dark:text-blue-400">3 of 8 tasks completed</p>
           </div>
         </div>
       )
@@ -166,27 +166,27 @@ export function NotebookComponentShowcase() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
               <div className="text-4xl mb-2">📐</div>
-              <p className="text-sm text-gray-600">Component Architecture</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">Component Architecture</p>
             </div>
             
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
               <div className="text-4xl mb-2">🎨</div>
-              <p className="text-sm text-gray-600">UI Mockups</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">UI Mockups</p>
             </div>
             
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
               <div className="text-4xl mb-2">🔄</div>
-              <p className="text-sm text-gray-600">User Flow</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">User Flow</p>
             </div>
             
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
               <div className="text-4xl mb-2">📊</div>
-              <p className="text-sm text-gray-600">Data Models</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">Data Models</p>
             </div>
           </div>
           
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600 italic">
+          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-950 rounded-lg">
+            <p className="text-sm text-gray-700 dark:text-gray-300 italic">
               💡 In a real application, this area could contain an integrated drawing canvas 
               or image upload functionality for actual sketches and diagrams.
             </p>
@@ -199,7 +199,7 @@ export function NotebookComponentShowcase() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-8">Notebook (Component)</h1>
-      <p className="text-lg text-gray-600 mb-8">
+      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
         Multi-page container with realistic notebook styling and tabbed navigation
       </p>
 
@@ -231,7 +231,7 @@ export function NotebookComponentShowcase() {
               >
                 <div className="text-center">
                   <h4 className="font-medium">Spiral</h4>
-                  <p className="text-xs text-gray-600">Ring binding</p>
+                  <p className="text-xs text-gray-700 dark:text-gray-300">Ring binding</p>
                 </div>
               </Notebook>
               <span className="mt-2 text-sm font-medium">Spiral</span>
@@ -245,7 +245,7 @@ export function NotebookComponentShowcase() {
               >
                 <div className="text-center">
                   <h4 className="font-medium">Composition</h4>
-                  <p className="text-xs text-gray-600">Classic notebook</p>
+                  <p className="text-xs text-gray-700 dark:text-gray-300">Classic notebook</p>
                 </div>
               </Notebook>
               <span className="mt-2 text-sm font-medium">Composition</span>
@@ -259,7 +259,7 @@ export function NotebookComponentShowcase() {
               >
                 <div className="text-center">
                   <h4 className="font-medium">Leather</h4>
-                  <p className="text-xs text-gray-600">Premium bound</p>
+                  <p className="text-xs text-gray-700 dark:text-gray-300">Premium bound</p>
                 </div>
               </Notebook>
               <span className="mt-2 text-sm font-medium">Leather</span>
@@ -273,7 +273,7 @@ export function NotebookComponentShowcase() {
               >
                 <div className="text-center">
                   <h4 className="font-medium">Ring Binder</h4>
-                  <p className="text-xs text-gray-600">Three rings</p>
+                  <p className="text-xs text-gray-700 dark:text-gray-300">Three rings</p>
                 </div>
               </Notebook>
               <span className="mt-2 text-sm font-medium">Ring Binder</span>
@@ -287,28 +287,28 @@ export function NotebookComponentShowcase() {
             <Notebook size="sm" lines="none" style="composition">
               <div>
                 <h4 className="font-medium mb-2">Blank</h4>
-                <p className="text-xs text-gray-600">Plain paper for free-form content</p>
+                <p className="text-xs text-gray-700 dark:text-gray-300">Plain paper for free-form content</p>
               </div>
             </Notebook>
 
             <Notebook size="sm" lines="ruled" style="composition">
               <div>
                 <h4 className="font-medium mb-2">Ruled</h4>
-                <p className="text-xs text-gray-600">Traditional lined paper</p>
+                <p className="text-xs text-gray-700 dark:text-gray-300">Traditional lined paper</p>
               </div>
             </Notebook>
 
             <Notebook size="sm" lines="dotted" style="composition">
               <div>
                 <h4 className="font-medium mb-2">Dotted</h4>
-                <p className="text-xs text-gray-600">Dot grid for flexible layouts</p>
+                <p className="text-xs text-gray-700 dark:text-gray-300">Dot grid for flexible layouts</p>
               </div>
             </Notebook>
 
             <Notebook size="sm" lines="grid" style="composition">
               <div>
                 <h4 className="font-medium mb-2">Grid</h4>
-                <p className="text-xs text-gray-600">Square grid for precise layouts</p>
+                <p className="text-xs text-gray-700 dark:text-gray-300">Square grid for precise layouts</p>
               </div>
             </Notebook>
           </div>

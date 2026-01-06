@@ -116,15 +116,15 @@
 }
 
 .notebook-leather {
-  @apply bg-amber-50;
+  @apply bg-orange-100;
   background-image:
-    radial-gradient(circle at 2px 2px, rgba(139,69,19,0.12) 1px, transparent 0),
+    radial-gradient(circle at 2px 2px, rgba(101,67,33,0.18) 1px, transparent 0),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 0.25em,
-      rgba(139,69,19,0.05) 0.25em,
-      rgba(139,69,19,0.05) 0.5em
+      rgba(101,67,33,0.08) 0.25em,
+      rgba(101,67,33,0.08) 0.5em
     );
   background-size: 0.9em 0.9em, 100% 0.75em;
 }
@@ -254,4 +254,124 @@
   box-shadow:
     0 0.9em 1.4em -0.3em rgba(0, 0, 0, 0.15),
     0 0.4em 0.6em -0.2em rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Dark Mode ---------- */
+
+.dark .notebook {
+  @apply bg-gray-800 border-gray-700;
+  box-shadow:
+    0 0.6em 0.9em -0.3em rgba(0, 0, 0, 0.4),
+    0 0.25em 0.4em -0.15em rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Spine */
+.dark .notebook-spine {
+  @apply bg-gray-700;
+}
+
+/* Dark Mode Binding Elements */
+.dark .spiral-ring {
+  border-color: #6b7280;
+  background: linear-gradient(45deg, #4b5563, #374151);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.dark .ring {
+  border-color: #4b5563;
+  background: radial-gradient(circle at 30% 30%, #6b7280, #4b5563);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.dark .stitch {
+  background: #4b5563;
+}
+
+/* Dark Mode Style Variants */
+.dark .notebook-composition {
+  @apply bg-gray-800;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 0.6em
+    );
+}
+
+.dark .notebook-leather {
+  @apply bg-yellow-900;
+  background-image:
+    radial-gradient(circle at 2px 2px, rgba(101,67,33,0.3) 1px, transparent 0),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 0.25em,
+      rgba(101,67,33,0.15) 0.25em,
+      rgba(101,67,33,0.15) 0.5em
+    );
+}
+
+/* Dark Mode Tabs */
+.dark .notebook-tab {
+  @apply bg-gray-700 border-gray-600 text-gray-300;
+}
+
+.dark .notebook-tab.active {
+  @apply bg-gray-800 border-gray-600 border-b-gray-800 text-gray-100;
+}
+
+/* Dark Mode Page */
+.dark .notebook-page {
+  @apply bg-gray-800;
+}
+
+.dark .notebook-margin {
+  @apply border-red-400;
+}
+
+/* Dark Mode Lines */
+.dark .notebook-lines-ruled .notebook-page {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 1lh,
+    #4b5563 1lh,
+    #4b5563 calc(1lh + 1px)
+  );
+}
+
+.dark .notebook-lines-dotted .notebook-page {
+  background-image:
+    radial-gradient(circle at 1.2em 1.4em, #6b7280 1px, transparent 1px);
+}
+
+.dark .notebook-lines-grid .notebook-page {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1lh,
+      #4b5563 1lh,
+      #4b5563 calc(1lh + 1px)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1lh,
+      #4b5563 1lh,
+      #4b5563 calc(1lh + 1px)
+    );
+}
+
+/* Dark Mode Page Number */
+.dark .notebook-page-number {
+  @apply text-gray-400;
+}
+
+/* Dark Mode Enhanced Shadows */
+.dark .notebook-interactive:hover {
+  box-shadow:
+    0 0.9em 1.4em -0.3em rgba(0, 0, 0, 0.5),
+    0 0.4em 0.6em -0.2em rgba(0, 0, 0, 0.3);
 }
