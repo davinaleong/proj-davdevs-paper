@@ -70,24 +70,45 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       }
     };
 
-    // Variant classes
+    // Variant classes (light + dark)
     const variantClasses = {
       default: {
-        button: 'border border-gray-300 bg-white hover:bg-gray-50',
-        active: 'bg-blue-600 text-white border-blue-600',
-        inactive: 'text-gray-500 hover:text-gray-700'
+        button:
+          'border border-gray-300 bg-white hover:bg-gray-50 ' +
+          'dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-800',
+        active:
+          'bg-blue-600 text-white border-blue-600 ' +
+          'dark:bg-blue-500 dark:border-blue-500',
+        inactive:
+          'text-gray-500 hover:text-gray-700 ' +
+          'dark:text-gray-400 dark:hover:text-gray-200'
       },
+
       minimal: {
-        button: 'border-none bg-transparent hover:bg-gray-100',
-        active: 'bg-blue-100 text-blue-700',
-        inactive: 'text-gray-500 hover:text-gray-700'
+        button:
+          'border-none bg-transparent hover:bg-gray-100 ' +
+          'dark:hover:bg-gray-800',
+        active:
+          'bg-blue-100 text-blue-700 ' +
+          'dark:bg-blue-900/40 dark:text-blue-300',
+        inactive:
+          'text-gray-500 hover:text-gray-700 ' +
+          'dark:text-gray-400 dark:hover:text-gray-200'
       },
+
       pills: {
-        button: 'border-none bg-gray-100 hover:bg-gray-200 rounded-full',
-        active: 'bg-blue-600 text-white',
-        inactive: 'text-gray-600 hover:text-gray-800'
+        button:
+          'border-none bg-gray-100 hover:bg-gray-200 rounded-full ' +
+          'dark:bg-gray-800 dark:hover:bg-gray-700',
+        active:
+          'bg-blue-600 text-white ' +
+          'dark:bg-blue-500',
+        inactive:
+          'text-gray-600 hover:text-gray-800 ' +
+          'dark:text-gray-300 dark:hover:text-white'
       }
     };
+
 
     const sizes = sizeClasses[size];
     const variants = variantClasses[variant];
@@ -126,7 +147,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       <div className={cn('flex flex-col items-center', className)}>
         {/* Page Info */}
         {showPageInfo && (
-          <div className="mb-3 text-sm text-gray-600">
+          <div className="mb-3 text-sm text-gray-500">
             {pageInfo(currentPage, totalPages)}
           </div>
         )}
