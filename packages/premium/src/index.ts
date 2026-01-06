@@ -1,5 +1,4 @@
 // Export all premium components
-export * from './components/paper';
 export * from './components/premium-ui';
 
 // Export styles

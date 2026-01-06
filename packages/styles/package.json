@@ -1,0 +1,26 @@
+{
+  "name": "@davdevs/paper-styles",
+  "version": "1.0.0",
+  "description": "Pure CSS styles for DavDevs Paper Design System",
+  "main": "dist/index.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "postcss src/index.css -o dist/index.css",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@davdevs/paper-core": "workspace:*",
+    "@davdevs/paper-foundations": "workspace:*"
+  },
+  "devDependencies": {
+    "postcss": "^8.0.0",
+    "postcss-cli": "^10.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
