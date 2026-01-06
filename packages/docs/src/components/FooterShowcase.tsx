@@ -1,5 +1,6 @@
 import React from 'react';
 import { Footer } from '@davdevs/paper-basic';
+import Logo from "./../../../../assets/logo.svg"
 
 export function FooterShowcase() {
   const footerSections = [
@@ -40,10 +41,8 @@ export function FooterShowcase() {
 
   const logo = (
     <div className="flex items-center">
-      <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-2">
-        <span className="text-white font-bold text-sm">P</span>
-      </div>
-      <span className="text-lg font-semibold text-gray-900">Paper UI</span>
+      <img src={Logo} alt="Logo" className="w-8 h-8 mr-2" />
+      <span className="text-blue-500 text-lg font-semibold">Dav/Devs Paper UI</span>
     </div>
   );
 
@@ -51,16 +50,16 @@ export function FooterShowcase() {
     <div className="max-w-6xl mx-auto">
       <div className="p-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Footer</h1>
-          <p className="text-gray-600">Page footer sections with paper-inspired design</p>
+          <h1 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2">Footer</h1>
+          <p className="text-gray-700 dark:text-gray-300">Page footer sections with paper-inspired design</p>
         </div>
 
         <div className="space-y-12">
           {/* Full Footer */}
           <div>
             <h2 className="text-lg font-semibold mb-4">Full Footer</h2>
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-white p-4 text-center text-gray-500 text-sm border-b">
+            <div className="border border-white dark:border-black rounded-lg overflow-hidden">
+              <div className="bg-white dark:bg-black p-4 text-center text-gray-500 text-sm border-b border-gray-200 dark:border-gray-700">
                 Page content above footer
               </div>
               <Footer
@@ -76,8 +75,8 @@ export function FooterShowcase() {
           {/* Default Footer */}
           <div>
             <h2 className="text-lg font-semibold mb-4">Default Footer</h2>
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-white p-4 text-center text-gray-500 text-sm border-b">
+            <div className="border border-white dark:border-black rounded-lg overflow-hidden">
+              <div className="bg-white dark:bg-black p-4 text-center text-gray-500 text-sm border-b border-gray-200 dark:border-gray-700">
                 Page content above footer
               </div>
               <Footer
@@ -93,8 +92,8 @@ export function FooterShowcase() {
           {/* Minimal Footer */}
           <div>
             <h2 className="text-lg font-semibold mb-4">Minimal Footer</h2>
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-white p-4 text-center text-gray-500 text-sm border-b">
+            <div className="border border-white dark:border-black rounded-lg overflow-hidden">
+              <div className="bg-white dark:bg-black p-4 text-center text-gray-500 text-sm border-b border-gray-200 dark:border-gray-700">
                 Page content above footer
               </div>
               <Footer
@@ -109,8 +108,8 @@ export function FooterShowcase() {
           {/* Copyright Only */}
           <div>
             <h2 className="text-lg font-semibold mb-4">Copyright Only</h2>
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-white p-4 text-center text-gray-500 text-sm border-b">
+            <div className="border border-white dark:border-black rounded-lg overflow-hidden">
+              <div className="bg-white dark:bg-black p-4 text-center text-gray-500 text-sm border-b border-gray-200 dark:border-gray-700">
                 Page content above footer
               </div>
               <Footer
@@ -123,8 +122,8 @@ export function FooterShowcase() {
           {/* Custom Content */}
           <div>
             <h2 className="text-lg font-semibold mb-4">With Custom Content</h2>
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-white p-4 text-center text-gray-500 text-sm border-b">
+            <div className="border border-white dark:border-black rounded-lg overflow-hidden">
+              <div className="bg-white dark:bg-black p-4 text-center text-gray-500 text-sm border-b border-gray-200 dark:border-gray-700">
                 Page content above footer
               </div>
               <Footer
@@ -138,18 +137,18 @@ export function FooterShowcase() {
                 copyright="© 2024 Paper UI. All rights reserved."
                 variant="default"
               >
-                <div className="col-span-1">
-                  <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
+                <div className="col-span-2">
+                  <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 tracking-wider uppercase mb-4">
                     Subscribe
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-gray-500 text-sm mb-4">
                     Get the latest updates and news.
                   </p>
                   <div className="flex">
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-l-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 bg-white dark:border-gray-700 dark:bg-black rounded-l-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                     <button className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-r-md hover:bg-blue-700 transition-colors">
                       Subscribe

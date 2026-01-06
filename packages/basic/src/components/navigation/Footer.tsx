@@ -35,9 +35,9 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
   }, ref) => {
     const baseClasses = [
       'w-full',
-      'bg-gray-50',
+      'bg-gray-50 dark:bg-gray-900',
       'border-t',
-      'border-gray-200'
+      'border-gray-300 dark:border-gray-700',
     ];
 
     const variantClasses = {
@@ -67,7 +67,7 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
               )}
               
               {copyright && (
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-gray-500">
                   {copyright}
                 </div>
               )}
@@ -80,7 +80,7 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
                       href={link.href}
                       target={link.external ? '_blank' : undefined}
                       rel={link.external ? 'noopener noreferrer' : undefined}
-                      className="text-gray-500 hover:text-gray-700 transition-colors"
+                      className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                     >
                       {link.label}
                     </a>
@@ -103,7 +103,7 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
               {/* Footer sections */}
               {sections.map((section, index) => (
                 <div key={index} className="col-span-1">
-                  <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
+                  <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 tracking-wider uppercase mb-4">
                     {section.title}
                   </h3>
                   <ul className="space-y-3">
@@ -113,7 +113,7 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
                           href={link.href}
                           target={link.external ? '_blank' : undefined}
                           rel={link.external ? 'noopener noreferrer' : undefined}
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
+                          className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 "
                         >
                           {link.label}
                           {link.external && (
@@ -145,10 +145,10 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
 
           {variant !== 'minimal' && (
             /* Bottom section */
-            <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="mt-12 pt-8 border-t border-gray-300 dark:border-gray-700">
               <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                 {copyright && (
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-500">
                     {copyright}
                   </div>
                 )}
@@ -161,7 +161,7 @@ export const Footer = React.forwardRef<HTMLElement, FooterProps>(
                         href={link.href}
                         target={link.external ? '_blank' : undefined}
                         rel={link.external ? 'noopener noreferrer' : undefined}
-                        className="text-gray-500 hover:text-gray-700 transition-colors"
+                        className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
                       >
                         <span className="sr-only">{link.label}</span>
                         {link.label}
