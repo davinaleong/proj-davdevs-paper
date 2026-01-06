@@ -24,7 +24,7 @@ export function BreadcrumbShowcase() {
   return (
     <div className="p-8 max-w-4xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Breadcrumb</h1>
+        <h1 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2">Breadcrumb</h1>
         <p className="text-gray-600">Navigation trails with paper-inspired design</p>
       </div>
 
@@ -42,15 +42,15 @@ export function BreadcrumbShowcase() {
           <h2 className="text-lg font-semibold mb-4">Sizes</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Small</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Small</h3>
               <Breadcrumb items={sampleBreadcrumbs} size="sm" />
             </div>
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Medium (Default)</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Medium (Default)</h3>
               <Breadcrumb items={sampleBreadcrumbs} size="md" />
             </div>
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Large</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Large</h3>
               <Breadcrumb items={sampleBreadcrumbs} size="lg" />
             </div>
           </div>
@@ -84,15 +84,15 @@ export function BreadcrumbShowcase() {
           <h2 className="text-lg font-semibold mb-4">Truncation</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Full breadcrumb (7 items)</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full breadcrumb (7 items)</h3>
               <Breadcrumb items={longBreadcrumbs} />
             </div>
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Max 5 items</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Max 5 items</h3>
               <Breadcrumb items={longBreadcrumbs} maxItems={5} />
             </div>
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Max 3 items</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Max 3 items</h3>
               <Breadcrumb items={longBreadcrumbs} maxItems={3} />
             </div>
           </div>
@@ -114,10 +114,9 @@ export function BreadcrumbShowcase() {
         </div>
 
         {/* Implementation Example */}
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h2 className="text-lg font-semibold mb-4">Usage Example</h2>
-          <pre className="text-sm bg-white p-4 rounded border overflow-x-auto">
-            <code>{`import { Breadcrumb } from '@davdevs/paper-basic';
+        <div>
+            <h2 className="text-lg font-semibold mb-4">Usage Example</h2>
+            <pre className="showcase-code mt-4">{`import { Breadcrumb } from '@davdevs/paper-basic';
 
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
@@ -135,8 +134,7 @@ function MyBreadcrumb() {
       separator="/"
     />
   );
-}`}</code>
-          </pre>
+}`}</pre>
         </div>
       </div>
     </div>
