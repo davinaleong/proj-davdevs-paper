@@ -202,46 +202,70 @@
 }
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  .paper-stack-layer,
-  .paper-stack-content {
-    @apply bg-gray-800 border-gray-700;
-  }
-  
-  .paper-stack-texture-grain .paper-stack-layer,
-  .paper-stack-texture-grain .paper-stack-content {
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
-  }
-  
-  .paper-stack-texture-linen .paper-stack-layer,
-  .paper-stack-texture-linen .paper-stack-content {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 2px,
-        rgba(255,255,255,0.01) 2px,
-        rgba(255,255,255,0.01) 4px
-      );
-  }
-  
-  .paper-stack-texture-fiber .paper-stack-layer,
-  .paper-stack-texture-fiber .paper-stack-content {
-    background-image: 
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 1px,
-        rgba(255,255,255,0.015) 1px,
-        rgba(255,255,255,0.015) 2px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 1px,
-        rgba(255,255,255,0.015) 1px,
-        rgba(255,255,255,0.015) 2px
-      );
-  }
+.dark .paper-stack-layer,
+.dark .paper-stack-content {
+  @apply bg-gray-800 border-gray-700;
+}
+
+/* Dark Mode Textures */
+.dark .paper-stack-texture-grain .paper-stack-layer,
+.dark .paper-stack-texture-grain .paper-stack-content {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 3px 3px, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 18px 18px, 24px 24px;
+}
+
+.dark .paper-stack-texture-linen .paper-stack-layer,
+.dark .paper-stack-texture-linen .paper-stack-content {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.025),
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+}
+
+.dark .paper-stack-texture-fiber .paper-stack-layer,
+.dark .paper-stack-texture-fiber .paper-stack-content {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.025),
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+/* Dark mode shadows with better contrast */
+.dark .paper-stack-shadow-soft .paper-stack-layer,
+.dark .paper-stack-shadow-soft .paper-stack-content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .paper-stack-shadow-medium .paper-stack-layer,
+.dark .paper-stack-shadow-medium .paper-stack-content {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.dark .paper-stack-shadow-hard .paper-stack-layer,
+.dark .paper-stack-shadow-hard .paper-stack-content {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
