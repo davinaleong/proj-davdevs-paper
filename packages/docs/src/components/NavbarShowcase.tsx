@@ -14,7 +14,7 @@ export function NavbarShowcase() {
 
   const actions = (
     <div className="flex items-center space-x-3">
-      <button className="text-sm text-gray-700 hover:text-gray-900">
+      <button className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
         Sign In
       </button>
       <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
@@ -26,8 +26,8 @@ export function NavbarShowcase() {
   return (
     <div className="p-8 max-w-6xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Navbar</h1>
-        <p className="text-gray-600">Site navigation with paper elevation</p>
+        <h1 className="showcase-title">Navbar Component</h1>
+        <p className="text-gray-700 dark:text-gray-300">Site navigation with paper elevation</p>
       </div>
 
       <div className="space-y-8">
@@ -49,7 +49,7 @@ export function NavbarShowcase() {
           <h2 className="text-lg font-semibold mb-4">Variants</h2>
           <div className="space-y-6">
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Default</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Default</h3>
               <Navbar
                 title="Default Navbar"
                 titleHref="#"
@@ -59,7 +59,7 @@ export function NavbarShowcase() {
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Elevated</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Elevated</h3>
               <Navbar
                 title="Elevated Navbar"
                 titleHref="#"
@@ -68,8 +68,8 @@ export function NavbarShowcase() {
               />
             </div>
 
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Transparent</h3>
+            <div className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg">
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Transparent</h3>
               <Navbar
                 title="Transparent Navbar"
                 titleHref="#"
@@ -85,7 +85,7 @@ export function NavbarShowcase() {
           <h2 className="text-lg font-semibold mb-4">Position Types</h2>
           <div className="space-y-6">
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Static (Default)</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Static (Default)</h3>
               <Navbar
                 title="Static Navbar"
                 titleHref="#"
@@ -95,16 +95,16 @@ export function NavbarShowcase() {
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Sticky</h3>
-              <div className="border rounded-lg overflow-hidden h-48">
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Sticky</h3>
+              <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden h-48">
                 <Navbar
                   title="Sticky Navbar"
                   titleHref="#"
                   links={navLinks.slice(0, 3)}
                   position="sticky"
                 />
-                <div className="p-4 h-96 bg-gradient-to-b from-blue-50 to-blue-100">
-                  <p className="text-gray-700">Scroll to see sticky behavior (in a real page)</p>
+                <div className="p-4 h-96 bg-gradient-to-b from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800">
+                  <p className="text-gray-700 dark:text-gray-300">Scroll to see sticky behavior (in a real page)</p>
                 </div>
               </div>
             </div>

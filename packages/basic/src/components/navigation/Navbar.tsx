@@ -46,8 +46,8 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     ];
 
     const variantClasses = {
-      default: 'bg-white border-b border-gray-200',
-      elevated: 'bg-white shadow-sm border-b border-gray-200',
+      default: 'bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700',
+      elevated: 'bg-white shadow-sm border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700',
       transparent: 'bg-transparent'
     };
 
@@ -76,12 +76,12 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                 titleHref ? (
                   <a
                     href={titleHref}
-                    className="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors"
+                    className="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors dark:text-white dark:hover:text-gray-300"
                   >
                     {title}
                   </a>
                 ) : (
-                  <span className="text-xl font-semibold text-gray-900">
+                  <span className="text-xl font-semibold text-gray-900 dark:text-white">
                     {title}
                   </span>
                 )
@@ -99,8 +99,8 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                       className={cn(
                         'px-3 py-2 rounded-md text-sm font-medium transition-colors',
                         link.active
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900',
+                          ? 'bg-gray-900 text-white dark:bg-gray-800 dark:text-white'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white',
                         link.disabled && 'opacity-50 cursor-not-allowed pointer-events-none'
                       )}
                       aria-current={link.active ? 'page' : undefined}
@@ -125,7 +125,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                 <button
                   type="button"
                   onClick={toggleMobileMenu}
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                   aria-controls="mobile-menu"
                   aria-expanded={isMobileMenuOpen}
                 >
