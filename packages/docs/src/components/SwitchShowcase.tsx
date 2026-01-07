@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Switch } from '@davdevs/paper-basic';
 
 export function SwitchShowcase() {

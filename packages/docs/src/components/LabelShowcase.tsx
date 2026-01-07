@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Input, Textarea, Label } from '../../../basic/src/components/forms';
 
 export function LabelShowcase() {

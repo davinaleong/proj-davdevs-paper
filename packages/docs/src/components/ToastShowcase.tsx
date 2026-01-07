@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Toast } from '../../../basic/src/components/feedback';
 import { Select } from '../../../basic/src/components/forms';
 

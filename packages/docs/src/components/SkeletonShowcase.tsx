@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Skeleton } from '@davdevs/paper-basic';
 
 export function SkeletonShowcase() {

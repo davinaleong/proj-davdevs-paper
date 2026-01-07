@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { SidebarLayout } from '@davdevs/paper-premium';
 
 export function SidebarLayoutShowcase() {

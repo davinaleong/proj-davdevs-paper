@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+
 import { Navbar } from '@davdevs/paper-basic';
 import { Search, Bell } from 'lucide-react';
 
 export function NavbarShowcase() {
-  const [activeTab, setActiveTab] = useState('basic');
 
   const navLinks = [
     { label: 'Home', href: '#', active: true },

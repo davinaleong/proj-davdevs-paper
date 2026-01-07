@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Radio, RadioGroup } from '@davdevs/paper-basic';
 
 export function RadioShowcase() {
@@ -52,7 +52,6 @@ export function RadioShowcase() {
                 name="described"
                 value="option-1"
                 label="Option with description"
-                description="This option provides additional context"
                 checked={true}
                 readOnly
               />
@@ -260,7 +259,7 @@ export function RadioShowcase() {
       <section className="showcase-section">
         <h2 className="showcase-subtitle">Colors</h2>
         <div className="showcase-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {['primary', 'secondary', 'success', 'warning', 'danger'].map((color) => (
+          {(['primary', 'secondary', 'success', 'warning', 'danger'] as const).map((color) => (
             <div key={color} className="showcase-item">
               <h3 className="font-semibold mb-2 capitalize">{color}</h3>
               <RadioGroup 
@@ -313,7 +312,7 @@ export function RadioShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">Error State</h3>
             <RadioGroup 
-              error={true}
+              error="Please select an option"
               label="Error group"
               description="Please select an option"
               name="error"
@@ -371,7 +370,6 @@ export function RadioShowcase() {
               name="contact-preference"
               value={preferenceValue}
               onChange={setPreferenceValue}
-              gap="lg"
             >
               <Radio 
                 value="email"
@@ -381,7 +379,7 @@ export function RadioShowcase() {
               <Radio 
                 value="sms"
                 label="SMS / Text Message"
-                description="Send quick updates via text message"
+                helperText="Send quick updates via text message"
               />
               <Radio 
                 value="phone"

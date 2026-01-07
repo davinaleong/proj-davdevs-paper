@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   Text,
   Lead,
@@ -290,9 +290,9 @@ export function BodyTextShowcase() {
             <h3 className="font-semibold mb-4">Different Elements</h3>
             <div className="space-y-4 mb-4">
               <Text as="p">Text as paragraph (default)</Text>
-              <Text as="span">Text as inline span element</Text>
-              <Text as="div">Text as div block element</Text>
-              <Text as="label">Text as label element</Text>
+              <Text as={"span" as any}>Text as inline span element</Text>
+              <Text as={"div" as any}>Text as div block element</Text>
+              <Text as={"label" as any}>Text as label element</Text>
             </div>
             <pre className="showcase-code">
 {`<Text as="p">Paragraph element</Text>
@@ -305,12 +305,12 @@ export function BodyTextShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-4">Semantic Usage</h3>
             <div className="space-y-4 mb-4">
-              <Text as="time" color="subtle">December 26, 2025</Text>
-              <Text as="address" font="mono" size="sm">
+              <Text as={"time" as any} color="subtle">December 26, 2025</Text>
+              <Text as={"address" as any} font="mono" size="sm">
                 123 Paper Street<br />
                 Design City, UI 12345
               </Text>
-              <Text as="abbr" title="HyperText Markup Language">HTML</Text>
+              <Text as={"abbr" as any} title="HyperText Markup Language">HTML</Text>
             </div>
             <pre className="showcase-code">
 {`<Text as="time" color="subtle">

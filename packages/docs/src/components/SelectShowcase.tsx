@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Select } from '@davdevs/paper-basic';
 
 // Sample options for demonstrations
@@ -92,12 +92,6 @@ const LocationIcon = () => (
   </svg>
 );
 
-const FlagIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 2H21l-3 6 3 6h-8.5l-1-2H5a2 2 0 00-2 2zm9-13.5V9" />
-  </svg>
-);
-
 export function SelectShowcase() {
   const [selectValues, setSelectValues] = useState({
     country: '',
@@ -127,7 +121,7 @@ export function SelectShowcase() {
               placeholder="Choose a country"
               options={countryOptions}
               value={selectValues.country}
-              onChange={(value: string) => setSelectValues({...selectValues, country: value})}
+              onChange={(e) => setSelectValues({...selectValues, country: e.target.value})}
               className="mb-4" 
             />
             <pre className="showcase-code">
@@ -146,7 +140,7 @@ export function SelectShowcase() {
               placeholder="Select priority"
               options={priorityOptions}
               value={selectValues.priority}
-              onChange={(value: string) => setSelectValues({...selectValues, priority: value})}
+              onChange={(e) => setSelectValues({...selectValues, priority: e.target.value})}
               helperText="Choose the task priority level"
               className="mb-4"
             />
@@ -171,7 +165,7 @@ export function SelectShowcase() {
               placeholder="Choose food type"
               optgroups={foodOptgroups}
               value={selectValues.food}
-              onChange={(value: string) => setSelectValues({...selectValues, food: value})}
+              onChange={(e) => setSelectValues({...selectValues, food: e.target.value})}
               className="mb-4" 
             />
             <pre className="showcase-code">
@@ -203,7 +197,7 @@ export function SelectShowcase() {
               placeholder="Choose region"
               optgroups={regionOptgroups}
               value={selectValues.region}
-              onChange={(value: string) => setSelectValues({...selectValues, region: value})}
+              onChange={(e) => setSelectValues({...selectValues, region: e.target.value})}
               className="mb-4"
             />
             <pre className="showcase-code">
@@ -343,16 +337,15 @@ export function SelectShowcase() {
           </div>
 
           <div className="showcase-item">
-            <h3 className="font-semibold mb-2">Custom End Icon</h3>
+            <h3 className="font-semibold mb-2">Custom Icon (Placeholder)</h3>
             <Select 
-              endIcon={<FlagIcon />}
               placeholder="Choose priority"
               options={priorityOptions}
               className="mb-4"
             />
             <pre className="showcase-code">
 {`<Select 
-  endIcon={<FlagIcon />}
+  placeholder="Choose priority"
   placeholder="Choose priority"
   options={priorityOptions}
 />`}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Pagination } from '@davdevs/paper-basic';
 
 export function PaginationShowcase() {

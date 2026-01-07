@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Footer } from '@davdevs/paper-basic';
 // import Logo from "../../../../../assets/logo.svg"
 
@@ -41,7 +41,7 @@ export function FooterShowcase() {
 
   const logo = (
     <div className="flex items-center">
-      <img src={Logo} alt="Logo" className="w-8 h-8 mr-2" />
+      {/* <img src={Logo} alt="Logo" className="w-8 h-8 mr-2" /> */}
       <span className="text-blue-500 text-lg font-semibold">Dav/Devs Paper UI</span>
     </div>
   );

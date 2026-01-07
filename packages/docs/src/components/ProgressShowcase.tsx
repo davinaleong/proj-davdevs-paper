@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Progress } from '@davdevs/paper-basic';
 
 export function ProgressShowcase() {
@@ -315,7 +315,7 @@ export function ProgressShowcase() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         @keyframes progress-indeterminate {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(400%); }

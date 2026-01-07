@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Section, H1, H2, H3, Text } from '@davdevs/paper-foundations';
 
 export function SectionShowcase() {

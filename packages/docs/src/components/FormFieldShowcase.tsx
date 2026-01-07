@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Textarea, Select, Label, FormField } from '../../../basic/src/components/forms';
+import { Input, Textarea, Select, FormField } from '../../../basic/src/components/forms';
 
 export function FormFieldShowcase() {
   const [formData, setFormData] = useState({

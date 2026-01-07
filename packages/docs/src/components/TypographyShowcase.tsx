@@ -1,6 +1,5 @@
-import React from 'react';
+
 import {
-  Heading,
   Text,
   List,
   Blockquote,

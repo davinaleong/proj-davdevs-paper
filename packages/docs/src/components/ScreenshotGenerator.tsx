@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ThemeProvider } from '../context/ThemeContext';
 import { BoxShowcase } from './BoxShowcase';
 import { StackShowcase } from './StackShowcase';
@@ -42,13 +42,6 @@ import { FooterShowcase } from './FooterShowcase';
 import { PaperStackShowcase } from './PaperStackShowcase';
 import { SidebarLayoutShowcase } from './SidebarLayoutShowcase';
 import { NotebookComponentShowcase } from './NotebookComponentShowcase';
-
-interface ComponentItem {
-  id: string;
-  label: string;
-  component: React.ComponentType;
-  tier: 'basic' | 'premium';
-}
 
 // All available components organized by category
 const componentGroups = [
@@ -142,10 +135,6 @@ export function ScreenshotGenerator() {
 
   const ActiveComponent = allComponents.find(item => item.id === selectedComponent)?.component || ButtonShowcase;
   
-  const filteredComponents = allComponents.filter(component => 
-    filterTier === 'all' || component.tier === filterTier
-  );
-
   // Screenshot generation function
   const generateScreenshot = async () => {
     const screenshotArea = document.getElementById('screenshot-area');

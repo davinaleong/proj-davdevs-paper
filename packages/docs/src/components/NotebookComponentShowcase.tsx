@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Notebook } from '@davdevs/paper-premium';
 import type { NotebookPage } from '@davdevs/paper-premium';
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Gauge, Briefcase, Users, ChartSpline, Cog } from 'lucide-react';
 import { Drawer } from '../../../basic/src/components/feedback';
 import { Select, Checkbox, Label } from '../../../basic/src/components/forms';

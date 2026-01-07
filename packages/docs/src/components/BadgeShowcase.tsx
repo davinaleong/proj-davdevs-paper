@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Badge } from '@davdevs/paper-basic';
 
 // Mock icons for demonstration

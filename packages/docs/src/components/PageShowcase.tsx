@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Page, Text } from '@davdevs/paper-foundations';
 
 export function PageShowcase() {

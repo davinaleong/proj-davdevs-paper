@@ -1,20 +1,20 @@
 import React from 'react';
-import { Container, Stack, Inline, Divider, Surface } from '@davdevs/paper-foundations';
+import { Container, Stack, Inline, Surface } from '@davdevs/paper-foundations';
 
 export const ContainerShowcase = () => {
-  const DemoButton = ({ children, variant = 'default' }: { children: React.ReactNode; variant?: 'default' | 'primary' | 'secondary' }) => {
-    const variants = {
-      default: 'bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600',
-      primary: 'bg-blue-600 text-white hover:bg-blue-700',
-      secondary: 'bg-gray-600 text-white hover:bg-gray-700'
-    };
-    
-    return (
-      <button className={`px-4 py-2 rounded-md font-medium transition-colors ${variants[variant]}`}>
-        {children}
-      </button>
-    );
-  };
+  // const DemoButton = ({ children, variant = 'default' }: { children: React.ReactNode; variant?: 'default' | 'primary' | 'secondary' }) => {
+  //   const variants = {
+  //     default: 'bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600',
+  //     primary: 'bg-blue-600 text-white hover:bg-blue-700',
+  //     secondary: 'bg-gray-600 text-white hover:bg-gray-700'
+  //   };
+  //   
+  //   return (
+  //     <button className={`px-4 py-2 rounded-md font-medium transition-colors ${variants[variant]}`}>
+  //       {children}
+  //     </button>
+  //   );
+  // };
 
   const DemoContent = ({ title, size }: { title: string; size: string }) => (
     <Surface level="primary" padding="md" radius="base" border="subtle" className="text-center">
@@ -170,7 +170,7 @@ export const ContainerShowcase = () => {
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Container as &lt;main&gt;</p>
                 <VisualContainer label="<main> element">
-                  <Container as="main" size="lg" padding="md">
+                  <Container as={"main" as any} size="lg" padding="md">
                     <Surface level="primary" padding="sm" radius="base" border="subtle">
                       <p className="text-sm text-gray-900 dark:text-gray-100">Main content area</p>
                     </Surface>
@@ -181,7 +181,7 @@ export const ContainerShowcase = () => {
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Container as &lt;section&gt;</p>
                 <VisualContainer label="<section> element">
-                  <Container as="section" size="md" padding="md">
+                  <Container as={"section" as any} size="md" padding="md">
                     <Surface level="primary" padding="sm" radius="base" border="subtle">
                       <p className="text-sm text-gray-900 dark:text-gray-100">Section content</p>
                     </Surface>
@@ -192,7 +192,7 @@ export const ContainerShowcase = () => {
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Container as &lt;article&gt;</p>
                 <VisualContainer label="<article> element">
-                  <Container as="article" size="md" padding="sm">
+                  <Container as={"article" as any} size="md" padding="sm">
                     <Surface level="primary" padding="sm" radius="base" border="subtle">
                       <p className="text-sm text-gray-900 dark:text-gray-100">Article content</p>
                     </Surface>
@@ -212,7 +212,7 @@ export const ContainerShowcase = () => {
             <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
               <Stack gap="none">
                 {/* Header */}
-                <Container as="header" size="full" padding="md" className="bg-gray-100 dark:bg-gray-800 border-b dark:border-gray-600">
+                <Container as={"header" as any} size="full" padding="md" className="bg-gray-100 dark:bg-gray-800 border-b dark:border-gray-600">
                   <Inline justify="between" align="center">
                     <div className="font-bold text-gray-900 dark:text-gray-100">Site Logo</div>
                     <Inline gap="md">
@@ -224,7 +224,7 @@ export const ContainerShowcase = () => {
                 </Container>
                 
                 {/* Main Content */}
-                <Container as="main" size="xl" padding="lg" className="bg-white dark:bg-gray-800 min-h-[200px]">
+                <Container as={"main" as any} size="xl" padding="lg" className="bg-white dark:bg-gray-800 min-h-[200px]">
                   <Stack gap="lg">
                     <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Welcome to Our Site</h2>
                     <p className="text-gray-600 dark:text-gray-400">Main content area with consistent container sizing and proper semantic HTML.</p>
@@ -244,7 +244,7 @@ export const ContainerShowcase = () => {
                 </Container>
                 
                 {/* Footer */}
-                <Container as="footer" size="full" padding="md" className="bg-gray-800 dark:bg-gray-900 text-white">
+                <Container as={"footer" as any} size="full" padding="md" className="bg-gray-800 dark:bg-gray-900 text-white">
                   <div className="text-center">
                     <p className="text-sm">&copy; 2025 Your Site Name</p>
                   </div>

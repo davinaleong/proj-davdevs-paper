@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Tabs } from '@davdevs/paper-basic';
 import type { TabItem } from '@davdevs/paper-basic';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Prose } from '@davdevs/paper-basic';
 
 export function ProseShowcase() {

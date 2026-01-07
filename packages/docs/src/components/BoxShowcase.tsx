@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Box } from '@davdevs/paper-foundations';
 
 export function BoxShowcase() {
@@ -153,7 +153,7 @@ export function BoxShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">As Button</h3>
             <Box 
-              as="button" 
+              as={"button" as any} 
               elevation="sm" 
               padding="md"
               className="bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
@@ -171,7 +171,7 @@ export function BoxShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">As Article</h3>
             <Box 
-              as="article" 
+              as={"article" as any} 
               variant="secondary" 
               padding="lg"
               border

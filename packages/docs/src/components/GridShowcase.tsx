@@ -1,5 +1,5 @@
-import React from 'react';
-import { Grid, Box, H1, H2, H3, Text } from '@davdevs/paper-foundations';
+
+import { Grid, Box, H3, Text } from '@davdevs/paper-foundations';
 
 export function GridShowcase() {
   return (

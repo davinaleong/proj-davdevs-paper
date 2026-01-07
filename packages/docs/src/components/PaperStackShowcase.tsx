@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { PaperStack, SidebarLayout, Notebook } from '@davdevs/paper-premium';
-import type { NotebookPage } from '@davdevs/paper-premium';
+
+import { PaperStack } from '@davdevs/paper-premium';
+
 
 export function PaperStackShowcase() {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { Tooltip, Button } from '@davdevs/paper-basic';
 
 // Sample icons
@@ -22,7 +22,6 @@ const SettingsIcon = () => (
 );
 
 export function TooltipShowcase() {
-  const [manualOpen, setManualOpen] = useState(false);
 
   return (
     <div>
@@ -92,13 +91,13 @@ export function TooltipShowcase() {
           </div>
 
           <div className="showcase-item">
-            <h3 className="font-semibold mb-2">Primary</h3>
-            <Tooltip content="Primary colored tooltip" variant="primary">
-              <Button variant="outline">Primary</Button>
+            <h3 className="font-semibold mb-2">Info</h3>
+            <Tooltip content="Info colored tooltip" variant="info">
+              <Button variant="outline">Info</Button>
             </Tooltip>
             <pre className="showcase-code mt-4">
-{`<Tooltip variant="primary" content="Primary tooltip">
-  <Button variant="outline">Primary</Button>
+{`<Tooltip variant="info" content="Info tooltip">
+  <Button variant="outline">Info</Button>
 </Tooltip>`}
             </pre>
           </div>

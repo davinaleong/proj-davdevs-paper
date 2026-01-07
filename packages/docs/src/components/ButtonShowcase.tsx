@@ -197,7 +197,7 @@ export function ButtonShowcase() {
 
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">Custom Element</h3>
-            <Button as="a" href="#" variant="outline" className="mb-4">Link Button</Button>
+            <Button as={"a" as any} variant="outline" className="mb-4">Link Button</Button>
             <pre className="showcase-code">
 {`<Button as="a" href="#">
   Link Button

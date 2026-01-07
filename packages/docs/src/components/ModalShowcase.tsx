@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal } from '../../../basic/src/components/feedback';
 
 export function ModalShowcase() {

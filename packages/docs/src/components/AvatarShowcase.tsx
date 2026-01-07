@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { User } from 'lucide-react';
 import { Avatar } from '@davdevs/paper-basic';
 
@@ -333,8 +333,8 @@ export function AvatarShowcase() {
           <div className="showcase-item">
             <h3 className="font-semibold mb-2">Custom Element</h3>
             <Avatar 
-              as="a"
-              href="#"
+              as={"a" as any}
+
               name="Link"
               size="lg"
               interactive
