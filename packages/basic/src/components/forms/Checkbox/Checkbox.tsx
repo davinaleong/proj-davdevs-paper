@@ -2,7 +2,6 @@ import React, { forwardRef, useEffect, useRef } from 'react';
 import { Check, Minus } from 'lucide-react';
 import { cn } from '../../../utils';
 import { CheckboxProps } from './Checkbox.types';
-import './Checkbox.styles.css';
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((
   {

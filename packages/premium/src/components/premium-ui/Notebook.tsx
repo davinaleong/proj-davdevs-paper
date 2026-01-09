@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { cn } from '../../../../foundations/src/utils';
+import { cn } from '@davdevs/paper-foundations';
 
 export interface NotebookPage {
   id: string;

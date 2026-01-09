@@ -3,7 +3,12 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
     "src/**/*"

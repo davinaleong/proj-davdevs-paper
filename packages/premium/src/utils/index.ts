@@ -2,8 +2,9 @@
    Premium Utilities
    ========================================================= */
 
-// Re-export basic utilities
-export * from '@davdevs/paper-basic/utils';
+// Premium-specific utilities
+// Re-export common utils from foundations
+export { cn } from '@davdevs/paper-foundations';
 
 // Premium-specific utilities can be added here
 // export * from './animations';

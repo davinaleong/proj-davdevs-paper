@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../../utils';
 import { RadioProps, RadioGroupProps } from './Radio.types';
-import './Radio.styles.css';
+
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>((
   {

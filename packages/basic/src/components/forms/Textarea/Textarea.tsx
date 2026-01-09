@@ -1,7 +1,6 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { cn } from '../../../utils';
 import { TextareaProps } from './Textarea.types';
-import './Textarea.styles.css';
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((
   {

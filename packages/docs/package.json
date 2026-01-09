@@ -12,6 +12,7 @@
   "dependencies": {
     "@davdevs/paper-foundations": "*",
     "@davdevs/paper-basic": "*",
+    "@davdevs/paper-premium": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "lucide-react": "^0.562.0",

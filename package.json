@@ -1,5 +1,5 @@
 {
-  "name": "proj-davdevs-paper-ui",
+  "name": "proj-davdevs-paper",
   "version": "1.0.0",
   "description": "Dav/Devs Paper UI - A premium paper-inspired design system",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "clean": "npm run clean --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "prepack": "npm run build",
-    "publish:all": "npm run build && npm publish --workspaces --if-present",
+    "publish:all": "npm install && npm run build && npm publish --workspaces --if-present",
     "publish:basic": "npm publish --workspace=packages/basic",
     "publish:premium": "npm publish --workspace=packages/premium",
     "publish:core": "npm publish --workspace=packages/core",

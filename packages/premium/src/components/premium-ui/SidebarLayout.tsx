@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../../../../foundations/src/utils';
+import { cn } from '@davdevs/paper-foundations';
 
 export interface SidebarLayoutProps {
   children: React.ReactNode;
