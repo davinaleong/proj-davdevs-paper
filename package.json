@@ -11,7 +11,21 @@
     "dev": "npm run dev --workspace=packages/docs",
     "build": "npm run build --workspaces --if-present",
     "clean": "npm run clean --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm run test --workspaces --if-present",
+    "prepack": "npm run build",
+    "publish:all": "npm run build && npm publish --workspaces --if-present",
+    "publish:basic": "npm publish --workspace=packages/basic",
+    "publish:premium": "npm publish --workspace=packages/premium",
+    "publish:core": "npm publish --workspace=packages/core",
+    "publish:foundations": "npm publish --workspace=packages/foundations",
+    "publish:react": "npm publish --workspace=packages/react",
+    "publish:styles": "npm publish --workspace=packages/styles",
+    "version:patch": "npm version patch --workspaces",
+    "version:minor": "npm version minor --workspaces",
+    "version:major": "npm version major --workspaces",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish"
   },
   "repository": {
     "type": "git",

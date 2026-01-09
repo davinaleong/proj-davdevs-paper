@@ -3,26 +3,54 @@
   "version": "1.0.0",
   "description": "Pure CSS styles for DavDevs Paper Design System",
   "main": "dist/index.css",
+  "style": "dist/index.css",
   "files": [
     "dist",
     "src"
   ],
-  "scripts": {
-    "build": "postcss src/index.css -o dist/index.css",
-    "clean": "rimraf dist"
+  "exports": {
+    ".": "./dist/index.css",
+    "./css": "./dist/index.css"
   },
+  "scripts": {
+    "build": "postcss src/index.css -o dist/index.css --map",
+    "clean": "rimraf dist",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "css",
+    "styles",
+    "design-system",
+    "paper",
+    "ui"
+  ],
+  "author": "Davina Leong",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davinaleong/proj-davdevs-paper.git",
+    "directory": "packages/styles"
+  },
+  "bugs": {
+    "url": "https://github.com/davinaleong/proj-davdevs-paper/issues"
+  },
+  "homepage": "https://github.com/davinaleong/proj-davdevs-paper#readme",
   "dependencies": {
-    "@davdevs/paper-core": "file:../core",
-    "@davdevs/paper-foundations": "file:../foundations",
-    "autoprefixer": "^10.4.23",
-    "postcss-import": "^15.1.0"
+    "@davdevs/paper-core": "^1.0.0",
+    "@davdevs/paper-foundations": "^1.0.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.23",
     "postcss": "^8.0.0",
     "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.1.0",
     "rimraf": "^5.0.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
